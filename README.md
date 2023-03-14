@@ -1,5 +1,11 @@
 # CS306Project_Group10
 
+Hamza Özdemir 31239
+Berkem Elgül 29363
+Mert Dilek 27927
+Doğukan Dizman 28196
+Mehmet Eren 
+
 CS306 Project: Energy Production and Emissions
 Our CS306 project will be focusing on analyzing energy production by
 countries, seperated by sources, while also taking a look at carbon emissions,
