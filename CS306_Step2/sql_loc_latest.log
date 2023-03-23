@@ -1,0 +1,796 @@
+[1, 10:24:48] CREATE DATABASE test: Running...
+[1, 10:24:48] CREATE DATABASE test: 1 row(s) affected
+[2, 10:24:57] CREATE DATABASE test: Running...
+[2, 10:24:57] CREATE DATABASE test: Error Code: 1007. Can't create database 'test'; database exists
+[3, 10:25:32] DROP DATABASE: Running...
+[3, 10:25:32] DROP DATABASE: Error Code: 1064. You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+[4, 10:25:44] DROP DATABASE test: Running...
+[4, 10:25:44] DROP DATABASE test: 0 row(s) affected
+[5, 10:25:55] CREATE DATABASE test: Running...
+[5, 10:25:55] CREATE DATABASE test: 1 row(s) affected
+[1, 12:02:33] DROP DATABASE test: Running...
+[1, 12:02:33] DROP DATABASE test: 0 row(s) affected
+[2, 12:02:35] DROP DATABASE test: Running...
+[2, 12:02:35] DROP DATABASE test: Error Code: 1008. Can't drop database 'test'; database doesn't exist
+[3, 12:02:40] CREATE DATABASE test: Running...
+[3, 12:02:40] CREATE DATABASE test: 1 row(s) affected
+[4, 12:02:42] CREATE DATABASE test: Running...
+[4, 12:02:42] CREATE DATABASE test: Error Code: 1007. Can't create database 'test'; database exists
+[5, 12:07:19] USE test: Running...
+[5, 12:07:19] USE test: 0 row(s) affected
+[6, 12:07:20] USE test: Running...
+[6, 12:07:20] USE test: 0 row(s) affected
+[7, 12:07:21] USE test: Running...
+[7, 12:07:21] USE test: 0 row(s) affected
+
+[3, 11:50:41] CREATE TABLE Population (
+    id SERIAL PRIMARY KEY,
+    country_code VARCHAR(3) NOT NULL,
+    year INT NOT NULL,
+    population FLOAT,
+    FOREIGN KEY (country_code) REFERENCES Countries(country_code)   
+): Running...
+[3, 11:50:41] CREATE TABLE Population (
+    id SERIAL PRIMARY KEY,
+    country_code VARCHAR(3) NOT NULL,
+    year INT NOT NULL,
+    population FLOAT,
+    FOREIGN KEY (country_code) REFERENCES Countries(country_code)   
+): Error Code: 1046. No database selected
+Select the default DB to be used by double-clicking its name in the SCHEMAS list in the sidebar.
+[4, 11:51:44] CREATE DATABASE test: Running...
+[4, 11:51:44] CREATE DATABASE test: Error Code: 1007. Can't create database 'test'; database exists
+[5, 11:51:45] CREATE DATABASE test: Running...
+[5, 11:51:45] CREATE DATABASE test: Error Code: 1007. Can't create database 'test'; database exists
+[6, 11:53:15] Apply changes to test: Applying object changes ...
+[6, 11:53:15] Apply changes to test: No changes detected
+[7, 11:53:35] CREATE DATABASE test: Running...
+[7, 11:53:35] CREATE DATABASE test: Error Code: 1007. Can't create database 'test'; database exists
+[8, 11:53:36] CREATE DATABASE test: Running...
+[8, 11:53:36] CREATE DATABASE test: Error Code: 1007. Can't create database 'test'; database exists
+[9, 11:53:37] CREATE DATABASE test: Running...
+[9, 11:53:37] CREATE DATABASE test: Error Code: 1007. Can't create database 'test'; database exists
+[1, 18:20:54] CREATE DATABASE test: Running...
+[1, 18:20:54] CREATE DATABASE test: Error Code: 1007. Can't create database 'test'; database exists
+[2, 18:20:58] CREATE TABLE consumer_relationship (
+  iso_code VARCHAR(3),
+  year INT,
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code),
+  FOREIGN KEY (year) REFERENCES energy(year)
+): Running...
+[2, 18:20:58] CREATE TABLE consumer_relationship (
+  iso_code VARCHAR(3),
+  year INT,
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code),
+  FOREIGN KEY (year) REFERENCES energy(year)
+): Error Code: 1046. No database selected
+Select the default DB to be used by double-clicking its name in the SCHEMAS list in the sidebar.
+[3, 18:21:01] CREATE TABLE consumer_relationship (
+  iso_code VARCHAR(3),
+  year INT,
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code),
+  FOREIGN KEY (year) REFERENCES energy(year)
+): Running...
+[3, 18:21:01] CREATE TABLE consumer_relationship (
+  iso_code VARCHAR(3),
+  year INT,
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code),
+  FOREIGN KEY (year) REFERENCES energy(year)
+): Error Code: 1046. No database selected
+Select the default DB to be used by double-clicking its name in the SCHEMAS list in the sidebar.
+[4, 18:21:05] CREATE TABLE have_relationship (
+  iso_code VARCHAR(3),
+  year INT,
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code),
+  FOREIGN KEY (year) REFERENCES population(year)
+): Running...
+[4, 18:21:05] CREATE TABLE have_relationship (
+  iso_code VARCHAR(3),
+  year INT,
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code),
+  FOREIGN KEY (year) REFERENCES population(year)
+): Error Code: 1046. No database selected
+Select the default DB to be used by double-clicking its name in the SCHEMAS list in the sidebar.
+[5, 18:21:37] DROP DATABASE test: Running...
+[5, 18:21:37] DROP DATABASE test: 5 row(s) affected
+[6, 18:21:41] USE test: Running...
+[6, 18:21:41] USE test: Error Code: 1049. Unknown database 'test'
+[7, 18:21:46] CREATE DATABASE test: Running...
+[7, 18:21:46] CREATE DATABASE test: 1 row(s) affected
+[8, 18:21:46] USE test: Running...
+[8, 18:21:46] USE test: 0 row(s) affected
+[9, 18:21:46] CREATE TABLE countries (
+  name VARCHAR(30),
+  iso_code VARCHAR(3),
+  PRIMARY KEY (iso_code)
+): Running...
+[9, 18:21:46] CREATE TABLE countries (
+  name VARCHAR(30),
+  iso_code VARCHAR(3),
+  PRIMARY KEY (iso_code)
+): 0 row(s) affected
+[10, 18:21:46] CREATE TABLE population (
+  year INT,
+  amount INT,
+  iso_code VARCHAR(3),
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code)
+): Running...
+[10, 18:21:46] CREATE TABLE population (
+  year INT,
+  amount INT,
+  iso_code VARCHAR(3),
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code)
+): 0 row(s) affected
+[11, 18:21:46] CREATE TABLE energy (
+  year INT,
+  clean_energy INT,
+  dirty_energy INT,
+  co2_emission INT,
+  iso_code VARCHAR(3),
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code)
+): Running...
+[11, 18:21:46] CREATE TABLE energy (
+  year INT,
+  clean_energy INT,
+  dirty_energy INT,
+  co2_emission INT,
+  iso_code VARCHAR(3),
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code)
+): 0 row(s) affected
+[12, 18:21:46] CREATE TABLE have_relationship (
+  iso_code VARCHAR(3),
+  year INT,
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code),
+  FOREIGN KEY (year) REFERENCES population(year)
+): Running...
+[12, 18:21:46] CREATE TABLE have_relationship (
+  iso_code VARCHAR(3),
+  year INT,
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code),
+  FOREIGN KEY (year) REFERENCES population(year)
+): Error Code: 1822. Failed to add the foreign key constraint. Missing index for constraint 'have_relationship_ibfk_2' in the referenced table 'population'
+[13, 18:21:47] USE test: Running...
+[13, 18:21:47] USE test: 0 row(s) affected
+[14, 18:21:52] USE test: Running...
+[14, 18:21:52] USE test: 0 row(s) affected
+[15, 18:21:54] USE test: Running...
+[15, 18:21:54] USE test: 0 row(s) affected
+[16, 18:21:54] USE test: Running...
+[16, 18:21:54] USE test: 0 row(s) affected
+[17, 18:21:55] USE test: Running...
+[17, 18:21:55] USE test: 0 row(s) affected
+[18, 18:21:55] USE test: Running...
+[18, 18:21:55] USE test: 0 row(s) affected
+[19, 18:21:57] CREATE DATABASE test: Running...
+[19, 18:21:57] CREATE DATABASE test: Error Code: 1007. Can't create database 'test'; database exists
+[20, 18:22:00] CREATE TABLE consumer_relationship (
+  iso_code VARCHAR(3),
+  year INT,
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code),
+  FOREIGN KEY (year) REFERENCES energy(year)
+): Running...
+[20, 18:22:00] CREATE TABLE consumer_relationship (
+  iso_code VARCHAR(3),
+  year INT,
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code),
+  FOREIGN KEY (year) REFERENCES energy(year)
+): Error Code: 1822. Failed to add the foreign key constraint. Missing index for constraint 'consumer_relationship_ibfk_2' in the referenced table 'energy'
+[21, 18:22:56] CREATE TABLE consumer_relationship (
+  iso_code VARCHAR(3),
+  year_ INT,
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code),
+  FOREIGN KEY (year_) REFERENCES energy(year_)
+): Running...
+[21, 18:22:56] CREATE TABLE consumer_relationship (
+  iso_code VARCHAR(3),
+  year_ INT,
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code),
+  FOREIGN KEY (year_) REFERENCES energy(year_)
+): Error Code: 3734. Failed to add the foreign key constraint. Missing column 'year_' for constraint 'consumer_relationship_ibfk_2' in the referenced table 'energy'
+[22, 18:22:57] CREATE TABLE consumer_relationship (
+  iso_code VARCHAR(3),
+  year_ INT,
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code),
+  FOREIGN KEY (year_) REFERENCES energy(year_)
+): Running...
+[22, 18:22:57] CREATE TABLE consumer_relationship (
+  iso_code VARCHAR(3),
+  year_ INT,
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code),
+  FOREIGN KEY (year_) REFERENCES energy(year_)
+): Error Code: 3734. Failed to add the foreign key constraint. Missing column 'year_' for constraint 'consumer_relationship_ibfk_2' in the referenced table 'energy'
+[23, 18:22:57] CREATE TABLE consumer_relationship (
+  iso_code VARCHAR(3),
+  year_ INT,
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code),
+  FOREIGN KEY (year_) REFERENCES energy(year_)
+): Running...
+[23, 18:22:57] CREATE TABLE consumer_relationship (
+  iso_code VARCHAR(3),
+  year_ INT,
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code),
+  FOREIGN KEY (year_) REFERENCES energy(year_)
+): Error Code: 3734. Failed to add the foreign key constraint. Missing column 'year_' for constraint 'consumer_relationship_ibfk_2' in the referenced table 'energy'
+[24, 18:24:28] CREATE TABLE consumer_relationship (
+  iso_code VARCHAR(3),
+  year_ INT,
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code),
+  FOREIGN KEY (year_) REFERENCES energy(year_)
+): Running...
+[24, 18:24:28] CREATE TABLE consumer_relationship (
+  iso_code VARCHAR(3),
+  year_ INT,
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code),
+  FOREIGN KEY (year_) REFERENCES energy(year_)
+): Error Code: 3734. Failed to add the foreign key constraint. Missing column 'year_' for constraint 'consumer_relationship_ibfk_2' in the referenced table 'energy'
+[25, 18:25:06] CREATE TABLE consumer_relationship (
+  iso_code VARCHAR(3),
+  year_ INT,
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code),
+  FOREIGN KEY (year_) REFERENCES energy(year_)
+): Running...
+[25, 18:25:06] CREATE TABLE consumer_relationship (
+  iso_code VARCHAR(3),
+  year_ INT,
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code),
+  FOREIGN KEY (year_) REFERENCES energy(year_)
+): Error Code: 3734. Failed to add the foreign key constraint. Missing column 'year_' for constraint 'consumer_relationship_ibfk_2' in the referenced table 'energy'
+[26, 18:25:06] CREATE TABLE consumer_relationship (
+  iso_code VARCHAR(3),
+  year_ INT,
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code),
+  FOREIGN KEY (year_) REFERENCES energy(year_)
+): Running...
+[26, 18:25:06] CREATE TABLE consumer_relationship (
+  iso_code VARCHAR(3),
+  year_ INT,
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code),
+  FOREIGN KEY (year_) REFERENCES energy(year_)
+): Error Code: 3734. Failed to add the foreign key constraint. Missing column 'year_' for constraint 'consumer_relationship_ibfk_2' in the referenced table 'energy'
+[27, 18:25:07] CREATE TABLE consumer_relationship (
+  iso_code VARCHAR(3),
+  year_ INT,
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code),
+  FOREIGN KEY (year_) REFERENCES energy(year_)
+): Running...
+[27, 18:25:07] CREATE TABLE consumer_relationship (
+  iso_code VARCHAR(3),
+  year_ INT,
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code),
+  FOREIGN KEY (year_) REFERENCES energy(year_)
+): Error Code: 3734. Failed to add the foreign key constraint. Missing column 'year_' for constraint 'consumer_relationship_ibfk_2' in the referenced table 'energy'
+[28, 18:25:07] CREATE TABLE consumer_relationship (
+  iso_code VARCHAR(3),
+  year_ INT,
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code),
+  FOREIGN KEY (year_) REFERENCES energy(year_)
+): Running...
+[28, 18:25:07] CREATE TABLE consumer_relationship (
+  iso_code VARCHAR(3),
+  year_ INT,
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code),
+  FOREIGN KEY (year_) REFERENCES energy(year_)
+): Error Code: 3734. Failed to add the foreign key constraint. Missing column 'year_' for constraint 'consumer_relationship_ibfk_2' in the referenced table 'energy'
+[29, 18:25:07] CREATE TABLE consumer_relationship (
+  iso_code VARCHAR(3),
+  year_ INT,
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code),
+  FOREIGN KEY (year_) REFERENCES energy(year_)
+): Running...
+[29, 18:25:07] CREATE TABLE consumer_relationship (
+  iso_code VARCHAR(3),
+  year_ INT,
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code),
+  FOREIGN KEY (year_) REFERENCES energy(year_)
+): Error Code: 3734. Failed to add the foreign key constraint. Missing column 'year_' for constraint 'consumer_relationship_ibfk_2' in the referenced table 'energy'
+[30, 18:25:07] CREATE TABLE consumer_relationship (
+  iso_code VARCHAR(3),
+  year_ INT,
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code),
+  FOREIGN KEY (year_) REFERENCES energy(year_)
+): Running...
+[30, 18:25:07] CREATE TABLE consumer_relationship (
+  iso_code VARCHAR(3),
+  year_ INT,
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code),
+  FOREIGN KEY (year_) REFERENCES energy(year_)
+): Error Code: 3734. Failed to add the foreign key constraint. Missing column 'year_' for constraint 'consumer_relationship_ibfk_2' in the referenced table 'energy'
+[31, 18:25:07] CREATE TABLE consumer_relationship (
+  iso_code VARCHAR(3),
+  year_ INT,
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code),
+  FOREIGN KEY (year_) REFERENCES energy(year_)
+): Running...
+[31, 18:25:07] CREATE TABLE consumer_relationship (
+  iso_code VARCHAR(3),
+  year_ INT,
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code),
+  FOREIGN KEY (year_) REFERENCES energy(year_)
+): Error Code: 3734. Failed to add the foreign key constraint. Missing column 'year_' for constraint 'consumer_relationship_ibfk_2' in the referenced table 'energy'
+[32, 18:25:07] CREATE TABLE consumer_relationship (
+  iso_code VARCHAR(3),
+  year_ INT,
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code),
+  FOREIGN KEY (year_) REFERENCES energy(year_)
+): Running...
+[32, 18:25:07] CREATE TABLE consumer_relationship (
+  iso_code VARCHAR(3),
+  year_ INT,
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code),
+  FOREIGN KEY (year_) REFERENCES energy(year_)
+): Error Code: 3734. Failed to add the foreign key constraint. Missing column 'year_' for constraint 'consumer_relationship_ibfk_2' in the referenced table 'energy'
+[33, 18:25:07] CREATE TABLE consumer_relationship (
+  iso_code VARCHAR(3),
+  year_ INT,
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code),
+  FOREIGN KEY (year_) REFERENCES energy(year_)
+): Running...
+[33, 18:25:07] CREATE TABLE consumer_relationship (
+  iso_code VARCHAR(3),
+  year_ INT,
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code),
+  FOREIGN KEY (year_) REFERENCES energy(year_)
+): Error Code: 3734. Failed to add the foreign key constraint. Missing column 'year_' for constraint 'consumer_relationship_ibfk_2' in the referenced table 'energy'
+[34, 18:25:08] CREATE TABLE consumer_relationship (
+  iso_code VARCHAR(3),
+  year_ INT,
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code),
+  FOREIGN KEY (year_) REFERENCES energy(year_)
+): Running...
+[34, 18:25:08] CREATE TABLE consumer_relationship (
+  iso_code VARCHAR(3),
+  year_ INT,
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code),
+  FOREIGN KEY (year_) REFERENCES energy(year_)
+): Error Code: 3734. Failed to add the foreign key constraint. Missing column 'year_' for constraint 'consumer_relationship_ibfk_2' in the referenced table 'energy'
+[35, 18:25:08] CREATE TABLE consumer_relationship (
+  iso_code VARCHAR(3),
+  year_ INT,
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code),
+  FOREIGN KEY (year_) REFERENCES energy(year_)
+): Running...
+[35, 18:25:08] CREATE TABLE consumer_relationship (
+  iso_code VARCHAR(3),
+  year_ INT,
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code),
+  FOREIGN KEY (year_) REFERENCES energy(year_)
+): Error Code: 3734. Failed to add the foreign key constraint. Missing column 'year_' for constraint 'consumer_relationship_ibfk_2' in the referenced table 'energy'
+[1, 18:25:25] CREATE TABLE consumer_relationship (
+  iso_code VARCHAR(3),
+  year_ INT,
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code),
+  FOREIGN KEY (year_) REFERENCES energy(year_)
+): Running...
+[1, 18:25:25] CREATE TABLE consumer_relationship (
+  iso_code VARCHAR(3),
+  year_ INT,
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code),
+  FOREIGN KEY (year_) REFERENCES energy(year_)
+): Error Code: 1046. No database selected
+Select the default DB to be used by double-clicking its name in the SCHEMAS list in the sidebar.
+[2, 18:25:30] CREATE DATABASE test: Running...
+[2, 18:25:30] CREATE DATABASE test: Error Code: 1007. Can't create database 'test'; database exists
+[3, 18:25:35] CREATE DATABASE test: Running...
+[3, 18:25:35] CREATE DATABASE test: Error Code: 1007. Can't create database 'test'; database exists
+[4, 18:25:37] CREATE DATABASE test: Running...
+[4, 18:25:37] CREATE DATABASE test: Error Code: 1007. Can't create database 'test'; database exists
+[5, 18:25:40] USE test: Running...
+[5, 18:25:40] USE test: 0 row(s) affected
+[6, 18:25:40] CREATE TABLE countries (
+  name_ VARCHAR(30),
+  iso_code VARCHAR(3),
+  PRIMARY KEY (iso_code)
+): Running...
+[6, 18:25:41] CREATE TABLE countries (
+  name_ VARCHAR(30),
+  iso_code VARCHAR(3),
+  PRIMARY KEY (iso_code)
+): Error Code: 1050. Table 'countries' already exists
+[7, 18:25:42] USE test: Running...
+[7, 18:25:42] USE test: 0 row(s) affected
+[8, 18:25:42] CREATE TABLE countries (
+  name_ VARCHAR(30),
+  iso_code VARCHAR(3),
+  PRIMARY KEY (iso_code)
+): Running...
+[8, 18:25:42] CREATE TABLE countries (
+  name_ VARCHAR(30),
+  iso_code VARCHAR(3),
+  PRIMARY KEY (iso_code)
+): Error Code: 1050. Table 'countries' already exists
+[9, 18:25:48] USE test: Running...
+[9, 18:25:48] USE test: 0 row(s) affected
+[10, 18:25:48] CREATE TABLE countries (
+  name_ VARCHAR(30),
+  iso_code VARCHAR(3),
+  PRIMARY KEY (iso_code)
+): Running...
+[10, 18:25:48] CREATE TABLE countries (
+  name_ VARCHAR(30),
+  iso_code VARCHAR(3),
+  PRIMARY KEY (iso_code)
+): Error Code: 1050. Table 'countries' already exists
+[11, 18:25:52] CREATE TABLE countries (
+  name_ VARCHAR(30),
+  iso_code VARCHAR(3),
+  PRIMARY KEY (iso_code)
+): Running...
+[11, 18:25:52] CREATE TABLE countries (
+  name_ VARCHAR(30),
+  iso_code VARCHAR(3),
+  PRIMARY KEY (iso_code)
+): Error Code: 1050. Table 'countries' already exists
+[12, 18:25:56] CREATE TABLE population (
+  year_ INT,
+  amount INT,
+  iso_code VARCHAR(3),
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code)
+): Running...
+[12, 18:25:56] CREATE TABLE population (
+  year_ INT,
+  amount INT,
+  iso_code VARCHAR(3),
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code)
+): Error Code: 1050. Table 'population' already exists
+[13, 18:25:59] CREATE TABLE energy (
+  year_ INT,
+  clean_energy INT,
+  dirty_energy INT,
+  co2_emission INT,
+  iso_code VARCHAR(3),
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code),
+  PRIMARY KEY (year_)
+): Running...
+[13, 18:25:59] CREATE TABLE energy (
+  year_ INT,
+  clean_energy INT,
+  dirty_energy INT,
+  co2_emission INT,
+  iso_code VARCHAR(3),
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code),
+  PRIMARY KEY (year_)
+): Error Code: 1050. Table 'energy' already exists
+[14, 18:26:01] CREATE TABLE have_relationship (
+  iso_code VARCHAR(3),
+  year_ INT,
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code),
+  FOREIGN KEY (year_) REFERENCES population(year_)
+): Running...
+[14, 18:26:01] CREATE TABLE have_relationship (
+  iso_code VARCHAR(3),
+  year_ INT,
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code),
+  FOREIGN KEY (year_) REFERENCES population(year_)
+): Error Code: 3734. Failed to add the foreign key constraint. Missing column 'year_' for constraint 'have_relationship_ibfk_2' in the referenced table 'population'
+[15, 18:26:33] USE test: Running...
+[15, 18:26:33] USE test: 0 row(s) affected
+[16, 18:26:33] CREATE TABLE countries (
+  name_ VARCHAR(30),
+  iso_code VARCHAR(3),
+  PRIMARY KEY (iso_code)
+): Running...
+[16, 18:26:33] CREATE TABLE countries (
+  name_ VARCHAR(30),
+  iso_code VARCHAR(3),
+  PRIMARY KEY (iso_code)
+): Error Code: 1050. Table 'countries' already exists
+[17, 18:26:37] USE test: Running...
+[17, 18:26:37] USE test: 0 row(s) affected
+[18, 18:26:37] CREATE TABLE countries (
+  name_ VARCHAR(30),
+  iso_code VARCHAR(3),
+  PRIMARY KEY (iso_code)
+): Running...
+[18, 18:26:37] CREATE TABLE countries (
+  name_ VARCHAR(30),
+  iso_code VARCHAR(3),
+  PRIMARY KEY (iso_code)
+): Error Code: 1050. Table 'countries' already exists
+[19, 18:26:40] USE test: Running...
+[19, 18:26:40] USE test: 0 row(s) affected
+[20, 18:26:40] CREATE TABLE countries (
+  name_ VARCHAR(30),
+  iso_code VARCHAR(3),
+  PRIMARY KEY (iso_code)
+): Running...
+[20, 18:26:40] CREATE TABLE countries (
+  name_ VARCHAR(30),
+  iso_code VARCHAR(3),
+  PRIMARY KEY (iso_code)
+): Error Code: 1050. Table 'countries' already exists
+[21, 18:26:43] USE test: Running...
+[21, 18:26:43] USE test: 0 row(s) affected
+[22, 18:26:43] CREATE TABLE countries (
+  name_ VARCHAR(30),
+  iso_code VARCHAR(3),
+  PRIMARY KEY (iso_code)
+): Running...
+[22, 18:26:43] CREATE TABLE countries (
+  name_ VARCHAR(30),
+  iso_code VARCHAR(3),
+  PRIMARY KEY (iso_code)
+): Error Code: 1050. Table 'countries' already exists
+[23, 18:26:44] USE test: Running...
+[23, 18:26:44] USE test: 0 row(s) affected
+[24, 18:26:44] CREATE TABLE countries (
+  name_ VARCHAR(30),
+  iso_code VARCHAR(3),
+  PRIMARY KEY (iso_code)
+): Running...
+[24, 18:26:44] CREATE TABLE countries (
+  name_ VARCHAR(30),
+  iso_code VARCHAR(3),
+  PRIMARY KEY (iso_code)
+): Error Code: 1050. Table 'countries' already exists
+[25, 18:26:44] USE test: Running...
+[25, 18:26:44] USE test: 0 row(s) affected
+[26, 18:26:44] CREATE TABLE countries (
+  name_ VARCHAR(30),
+  iso_code VARCHAR(3),
+  PRIMARY KEY (iso_code)
+): Running...
+[26, 18:26:44] CREATE TABLE countries (
+  name_ VARCHAR(30),
+  iso_code VARCHAR(3),
+  PRIMARY KEY (iso_code)
+): Error Code: 1050. Table 'countries' already exists
+[27, 18:26:45] USE test: Running...
+[27, 18:26:45] USE test: 0 row(s) affected
+[28, 18:26:45] CREATE TABLE countries (
+  name_ VARCHAR(30),
+  iso_code VARCHAR(3),
+  PRIMARY KEY (iso_code)
+): Running...
+[28, 18:26:45] CREATE TABLE countries (
+  name_ VARCHAR(30),
+  iso_code VARCHAR(3),
+  PRIMARY KEY (iso_code)
+): Error Code: 1050. Table 'countries' already exists
+[29, 18:26:46] CREATE TABLE consumer_relationship (
+  iso_code VARCHAR(3),
+  year_ INT,
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code),
+  FOREIGN KEY (year_) REFERENCES energy(year_)
+): Running...
+[29, 18:26:46] CREATE TABLE consumer_relationship (
+  iso_code VARCHAR(3),
+  year_ INT,
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code),
+  FOREIGN KEY (year_) REFERENCES energy(year_)
+): Error Code: 3734. Failed to add the foreign key constraint. Missing column 'year_' for constraint 'consumer_relationship_ibfk_2' in the referenced table 'energy'
+[30, 18:26:53] CREATE TABLE population (
+  year_ INT,
+  amount INT,
+  iso_code VARCHAR(3),
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code),
+  PRIMARY KEY (year_)
+): Running...
+[30, 18:26:53] CREATE TABLE population (
+  year_ INT,
+  amount INT,
+  iso_code VARCHAR(3),
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code),
+  PRIMARY KEY (year_)
+): Error Code: 1050. Table 'population' already exists
+[31, 18:26:55] CREATE TABLE energy (
+  year_ INT,
+  clean_energy INT,
+  dirty_energy INT,
+  co2_emission INT,
+  iso_code VARCHAR(3),
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code),
+  PRIMARY KEY (year_)
+): Running...
+[31, 18:26:55] CREATE TABLE energy (
+  year_ INT,
+  clean_energy INT,
+  dirty_energy INT,
+  co2_emission INT,
+  iso_code VARCHAR(3),
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code),
+  PRIMARY KEY (year_)
+): Error Code: 1050. Table 'energy' already exists
+[32, 18:26:58] CREATE TABLE have_relationship (
+  iso_code VARCHAR(3),
+  year_ INT,
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code),
+  FOREIGN KEY (year_) REFERENCES population(year_)
+): Running...
+[32, 18:26:58] CREATE TABLE have_relationship (
+  iso_code VARCHAR(3),
+  year_ INT,
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code),
+  FOREIGN KEY (year_) REFERENCES population(year_)
+): Error Code: 3734. Failed to add the foreign key constraint. Missing column 'year_' for constraint 'have_relationship_ibfk_2' in the referenced table 'population'
+[33, 18:27:35] CREATE TABLE population (
+  year_ INT,
+  amount INT,
+  iso_code VARCHAR(3),
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code)
+  
+): Running...
+[33, 18:27:35] CREATE TABLE population (
+  year_ INT,
+  amount INT,
+  iso_code VARCHAR(3),
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code)
+  
+): Error Code: 1050. Table 'population' already exists
+[34, 18:27:38] CREATE TABLE energy (
+  year_ INT,
+  clean_energy INT,
+  dirty_energy INT,
+  co2_emission INT,
+  iso_code VARCHAR(3),
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code)
+
+): Running...
+[34, 18:27:38] CREATE TABLE energy (
+  year_ INT,
+  clean_energy INT,
+  dirty_energy INT,
+  co2_emission INT,
+  iso_code VARCHAR(3),
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code)
+
+): Error Code: 1050. Table 'energy' already exists
+[35, 18:27:40] CREATE TABLE have_relationship (
+  iso_code VARCHAR(3),
+  year_ INT,
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code),
+  FOREIGN KEY (year_) REFERENCES population(year_)
+): Running...
+[35, 18:27:40] CREATE TABLE have_relationship (
+  iso_code VARCHAR(3),
+  year_ INT,
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code),
+  FOREIGN KEY (year_) REFERENCES population(year_)
+): Error Code: 3734. Failed to add the foreign key constraint. Missing column 'year_' for constraint 'have_relationship_ibfk_2' in the referenced table 'population'
+[36, 18:28:43] CREATE TABLE have_relationship (
+  iso_code VARCHAR(3),
+  year_ INT,
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code),
+  FOREIGN KEY (year_) REFERENCES population(year_)
+): Running...
+[36, 18:28:43] CREATE TABLE have_relationship (
+  iso_code VARCHAR(3),
+  year_ INT,
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code),
+  FOREIGN KEY (year_) REFERENCES population(year_)
+): Error Code: 3734. Failed to add the foreign key constraint. Missing column 'year_' for constraint 'have_relationship_ibfk_2' in the referenced table 'population'
+[37, 18:34:11] CREATE TABLE have_relationship (
+  iso_code VARCHAR(3),
+  year_ INT,
+  amount INT,
+  PRIMARY KEY (year_),
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code) ON UPDATE CASCADE
+): Running...
+[37, 18:34:11] CREATE TABLE have_relationship (
+  iso_code VARCHAR(3),
+  year_ INT,
+  amount INT,
+  PRIMARY KEY (year_),
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code) ON UPDATE CASCADE
+): 0 row(s) affected
+[38, 18:34:13] CREATE TABLE have_relationship (
+  iso_code VARCHAR(3),
+  year_ INT,
+  amount INT,
+  PRIMARY KEY (year_),
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code) ON UPDATE CASCADE
+): Running...
+[38, 18:34:13] CREATE TABLE have_relationship (
+  iso_code VARCHAR(3),
+  year_ INT,
+  amount INT,
+  PRIMARY KEY (year_),
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code) ON UPDATE CASCADE
+): Error Code: 1050. Table 'have_relationship' already exists
+[39, 18:34:16] CREATE TABLE consumer_relationship (
+  iso_code VARCHAR(3),
+  year_ INT,
+  clean_energy INT,
+  dirty_energy INT,
+  co2_emission INT,
+  PRIMARY KEY (year_),
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code) ON UPDATE CASCADE  
+): Running...
+[39, 18:34:17] CREATE TABLE consumer_relationship (
+  iso_code VARCHAR(3),
+  year_ INT,
+  clean_energy INT,
+  dirty_energy INT,
+  co2_emission INT,
+  PRIMARY KEY (year_),
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code) ON UPDATE CASCADE  
+): 0 row(s) affected
+[40, 18:34:18] CREATE TABLE consumer_relationship (
+  iso_code VARCHAR(3),
+  year_ INT,
+  clean_energy INT,
+  dirty_energy INT,
+  co2_emission INT,
+  PRIMARY KEY (year_),
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code) ON UPDATE CASCADE  
+): Running...
+[40, 18:34:18] CREATE TABLE consumer_relationship (
+  iso_code VARCHAR(3),
+  year_ INT,
+  clean_energy INT,
+  dirty_energy INT,
+  co2_emission INT,
+  PRIMARY KEY (year_),
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code) ON UPDATE CASCADE  
+): Error Code: 1050. Table 'consumer_relationship' already exists
+[41, 18:37:53] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': Executing 
+[41, 18:37:53] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': OK
+[42, 18:37:53] SHOW DATABASES: Executing 
+[42, 18:37:53] SHOW DATABASES: OK
+[43, 18:38:17] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': Executing 
+[43, 18:38:17] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': OK
+[44, 18:38:17] SHOW COLUMNS FROM `test`.`countries`: Executing 
+[44, 18:38:17] SHOW COLUMNS FROM `test`.`countries`: OK
+[45, 18:39:06] PREPARE stmt FROM 'INSERT INTO `test`.`countries` (`iso_code`,`name`) VALUES(?,?)': Executing 
+[45, 18:39:06] PREPARE stmt FROM 'INSERT INTO `test`.`countries` (`iso_code`,`name`) VALUES(?,?)': OK
+[46, 18:39:29] DEALLOCATE PREPARE stmt: Executing 
+[46, 18:39:29] DEALLOCATE PREPARE stmt: OK
+[47, 18:40:15] SELECT * FROM test.countries
+LIMIT 0, 1000
+: Running...
+[47, 18:40:15] SELECT * FROM test.countries
+LIMIT 0, 1000
+: Fetching...
+[47, 18:40:15] SELECT * FROM test.countries
+LIMIT 0, 1000
+: 218 row(s) returned
+[48, 18:41:01] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': Executing 
+[48, 18:41:01] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': OK
+[49, 18:41:01] SHOW DATABASES: Executing 
+[49, 18:41:01] SHOW DATABASES: OK
+[50, 18:41:06] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': Executing 
+[50, 18:41:06] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': OK
+[51, 18:41:06] SHOW COLUMNS FROM `test`.`population`: Executing 
+[51, 18:41:06] SHOW COLUMNS FROM `test`.`population`: OK
+[52, 18:41:38] PREPARE stmt FROM 'INSERT INTO `test`.`population` (`iso_code`,`amount`,`year`) VALUES(?,?,?)': Executing 
+[52, 18:41:38] PREPARE stmt FROM 'INSERT INTO `test`.`population` (`iso_code`,`amount`,`year`) VALUES(?,?,?)': OK
+[53, 18:41:58] DEALLOCATE PREPARE stmt: Executing 
+[53, 18:41:58] DEALLOCATE PREPARE stmt: OK
+[54, 18:42:17] SELECT * FROM test.population
+LIMIT 0, 1000
+: Running...
+[54, 18:42:17] SELECT * FROM test.population
+LIMIT 0, 1000
+: Fetching...
+[54, 18:42:17] SELECT * FROM test.population
+LIMIT 0, 1000
+: 1000 row(s) returned
+[55, 18:42:32] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': Executing 
+[55, 18:42:32] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': OK
+[56, 18:42:32] SHOW DATABASES: Executing 
+[56, 18:42:32] SHOW DATABASES: OK
+[57, 18:42:47] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': Executing 
+[57, 18:42:47] SHOW SESSION VARIABLES LIKE 'lower_case_table_names': OK
+[58, 18:42:47] SHOW COLUMNS FROM `test`.`energy`: Executing 
+[58, 18:42:47] SHOW COLUMNS FROM `test`.`energy`: OK
+[59, 18:43:37] PREPARE stmt FROM 'INSERT INTO `test`.`energy` (`iso_code`,`clean_energy`,`dirty_energy`,`co2_emission`,`year`) VALUES(?,?,?,?,?)': Executing 
+[59, 18:43:37] PREPARE stmt FROM 'INSERT INTO `test`.`energy` (`iso_code`,`clean_energy`,`dirty_energy`,`co2_emission`,`year`) VALUES(?,?,?,?,?)': OK
+[60, 18:44:02] DEALLOCATE PREPARE stmt: Executing 
+[60, 18:44:02] DEALLOCATE PREPARE stmt: OK
+[61, 18:44:22] SELECT * FROM test.population
+LIMIT 0, 1000
+: Running...
+[61, 18:44:22] SELECT * FROM test.population
+LIMIT 0, 1000
+: Fetching...
+[61, 18:44:22] SELECT * FROM test.population
+LIMIT 0, 1000
+: 1000 row(s) returned
+[62, 18:44:35] SELECT * FROM test.energy
+LIMIT 0, 1000
+: Running...
+[62, 18:44:35] SELECT * FROM test.energy
+LIMIT 0, 1000
+: Fetching...
+[62, 18:44:35] SELECT * FROM test.energy
+LIMIT 0, 1000
+: 1000 row(s) returned
