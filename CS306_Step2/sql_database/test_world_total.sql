@@ -16,29 +16,26 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `have_relationship`
+-- Table structure for table `world_total`
 --
 
-DROP TABLE IF EXISTS `have_relationship`;
+DROP TABLE IF EXISTS `world_total`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
-CREATE TABLE `have_relationship` (
-  `iso_code` varchar(3) DEFAULT NULL,
-  `year_` int(11) NOT NULL,
-  `amount` int(11) DEFAULT NULL,
-  PRIMARY KEY (`year_`),
-  KEY `iso_code` (`iso_code`),
-  CONSTRAINT `have_relationship_ibfk_1` FOREIGN KEY (`iso_code`) REFERENCES `countries` (`iso_code`) ON UPDATE CASCADE
+CREATE TABLE `world_total` (
+  `total_energy` int(11) DEFAULT NULL,
+  `ozone_density` float DEFAULT NULL,
+  `temperature_anomaly` float DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `have_relationship`
+-- Dumping data for table `world_total`
 --
 
-LOCK TABLES `have_relationship` WRITE;
-/*!40000 ALTER TABLE `have_relationship` DISABLE KEYS */;
-/*!40000 ALTER TABLE `have_relationship` ENABLE KEYS */;
+LOCK TABLES `world_total` WRITE;
+/*!40000 ALTER TABLE `world_total` DISABLE KEYS */;
+/*!40000 ALTER TABLE `world_total` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -50,4 +47,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-03-28 18:12:31
+-- Dump completed on 2023-03-28 18:12:30

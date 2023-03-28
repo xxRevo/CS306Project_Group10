@@ -16,29 +16,28 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `have_relationship`
+-- Table structure for table `pollution`
 --
 
-DROP TABLE IF EXISTS `have_relationship`;
+DROP TABLE IF EXISTS `pollution`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
-CREATE TABLE `have_relationship` (
-  `iso_code` varchar(3) DEFAULT NULL,
+CREATE TABLE `pollution` (
   `year_` int(11) NOT NULL,
-  `amount` int(11) DEFAULT NULL,
-  PRIMARY KEY (`year_`),
-  KEY `iso_code` (`iso_code`),
-  CONSTRAINT `have_relationship_ibfk_1` FOREIGN KEY (`iso_code`) REFERENCES `countries` (`iso_code`) ON UPDATE CASCADE
+  `ozone_density` float DEFAULT NULL,
+  `temperature_anomaly` float DEFAULT NULL,
+  PRIMARY KEY (`year_`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `have_relationship`
+-- Dumping data for table `pollution`
 --
 
-LOCK TABLES `have_relationship` WRITE;
-/*!40000 ALTER TABLE `have_relationship` DISABLE KEYS */;
-/*!40000 ALTER TABLE `have_relationship` ENABLE KEYS */;
+LOCK TABLES `pollution` WRITE;
+/*!40000 ALTER TABLE `pollution` DISABLE KEYS */;
+INSERT INTO `pollution` VALUES (1990,124.2,0.37),(1991,119,0.53),(1992,114.3,0.26),(1993,112.6,0.22),(1994,92.3,0.44),(1995,100.55,0.43),(1996,108.8,0.25),(1997,108.8,0.54),(1998,98.8,0.77),(1999,102.9,0.36),(2000,98.7,0.4),(2001,100.9,0.52),(2002,157.4,0.53),(2003,108.7,0.48),(2004,123.5,0.44),(2005,113.8,0.64),(2006,98.4,0.66),(2007,116.2,0.61),(2008,114,0.49),(2009,107.9,0.64),(2010,128.5,0.68),(2011,106.5,0.62),(2012,139.3,0.64),(2013,132.7,0.69),(2014,128.6,0.67),(2015,117.2,0.81),(2016,123.2,0.8),(2017,141.8,0.71),(2018,111.8,0.77),(2019,167,0.91);
+/*!40000 ALTER TABLE `pollution` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -50,4 +49,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-03-28 18:12:31
+-- Dump completed on 2023-03-28 18:12:32
