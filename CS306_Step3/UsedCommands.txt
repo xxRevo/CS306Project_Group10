@@ -1,0 +1,276 @@
+USE test;
+
+CREATE TABLE countries (
+  name_ VARCHAR(30),
+  iso_code VARCHAR(3),
+  PRIMARY KEY (iso_code)
+);
+
+CREATE TABLE population (
+  year_ INT,
+  amount INT,
+  iso_code VARCHAR(3),
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code)  
+);
+
+CREATE TABLE energy (
+  year_ INT,
+  clean_energy INT,
+  dirty_energy INT,  
+  iso_code VARCHAR(3),  
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code)
+);
+
+ALTER TABLE energy
+ADD COLUMN total_energy INT;
+
+UPDATE energy
+SET total_energy = dirty_energy + clean_energy
+WHERE iso_code IS NOT NULL;
+
+CREATE TABLE have_relationship (
+  iso_code VARCHAR(3),
+  year_ INT,
+  amount INT,
+  PRIMARY KEY (year_, iso_code),
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code)
+);
+
+CREATE TABLE consumer_relationship (
+  iso_code VARCHAR(3),
+  year_ INT,
+  clean_energy INT,
+  dirty_energy INT,
+  co2_emission INT,
+  PRIMARY KEY (year_, iso_code),
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code) ON UPDATE CASCADE  
+);
+
+CREATE TABLE pollution (
+	year_ INT,
+    ozone_density FLOAT,
+    temperature_anomaly FLOAT 
+);
+
+CREATE TABLE world_total AS
+	SELECT energy.total_energy, pollution.ozone_density, energy.year_, pollution.temperature_anomaly
+	FROM energy
+	JOIN pollution ON energy.year = pollution.year_;
+
+# Creating views (part a)
+
+# This view finds the top clean energy production of the countries between 1990 and 2019 and then finds the top 10 among them.
+CREATE VIEW top_clean_energy AS
+SELECT 
+  c.name,
+  MAX(e.clean_energy) AS highest_clean_energy
+FROM 
+  countries c
+  JOIN energy e ON c.iso_code = e.iso_code
+WHERE 
+  e.year BETWEEN 1990 AND 2019
+GROUP BY 
+  c.iso_code
+HAVING 
+  highest_clean_energy = (
+    SELECT 
+      MAX(clean_energy)
+    FROM 
+      energy
+    WHERE 
+      year BETWEEN 1990 AND 2019
+      AND iso_code = c.iso_code
+  )
+ORDER BY 
+  highest_clean_energy DESC
+LIMIT 10;    
+
+
+# This view finds the top dirty energy production of the countries between 1990 and 2019 and then fins the top 10 among them.
+CREATE VIEW top_dirty_energy AS
+SELECT 
+  c.name,
+  MAX(e.dirty_energy) AS highest_dirty_energy
+FROM 
+ countries c
+ JOIN energy e ON c.iso_code = e.iso_code
+WHERE
+ e.year between 1990 and 2019
+GROUP BY
+ c.iso_code
+HAVING 
+ highest_dirty_energy = (
+   SELECT
+	 MAX(dirty_energy)
+   FROM
+     energy
+   WHERE 
+     year BETWEEN 1990 AND 2019
+     AND iso_code = c.iso_code 
+ )
+ORDER BY
+  highest_dirty_energy DESC
+LIMIT 10;
+
+# Using set operators (part b)
+
+# Countries appearing in both views
+SELECT 
+  ce.name,
+  ce.highest_clean_energy,
+  de.highest_dirty_energy
+FROM 
+  top_clean_energy ce
+  JOIN top_dirty_energy de ON ce.name = de.name;
+  
+# Countries that appear in top clean energy but not in top dirty energy
+SELECT 
+  ce.name,
+  ce.highest_clean_energy
+FROM 
+  top_clean_energy ce
+  LEFT JOIN top_dirty_energy de ON ce.name = de.name
+WHERE 
+  de.name IS NULL;
+  
+# Countries that appear in top clean energy but not in top dirty energy
+SELECT 
+  de.name,
+  de.highest_dirty_energy
+FROM 
+  top_dirty_energy de
+  LEFT JOIN top_clean_energy ce ON de.name = ce.name
+WHERE 
+  ce.name IS NULL;
+
+# "In" and "Exists" (part c)
+
+# Using "In" operator to find the common country
+SELECT 
+  name 
+FROM 
+  top_clean_energy
+WHERE 
+  name IN (
+    SELECT 
+      name
+    FROM 
+      top_dirty_energy
+  );
+ 
+# Using "Exists" operator to find the common country
+SELECT 
+  name  
+FROM 
+  top_clean_energy  
+WHERE 
+  EXISTS (
+    SELECT
+	  name
+    FROM 
+      top_dirty_energy 
+	WHERE 
+		top_clean_energy.name = top_dirty_energy.name
+  );
+  
+# Aggregate Operators
+
+# Using COUNT and AVG, we can count the number of countries that have a higher clean energy production than the average
+SELECT
+  COUNT(*) AS num_countries
+FROM
+  top_clean_energy
+WHERE
+  highest_clean_energy > (
+    SELECT
+      AVG(highest_clean_energy)
+    FROM
+      top_clean_energy
+    );
+
+# Using MIN to find the minimum dirty energy producer among the top 10 dirty energy producers
+SELECT
+  name,
+  highest_dirty_energy
+FROM top_dirty_energy
+WHERE highest_dirty_energy = (
+  SELECT MIN(highest_dirty_energy)
+  FROM top_dirty_energy
+);
+
+# Using SUM to find the sum of the top dirty energy values
+SELECT
+ 'top_dirty_energy' AS view_name,
+  SUM(highest_dirty_energy) AS total_dirty_energy
+FROM top_dirty_energy;
+
+# Constraints and Triggers
+ALTER TABLE energy ADD CONSTRAINT clean_energy_constraint CHECK (clean_energy >= 0);
+
+DELIMITER //
+CREATE TRIGGER clean_energy_insert_trigger
+    BEFORE INSERT ON energy
+    FOR EACH ROW
+    BEGIN
+        IF (NEW.clean_energy < 0) 
+        THEN
+            SET NEW.clean_energy = 0;
+        END IF;
+    END//
+DELIMITER ;
+
+
+
+
+DELIMITER //
+CREATE TRIGGER clean_energy_update_trigger
+    BEFORE UPDATE ON energy
+    FOR EACH ROW
+    BEGIN
+        IF (NEW.clean_energy < 0) THEN
+            SET NEW.clean_energy = 0;
+		END IF;
+    END//
+DELIMITER ;
+
+INSERT INTO energy (year, clean_energy, dirty_energy, iso_code) VALUES (2022, -100, 200, 'USA');
+
+DELIMITER //
+CREATE PROCEDURE get_energy_stats(IN p_iso_code VARCHAR(3))
+BEGIN
+  DECLARE v_population INT;
+  DECLARE v_clean_energy INT;
+  DECLARE v_dirty_energy INT;
+  DECLARE v_total_energy INT;
+  
+  
+  SELECT SUM(clean_energy) INTO v_clean_energy FROM energy WHERE iso_code = p_iso_code;
+  SELECT SUM(dirty_energy) INTO v_dirty_energy FROM energy WHERE iso_code = p_iso_code;
+  SET v_total_energy = v_clean_energy + v_dirty_energy;
+
+  SELECT v_clean_energy, v_dirty_energy, v_total_energy;
+END//
+DELIMITER ;
+
+DROP PROCEDURE get_energy_stats;
+
+CALL get_energy_stats('USA');
+
+CALL get_energy_stats('CHN');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

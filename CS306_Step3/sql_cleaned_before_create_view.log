@@ -1,0 +1,4949 @@
+
+[35, 18:03:18] CREATE VIEW top_clean_energy AS
+SELECT 
+  c.name_,
+  e.clean_energy
+FROM 
+  countries c
+  JOIN energy e ON c.iso_code = e.iso_code
+ORDER BY 
+  e.clean_energy DESC
+LIMIT 10: Running...
+[35, 18:03:18] CREATE VIEW top_clean_energy AS
+SELECT 
+  c.name_,
+  e.clean_energy
+FROM 
+  countries c
+  JOIN energy e ON c.iso_code = e.iso_code
+ORDER BY 
+  e.clean_energy DESC
+LIMIT 10: Error Code: 1054. Unknown column 'c.name_' in 'field list'
+[36, 18:03:42] CREATE VIEW top_clean_energy AS
+SELECT 
+  c.name,
+  e.clean_energy
+FROM 
+  countries c
+  JOIN energy e ON c.iso_code = e.iso_code
+ORDER BY 
+  e.clean_energy DESC
+LIMIT 10: Running...
+[36, 18:03:42] CREATE VIEW top_clean_energy AS
+SELECT 
+  c.name,
+  e.clean_energy
+FROM 
+  countries c
+  JOIN energy e ON c.iso_code = e.iso_code
+ORDER BY 
+  e.clean_energy DESC
+LIMIT 10: 0 row(s) affected
+[37, 18:03:45] CREATE VIEW top_clean_energy AS
+SELECT 
+  c.name,
+  e.clean_energy
+FROM 
+  countries c
+  JOIN energy e ON c.iso_code = e.iso_code
+ORDER BY 
+  e.clean_energy DESC
+LIMIT 10: Running...
+[37, 18:03:45] CREATE VIEW top_clean_energy AS
+SELECT 
+  c.name,
+  e.clean_energy
+FROM 
+  countries c
+  JOIN energy e ON c.iso_code = e.iso_code
+ORDER BY 
+  e.clean_energy DESC
+LIMIT 10: Error Code: 1050. Table 'top_clean_energy' already exists
+[1, 18:04:33] SELECT * FROM top_clean_energy
+LIMIT 0, 1000
+: Running...
+[1, 18:04:33] SELECT * FROM top_clean_energy
+LIMIT 0, 1000
+: Fetching...
+[1, 18:04:33] SELECT * FROM top_clean_energy
+LIMIT 0, 1000
+: 10 row(s) returned
+[2, 18:07:02] SELECT * FROM test.population
+LIMIT 0, 1000
+: Running...
+[2, 18:07:02] SELECT * FROM test.population
+LIMIT 0, 1000
+: Fetching...
+[2, 18:07:02] SELECT * FROM test.population
+LIMIT 0, 1000
+: 1000 row(s) returned
+[3, 18:07:27] CREATE VIEW top_clean_energy AS
+SELECT 
+  c.name_,
+  MAX(e.clean_energy) AS highest_clean_energy
+FROM 
+  countries c
+  JOIN energy e ON c.iso_code = e.iso_code
+WHERE 
+  e.year_ BETWEEN 1990 AND 2019
+GROUP BY 
+  c.iso_code
+HAVING 
+  highest_clean_energy = (
+    SELECT 
+      MAX(clean_energy)
+    FROM 
+      energy
+    WHERE 
+      year_ BETWEEN 1990 AND 2019
+  )
+ORDER BY 
+  highest_clean_energy DESC
+  
+LIMIT 10: Running...
+[3, 18:07:27] CREATE VIEW top_clean_energy AS
+SELECT 
+  c.name_,
+  MAX(e.clean_energy) AS highest_clean_energy
+FROM 
+  countries c
+  JOIN energy e ON c.iso_code = e.iso_code
+WHERE 
+  e.year_ BETWEEN 1990 AND 2019
+GROUP BY 
+  c.iso_code
+HAVING 
+  highest_clean_energy = (
+    SELECT 
+      MAX(clean_energy)
+    FROM 
+      energy
+    WHERE 
+      year_ BETWEEN 1990 AND 2019
+  )
+ORDER BY 
+  highest_clean_energy DESC
+  
+LIMIT 10: Error Code: 1054. Unknown column 'c.name_' in 'field list'
+[4, 18:07:37] CREATE VIEW top_clean_energy AS
+SELECT 
+  c.name,
+  MAX(e.clean_energy) AS highest_clean_energy
+FROM 
+  countries c
+  JOIN energy e ON c.iso_code = e.iso_code
+WHERE 
+  e.year_ BETWEEN 1990 AND 2019
+GROUP BY 
+  c.iso_code
+HAVING 
+  highest_clean_energy = (
+    SELECT 
+      MAX(clean_energy)
+    FROM 
+      energy
+    WHERE 
+      year_ BETWEEN 1990 AND 2019
+  )
+ORDER BY 
+  highest_clean_energy DESC
+  
+LIMIT 10: Running...
+[4, 18:07:37] CREATE VIEW top_clean_energy AS
+SELECT 
+  c.name,
+  MAX(e.clean_energy) AS highest_clean_energy
+FROM 
+  countries c
+  JOIN energy e ON c.iso_code = e.iso_code
+WHERE 
+  e.year_ BETWEEN 1990 AND 2019
+GROUP BY 
+  c.iso_code
+HAVING 
+  highest_clean_energy = (
+    SELECT 
+      MAX(clean_energy)
+    FROM 
+      energy
+    WHERE 
+      year_ BETWEEN 1990 AND 2019
+  )
+ORDER BY 
+  highest_clean_energy DESC
+  
+LIMIT 10: Error Code: 1054. Unknown column 'e.year_' in 'where clause'
+[5, 18:07:57] CREATE VIEW top_clean_energy AS
+SELECT 
+  c.name,
+  MAX(e.clean_energy) AS highest_clean_energy
+FROM 
+  countries c
+  JOIN energy e ON c.iso_code = e.iso_code
+WHERE 
+  e.year BETWEEN 1990 AND 2019
+GROUP BY 
+  c.iso_code
+HAVING 
+  highest_clean_energy = (
+    SELECT 
+      MAX(clean_energy)
+    FROM 
+      energy
+    WHERE 
+      year_ BETWEEN 1990 AND 2019
+  )
+ORDER BY 
+  highest_clean_energy DESC
+  
+LIMIT 10: Running...
+[5, 18:07:57] CREATE VIEW top_clean_energy AS
+SELECT 
+  c.name,
+  MAX(e.clean_energy) AS highest_clean_energy
+FROM 
+  countries c
+  JOIN energy e ON c.iso_code = e.iso_code
+WHERE 
+  e.year BETWEEN 1990 AND 2019
+GROUP BY 
+  c.iso_code
+HAVING 
+  highest_clean_energy = (
+    SELECT 
+      MAX(clean_energy)
+    FROM 
+      energy
+    WHERE 
+      year_ BETWEEN 1990 AND 2019
+  )
+ORDER BY 
+  highest_clean_energy DESC
+  
+LIMIT 10: Error Code: 1054. Unknown column 'year_' in 'where clause'
+[6, 18:08:00] CREATE VIEW top_clean_energy AS
+SELECT 
+  c.name,
+  MAX(e.clean_energy) AS highest_clean_energy
+FROM 
+  countries c
+  JOIN energy e ON c.iso_code = e.iso_code
+WHERE 
+  e.year BETWEEN 1990 AND 2019
+GROUP BY 
+  c.iso_code
+HAVING 
+  highest_clean_energy = (
+    SELECT 
+      MAX(clean_energy)
+    FROM 
+      energy
+    WHERE 
+      year BETWEEN 1990 AND 2019
+  )
+ORDER BY 
+  highest_clean_energy DESC
+  
+LIMIT 10: Running...
+[6, 18:08:00] CREATE VIEW top_clean_energy AS
+SELECT 
+  c.name,
+  MAX(e.clean_energy) AS highest_clean_energy
+FROM 
+  countries c
+  JOIN energy e ON c.iso_code = e.iso_code
+WHERE 
+  e.year BETWEEN 1990 AND 2019
+GROUP BY 
+  c.iso_code
+HAVING 
+  highest_clean_energy = (
+    SELECT 
+      MAX(clean_energy)
+    FROM 
+      energy
+    WHERE 
+      year BETWEEN 1990 AND 2019
+  )
+ORDER BY 
+  highest_clean_energy DESC
+  
+LIMIT 10: Error Code: 1050. Table 'top_clean_energy' already exists
+[7, 18:08:48] DROP VIEW top_clean_energy: Running...
+[7, 18:08:48] DROP VIEW top_clean_energy: 0 row(s) affected
+[8, 18:08:58] CREATE VIEW top_clean_energy AS
+SELECT 
+  c.name,
+  MAX(e.clean_energy) AS highest_clean_energy
+FROM 
+  countries c
+  JOIN energy e ON c.iso_code = e.iso_code
+WHERE 
+  e.year BETWEEN 1990 AND 2019
+GROUP BY 
+  c.iso_code
+HAVING 
+  highest_clean_energy = (
+    SELECT 
+      MAX(clean_energy)
+    FROM 
+      energy
+    WHERE 
+      year BETWEEN 1990 AND 2019
+  )
+ORDER BY 
+  highest_clean_energy DESC
+  
+LIMIT 10: Running...
+[8, 18:08:58] CREATE VIEW top_clean_energy AS
+SELECT 
+  c.name,
+  MAX(e.clean_energy) AS highest_clean_energy
+FROM 
+  countries c
+  JOIN energy e ON c.iso_code = e.iso_code
+WHERE 
+  e.year BETWEEN 1990 AND 2019
+GROUP BY 
+  c.iso_code
+HAVING 
+  highest_clean_energy = (
+    SELECT 
+      MAX(clean_energy)
+    FROM 
+      energy
+    WHERE 
+      year BETWEEN 1990 AND 2019
+  )
+ORDER BY 
+  highest_clean_energy DESC
+  
+LIMIT 10: 0 row(s) affected
+[9, 18:09:01] SELECT * FROM top_clean_energy
+LIMIT 0, 1000
+: Running...
+[9, 18:09:01] SELECT * FROM top_clean_energy
+LIMIT 0, 1000
+: Fetching...
+[9, 18:09:01] SELECT * FROM top_clean_energy
+LIMIT 0, 1000
+: 1 row(s) returned
+[10, 18:11:28] DROP VIEW top_clean_energy: Running...
+[10, 18:11:28] DROP VIEW top_clean_energy: 0 row(s) affected
+[11, 18:11:30] CREATE VIEW top_clean_energy AS
+SELECT 
+  c.name,
+  MAX(e.clean_energy) AS highest_clean_energy
+FROM 
+  countries c
+  JOIN energy e ON c.iso_code = e.iso_code
+WHERE 
+  e.year BETWEEN 1990 AND 2019
+GROUP BY 
+  c.iso_code
+HAVING 
+  highest_clean_energy = (
+    SELECT 
+      MAX(clean_energy)
+    FROM 
+      energy
+    WHERE 
+      year BETWEEN 1990 AND 2019
+  )
+ORDER BY 
+  highest_clean_energy DESC,
+  c.name_
+  
+LIMIT 10: Running...
+[11, 18:11:30] CREATE VIEW top_clean_energy AS
+SELECT 
+  c.name,
+  MAX(e.clean_energy) AS highest_clean_energy
+FROM 
+  countries c
+  JOIN energy e ON c.iso_code = e.iso_code
+WHERE 
+  e.year BETWEEN 1990 AND 2019
+GROUP BY 
+  c.iso_code
+HAVING 
+  highest_clean_energy = (
+    SELECT 
+      MAX(clean_energy)
+    FROM 
+      energy
+    WHERE 
+      year BETWEEN 1990 AND 2019
+  )
+ORDER BY 
+  highest_clean_energy DESC,
+  c.name_
+  
+LIMIT 10: Error Code: 1054. Unknown column 'c.name_' in 'order clause'
+[12, 18:11:39] CREATE VIEW top_clean_energy AS
+SELECT 
+  c.name,
+  MAX(e.clean_energy) AS highest_clean_energy
+FROM 
+  countries c
+  JOIN energy e ON c.iso_code = e.iso_code
+WHERE 
+  e.year BETWEEN 1990 AND 2019
+GROUP BY 
+  c.iso_code
+HAVING 
+  highest_clean_energy = (
+    SELECT 
+      MAX(clean_energy)
+    FROM 
+      energy
+    WHERE 
+      year BETWEEN 1990 AND 2019
+  )
+ORDER BY 
+  highest_clean_energy DESC,
+  c.name
+  
+LIMIT 10: Running...
+[12, 18:11:39] CREATE VIEW top_clean_energy AS
+SELECT 
+  c.name,
+  MAX(e.clean_energy) AS highest_clean_energy
+FROM 
+  countries c
+  JOIN energy e ON c.iso_code = e.iso_code
+WHERE 
+  e.year BETWEEN 1990 AND 2019
+GROUP BY 
+  c.iso_code
+HAVING 
+  highest_clean_energy = (
+    SELECT 
+      MAX(clean_energy)
+    FROM 
+      energy
+    WHERE 
+      year BETWEEN 1990 AND 2019
+  )
+ORDER BY 
+  highest_clean_energy DESC,
+  c.name
+  
+LIMIT 10: 0 row(s) affected
+[13, 18:11:41] SELECT * FROM top_clean_energy
+LIMIT 0, 1000
+: Running...
+[13, 18:11:41] SELECT * FROM top_clean_energy
+LIMIT 0, 1000
+: Fetching...
+[13, 18:11:41] SELECT * FROM top_clean_energy
+LIMIT 0, 1000
+: 1 row(s) returned
+[14, 18:13:43] CREATE VIEW top_clean_energy AS
+SELECT   
+  MAX(e.clean_energy) AS highest_clean_energy
+FROM 
+  countries c
+  JOIN energy e ON c.iso_code = e.iso_code
+WHERE 
+  e.year BETWEEN 1990 AND 2019
+GROUP BY 
+  c.name
+HAVING 
+  highest_clean_energy = (
+    SELECT 
+      MAX(clean_energy)
+    FROM 
+      energy
+    WHERE 
+      year BETWEEN 1990 AND 2019
+  )
+ORDER BY 
+  highest_clean_energy DESC,
+  c.name
+  
+LIMIT 10: Running...
+[14, 18:13:43] CREATE VIEW top_clean_energy AS
+SELECT   
+  MAX(e.clean_energy) AS highest_clean_energy
+FROM 
+  countries c
+  JOIN energy e ON c.iso_code = e.iso_code
+WHERE 
+  e.year BETWEEN 1990 AND 2019
+GROUP BY 
+  c.name
+HAVING 
+  highest_clean_energy = (
+    SELECT 
+      MAX(clean_energy)
+    FROM 
+      energy
+    WHERE 
+      year BETWEEN 1990 AND 2019
+  )
+ORDER BY 
+  highest_clean_energy DESC,
+  c.name
+  
+LIMIT 10: Error Code: 1050. Table 'top_clean_energy' already exists
+[15, 18:13:47] DROP VIEW top_clean_energy: Running...
+[15, 18:13:47] DROP VIEW top_clean_energy: 0 row(s) affected
+[16, 18:13:49] CREATE VIEW top_clean_energy AS
+SELECT   
+  MAX(e.clean_energy) AS highest_clean_energy
+FROM 
+  countries c
+  JOIN energy e ON c.iso_code = e.iso_code
+WHERE 
+  e.year BETWEEN 1990 AND 2019
+GROUP BY 
+  c.name
+HAVING 
+  highest_clean_energy = (
+    SELECT 
+      MAX(clean_energy)
+    FROM 
+      energy
+    WHERE 
+      year BETWEEN 1990 AND 2019
+  )
+ORDER BY 
+  highest_clean_energy DESC,
+  c.name
+  
+LIMIT 10: Running...
+[16, 18:13:49] CREATE VIEW top_clean_energy AS
+SELECT   
+  MAX(e.clean_energy) AS highest_clean_energy
+FROM 
+  countries c
+  JOIN energy e ON c.iso_code = e.iso_code
+WHERE 
+  e.year BETWEEN 1990 AND 2019
+GROUP BY 
+  c.name
+HAVING 
+  highest_clean_energy = (
+    SELECT 
+      MAX(clean_energy)
+    FROM 
+      energy
+    WHERE 
+      year BETWEEN 1990 AND 2019
+  )
+ORDER BY 
+  highest_clean_energy DESC,
+  c.name
+  
+LIMIT 10: 0 row(s) affected
+[17, 18:13:51] SELECT * FROM top_clean_energy
+LIMIT 0, 1000
+: Running...
+[17, 18:13:51] SELECT * FROM top_clean_energy
+LIMIT 0, 1000
+: Fetching...
+[17, 18:13:51] SELECT * FROM top_clean_energy
+LIMIT 0, 1000
+: 1 row(s) returned
+[18, 18:14:15] DROP VIEW top_clean_energy: Running...
+[18, 18:14:15] DROP VIEW top_clean_energy: 0 row(s) affected
+[19, 18:14:17] CREATE VIEW top_clean_energy AS
+SELECT   
+  e.clean_energy AS highest_clean_energy
+FROM 
+  countries c
+  JOIN energy e ON c.iso_code = e.iso_code
+WHERE 
+  e.year BETWEEN 1990 AND 2019
+GROUP BY 
+  c.name
+HAVING 
+  highest_clean_energy = (
+    SELECT 
+      MAX(clean_energy)
+    FROM 
+      energy
+    WHERE 
+      year BETWEEN 1990 AND 2019
+  )
+ORDER BY 
+  highest_clean_energy DESC,
+  c.name
+  
+LIMIT 10: Running...
+[19, 18:14:17] CREATE VIEW top_clean_energy AS
+SELECT   
+  e.clean_energy AS highest_clean_energy
+FROM 
+  countries c
+  JOIN energy e ON c.iso_code = e.iso_code
+WHERE 
+  e.year BETWEEN 1990 AND 2019
+GROUP BY 
+  c.name
+HAVING 
+  highest_clean_energy = (
+    SELECT 
+      MAX(clean_energy)
+    FROM 
+      energy
+    WHERE 
+      year BETWEEN 1990 AND 2019
+  )
+ORDER BY 
+  highest_clean_energy DESC,
+  c.name
+  
+LIMIT 10: 0 row(s) affected
+[20, 18:14:19] SELECT * FROM top_clean_energy
+LIMIT 0, 1000
+: Running...
+[20, 18:14:19] SELECT * FROM top_clean_energy
+LIMIT 0, 1000
+: Error Code: 1055. Expression #1 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'test.e.clean_energy' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+[21, 18:16:51] DROP VIEW top_clean_energy: Running...
+[21, 18:16:51] DROP VIEW top_clean_energy: 0 row(s) affected
+[22, 18:16:54] USE test: Running...
+[22, 18:16:54] USE test: 0 row(s) affected
+[23, 18:16:54] CREATE TABLE countries (
+  name_ VARCHAR(30),
+  iso_code VARCHAR(3),
+  PRIMARY KEY (iso_code)
+): Running...
+[23, 18:16:54] CREATE TABLE countries (
+  name_ VARCHAR(30),
+  iso_code VARCHAR(3),
+  PRIMARY KEY (iso_code)
+): Error Code: 1050. Table 'countries' already exists
+[24, 18:16:57] CREATE VIEW top_clean_energy AS
+SELECT   
+  MAX(e.clean_energy) AS highest_clean_energy
+FROM 
+  countries c
+  JOIN energy e ON c.iso_code = e.iso_code
+WHERE 
+  e.year BETWEEN 1990 AND 2019
+GROUP BY 
+  c.name
+HAVING 
+  highest_clean_energy = (
+    SELECT 
+      MAX(clean_energy)
+    FROM 
+      energy
+    WHERE 
+      year BETWEEN 1990 AND 2019 AND iso_code = c.iso_code
+      
+  )
+ORDER BY 
+  highest_clean_energy DESC,
+  c.name
+  
+LIMIT 10: Running...
+[24, 18:16:57] CREATE VIEW top_clean_energy AS
+SELECT   
+  MAX(e.clean_energy) AS highest_clean_energy
+FROM 
+  countries c
+  JOIN energy e ON c.iso_code = e.iso_code
+WHERE 
+  e.year BETWEEN 1990 AND 2019
+GROUP BY 
+  c.name
+HAVING 
+  highest_clean_energy = (
+    SELECT 
+      MAX(clean_energy)
+    FROM 
+      energy
+    WHERE 
+      year BETWEEN 1990 AND 2019 AND iso_code = c.iso_code
+      
+  )
+ORDER BY 
+  highest_clean_energy DESC,
+  c.name
+  
+LIMIT 10: Error Code: 1054. Unknown column 'test.c.iso_code' in 'where clause'
+[25, 18:17:03] CREATE VIEW top_clean_energy AS
+SELECT   
+  MAX(e.clean_energy) AS highest_clean_energy
+FROM 
+  countries c
+  JOIN energy e ON c.iso_code = e.iso_code
+WHERE 
+  e.year BETWEEN 1990 AND 2019
+GROUP BY 
+  c.name
+HAVING 
+  highest_clean_energy = (
+    SELECT 
+      MAX(clean_energy)
+    FROM 
+      energy
+    WHERE 
+      year BETWEEN 1990 AND 2019 AND iso_code = c.iso_code
+      
+  )
+ORDER BY 
+  highest_clean_energy DESC,
+  c.name
+  
+LIMIT 10: Running...
+[25, 18:17:03] CREATE VIEW top_clean_energy AS
+SELECT   
+  MAX(e.clean_energy) AS highest_clean_energy
+FROM 
+  countries c
+  JOIN energy e ON c.iso_code = e.iso_code
+WHERE 
+  e.year BETWEEN 1990 AND 2019
+GROUP BY 
+  c.name
+HAVING 
+  highest_clean_energy = (
+    SELECT 
+      MAX(clean_energy)
+    FROM 
+      energy
+    WHERE 
+      year BETWEEN 1990 AND 2019 AND iso_code = c.iso_code
+      
+  )
+ORDER BY 
+  highest_clean_energy DESC,
+  c.name
+  
+LIMIT 10: Error Code: 1054. Unknown column 'test.c.iso_code' in 'where clause'
+[26, 18:17:16] USE test: Running...
+[26, 18:17:16] USE test: 0 row(s) affected
+[27, 18:17:16] CREATE TABLE countries (
+  name_ VARCHAR(30),
+  iso_code VARCHAR(3),
+  PRIMARY KEY (iso_code)
+): Running...
+[27, 18:17:16] CREATE TABLE countries (
+  name_ VARCHAR(30),
+  iso_code VARCHAR(3),
+  PRIMARY KEY (iso_code)
+): Error Code: 1050. Table 'countries' already exists
+[28, 18:17:19] CREATE VIEW top_clean_energy AS
+SELECT   
+  MAX(e.clean_energy) AS highest_clean_energy
+FROM 
+  countries c
+  JOIN energy e ON c.iso_code = e.iso_code
+WHERE 
+  e.year BETWEEN 1990 AND 2019
+GROUP BY 
+  c.name
+HAVING 
+  highest_clean_energy = (
+    SELECT 
+      MAX(clean_energy)
+    FROM 
+      energy
+    WHERE 
+      year BETWEEN 1990 AND 2019
+      AND iso_code = c.iso_code
+      
+  )
+ORDER BY 
+  highest_clean_energy DESC,
+  c.name
+  
+LIMIT 10: Running...
+[28, 18:17:19] CREATE VIEW top_clean_energy AS
+SELECT   
+  MAX(e.clean_energy) AS highest_clean_energy
+FROM 
+  countries c
+  JOIN energy e ON c.iso_code = e.iso_code
+WHERE 
+  e.year BETWEEN 1990 AND 2019
+GROUP BY 
+  c.name
+HAVING 
+  highest_clean_energy = (
+    SELECT 
+      MAX(clean_energy)
+    FROM 
+      energy
+    WHERE 
+      year BETWEEN 1990 AND 2019
+      AND iso_code = c.iso_code
+      
+  )
+ORDER BY 
+  highest_clean_energy DESC,
+  c.name
+  
+LIMIT 10: Error Code: 1054. Unknown column 'test.c.iso_code' in 'where clause'
+[29, 18:17:40] USE test: Running...
+[29, 18:17:40] USE test: 0 row(s) affected
+[30, 18:17:40] CREATE TABLE countries (
+  name_ VARCHAR(30),
+  iso_code VARCHAR(3),
+  PRIMARY KEY (iso_code)
+): Running...
+[30, 18:17:40] CREATE TABLE countries (
+  name_ VARCHAR(30),
+  iso_code VARCHAR(3),
+  PRIMARY KEY (iso_code)
+): Error Code: 1050. Table 'countries' already exists
+[31, 18:17:42] CREATE VIEW top_clean_energy AS
+SELECT   
+  MAX(e.clean_energy) AS highest_clean_energy
+FROM 
+  countries c
+  JOIN energy e ON c.iso_code = e.iso_code
+WHERE 
+  e.year BETWEEN 1990 AND 2019
+GROUP BY 
+  c.name
+HAVING 
+  highest_clean_energy = (
+    SELECT 
+      MAX(clean_energy)
+    FROM 
+      energy
+    WHERE 
+      year BETWEEN 1990 AND 2019
+      AND e.iso_code = c.iso_code
+      
+  )
+ORDER BY 
+  highest_clean_energy DESC,
+  c.name
+  
+LIMIT 10: Running...
+[31, 18:17:42] CREATE VIEW top_clean_energy AS
+SELECT   
+  MAX(e.clean_energy) AS highest_clean_energy
+FROM 
+  countries c
+  JOIN energy e ON c.iso_code = e.iso_code
+WHERE 
+  e.year BETWEEN 1990 AND 2019
+GROUP BY 
+  c.name
+HAVING 
+  highest_clean_energy = (
+    SELECT 
+      MAX(clean_energy)
+    FROM 
+      energy
+    WHERE 
+      year BETWEEN 1990 AND 2019
+      AND e.iso_code = c.iso_code
+      
+  )
+ORDER BY 
+  highest_clean_energy DESC,
+  c.name
+  
+LIMIT 10: Error Code: 1054. Unknown column 'test.e.iso_code' in 'where clause'
+[32, 18:17:43] CREATE VIEW top_clean_energy AS
+SELECT   
+  MAX(e.clean_energy) AS highest_clean_energy
+FROM 
+  countries c
+  JOIN energy e ON c.iso_code = e.iso_code
+WHERE 
+  e.year BETWEEN 1990 AND 2019
+GROUP BY 
+  c.name
+HAVING 
+  highest_clean_energy = (
+    SELECT 
+      MAX(clean_energy)
+    FROM 
+      energy
+    WHERE 
+      year BETWEEN 1990 AND 2019
+      AND e.iso_code = c.iso_code
+      
+  )
+ORDER BY 
+  highest_clean_energy DESC,
+  c.name
+  
+LIMIT 10: Running...
+[32, 18:17:43] CREATE VIEW top_clean_energy AS
+SELECT   
+  MAX(e.clean_energy) AS highest_clean_energy
+FROM 
+  countries c
+  JOIN energy e ON c.iso_code = e.iso_code
+WHERE 
+  e.year BETWEEN 1990 AND 2019
+GROUP BY 
+  c.name
+HAVING 
+  highest_clean_energy = (
+    SELECT 
+      MAX(clean_energy)
+    FROM 
+      energy
+    WHERE 
+      year BETWEEN 1990 AND 2019
+      AND e.iso_code = c.iso_code
+      
+  )
+ORDER BY 
+  highest_clean_energy DESC,
+  c.name
+  
+LIMIT 10: Error Code: 1054. Unknown column 'test.e.iso_code' in 'where clause'
+[33, 18:17:44] CREATE VIEW top_clean_energy AS
+SELECT   
+  MAX(e.clean_energy) AS highest_clean_energy
+FROM 
+  countries c
+  JOIN energy e ON c.iso_code = e.iso_code
+WHERE 
+  e.year BETWEEN 1990 AND 2019
+GROUP BY 
+  c.name
+HAVING 
+  highest_clean_energy = (
+    SELECT 
+      MAX(clean_energy)
+    FROM 
+      energy
+    WHERE 
+      year BETWEEN 1990 AND 2019
+      AND e.iso_code = c.iso_code
+      
+  )
+ORDER BY 
+  highest_clean_energy DESC,
+  c.name
+  
+LIMIT 10: Running...
+[33, 18:17:44] CREATE VIEW top_clean_energy AS
+SELECT   
+  MAX(e.clean_energy) AS highest_clean_energy
+FROM 
+  countries c
+  JOIN energy e ON c.iso_code = e.iso_code
+WHERE 
+  e.year BETWEEN 1990 AND 2019
+GROUP BY 
+  c.name
+HAVING 
+  highest_clean_energy = (
+    SELECT 
+      MAX(clean_energy)
+    FROM 
+      energy
+    WHERE 
+      year BETWEEN 1990 AND 2019
+      AND e.iso_code = c.iso_code
+      
+  )
+ORDER BY 
+  highest_clean_energy DESC,
+  c.name
+  
+LIMIT 10: Error Code: 1054. Unknown column 'test.e.iso_code' in 'where clause'
+[34, 18:17:55] CREATE VIEW top_clean_energy AS
+SELECT   
+  MAX(e.clean_energy) AS highest_clean_energy
+FROM 
+  countries c
+  JOIN energy e ON c.iso_code = e.iso_code
+WHERE 
+  e.year BETWEEN 1990 AND 2019
+GROUP BY 
+  c.name
+HAVING 
+  highest_clean_energy = (
+    SELECT 
+      MAX(clean_energy)
+    FROM 
+      energy
+    WHERE 
+      year BETWEEN 1990 AND 2019
+      AND e.iso_code = c.iso_code
+      
+  )
+ORDER BY 
+  highest_clean_energy DESC,
+  c.name
+  
+LIMIT 10: Running...
+[34, 18:17:55] CREATE VIEW top_clean_energy AS
+SELECT   
+  MAX(e.clean_energy) AS highest_clean_energy
+FROM 
+  countries c
+  JOIN energy e ON c.iso_code = e.iso_code
+WHERE 
+  e.year BETWEEN 1990 AND 2019
+GROUP BY 
+  c.name
+HAVING 
+  highest_clean_energy = (
+    SELECT 
+      MAX(clean_energy)
+    FROM 
+      energy
+    WHERE 
+      year BETWEEN 1990 AND 2019
+      AND e.iso_code = c.iso_code
+      
+  )
+ORDER BY 
+  highest_clean_energy DESC,
+  c.name
+  
+LIMIT 10: Error Code: 1054. Unknown column 'test.e.iso_code' in 'where clause'
+[35, 18:17:56] CREATE VIEW top_clean_energy AS
+SELECT   
+  MAX(e.clean_energy) AS highest_clean_energy
+FROM 
+  countries c
+  JOIN energy e ON c.iso_code = e.iso_code
+WHERE 
+  e.year BETWEEN 1990 AND 2019
+GROUP BY 
+  c.name
+HAVING 
+  highest_clean_energy = (
+    SELECT 
+      MAX(clean_energy)
+    FROM 
+      energy
+    WHERE 
+      year BETWEEN 1990 AND 2019
+      AND e.iso_code = c.iso_code
+      
+  )
+ORDER BY 
+  highest_clean_energy DESC,
+  c.name
+  
+LIMIT 10: Running...
+[35, 18:17:56] CREATE VIEW top_clean_energy AS
+SELECT   
+  MAX(e.clean_energy) AS highest_clean_energy
+FROM 
+  countries c
+  JOIN energy e ON c.iso_code = e.iso_code
+WHERE 
+  e.year BETWEEN 1990 AND 2019
+GROUP BY 
+  c.name
+HAVING 
+  highest_clean_energy = (
+    SELECT 
+      MAX(clean_energy)
+    FROM 
+      energy
+    WHERE 
+      year BETWEEN 1990 AND 2019
+      AND e.iso_code = c.iso_code
+      
+  )
+ORDER BY 
+  highest_clean_energy DESC,
+  c.name
+  
+LIMIT 10: Error Code: 1054. Unknown column 'test.e.iso_code' in 'where clause'
+[36, 18:18:21] DROP VIEW top_clean_energy: Running...
+[36, 18:18:21] DROP VIEW top_clean_energy: Error Code: 1051. Unknown table 'test.top_clean_energy'
+[37, 18:18:24] USE test: Running...
+[37, 18:18:24] USE test: 0 row(s) affected
+[38, 18:18:24] CREATE TABLE countries (
+  name_ VARCHAR(30),
+  iso_code VARCHAR(3),
+  PRIMARY KEY (iso_code)
+): Running...
+[38, 18:18:24] CREATE TABLE countries (
+  name_ VARCHAR(30),
+  iso_code VARCHAR(3),
+  PRIMARY KEY (iso_code)
+): Error Code: 1050. Table 'countries' already exists
+[39, 18:18:27] USE test: Running...
+[39, 18:18:27] USE test: 0 row(s) affected
+[40, 18:18:27] CREATE TABLE countries (
+  name_ VARCHAR(30),
+  iso_code VARCHAR(3),
+  PRIMARY KEY (iso_code)
+): Running...
+[40, 18:18:27] CREATE TABLE countries (
+  name_ VARCHAR(30),
+  iso_code VARCHAR(3),
+  PRIMARY KEY (iso_code)
+): Error Code: 1050. Table 'countries' already exists
+[41, 18:18:28] USE test: Running...
+[41, 18:18:28] USE test: 0 row(s) affected
+[42, 18:18:28] CREATE TABLE countries (
+  name_ VARCHAR(30),
+  iso_code VARCHAR(3),
+  PRIMARY KEY (iso_code)
+): Running...
+[42, 18:18:28] CREATE TABLE countries (
+  name_ VARCHAR(30),
+  iso_code VARCHAR(3),
+  PRIMARY KEY (iso_code)
+): Error Code: 1050. Table 'countries' already exists
+[43, 18:18:30] CREATE VIEW top_clean_energy AS
+SELECT 
+  c.name_,
+  MAX(e.clean_energy) AS highest_clean_energy
+FROM 
+  countries c
+  JOIN energy e ON c.iso_code = e.iso_code
+WHERE 
+  e.year_ BETWEEN 1990 AND 2019
+GROUP BY 
+  c.iso_code
+HAVING 
+  highest_clean_energy = (
+    SELECT 
+      MAX(clean_energy)
+    FROM 
+      energy
+    WHERE 
+      year_ BETWEEN 1990 AND 2019
+      AND iso_code = c.iso_code
+  )
+ORDER BY 
+  highest_clean_energy DESC
+LIMIT 10: Running...
+[43, 18:18:30] CREATE VIEW top_clean_energy AS
+SELECT 
+  c.name_,
+  MAX(e.clean_energy) AS highest_clean_energy
+FROM 
+  countries c
+  JOIN energy e ON c.iso_code = e.iso_code
+WHERE 
+  e.year_ BETWEEN 1990 AND 2019
+GROUP BY 
+  c.iso_code
+HAVING 
+  highest_clean_energy = (
+    SELECT 
+      MAX(clean_energy)
+    FROM 
+      energy
+    WHERE 
+      year_ BETWEEN 1990 AND 2019
+      AND iso_code = c.iso_code
+  )
+ORDER BY 
+  highest_clean_energy DESC
+LIMIT 10: Error Code: 1054. Unknown column 'c.name_' in 'field list'
+[44, 18:18:40] CREATE VIEW top_clean_energy AS
+SELECT 
+  c.name,
+  MAX(e.clean_energy) AS highest_clean_energy
+FROM 
+  countries c
+  JOIN energy e ON c.iso_code = e.iso_code
+WHERE 
+  e.year BETWEEN 1990 AND 2019
+GROUP BY 
+  c.iso_code
+HAVING 
+  highest_clean_energy = (
+    SELECT 
+      MAX(clean_energy)
+    FROM 
+      energy
+    WHERE 
+      year_ BETWEEN 1990 AND 2019
+      AND iso_code = c.iso_code
+  )
+ORDER BY 
+  highest_clean_energy DESC
+LIMIT 10: Running...
+[44, 18:18:40] CREATE VIEW top_clean_energy AS
+SELECT 
+  c.name,
+  MAX(e.clean_energy) AS highest_clean_energy
+FROM 
+  countries c
+  JOIN energy e ON c.iso_code = e.iso_code
+WHERE 
+  e.year BETWEEN 1990 AND 2019
+GROUP BY 
+  c.iso_code
+HAVING 
+  highest_clean_energy = (
+    SELECT 
+      MAX(clean_energy)
+    FROM 
+      energy
+    WHERE 
+      year_ BETWEEN 1990 AND 2019
+      AND iso_code = c.iso_code
+  )
+ORDER BY 
+  highest_clean_energy DESC
+LIMIT 10: Error Code: 1054. Unknown column 'year_' in 'where clause'
+[45, 18:18:45] CREATE VIEW top_clean_energy AS
+SELECT 
+  c.name,
+  MAX(e.clean_energy) AS highest_clean_energy
+FROM 
+  countries c
+  JOIN energy e ON c.iso_code = e.iso_code
+WHERE 
+  e.year BETWEEN 1990 AND 2019
+GROUP BY 
+  c.iso_code
+HAVING 
+  highest_clean_energy = (
+    SELECT 
+      MAX(clean_energy)
+    FROM 
+      energy
+    WHERE 
+      year BETWEEN 1990 AND 2019
+      AND iso_code = c.iso_code
+  )
+ORDER BY 
+  highest_clean_energy DESC
+LIMIT 10: Running...
+[45, 18:18:45] CREATE VIEW top_clean_energy AS
+SELECT 
+  c.name,
+  MAX(e.clean_energy) AS highest_clean_energy
+FROM 
+  countries c
+  JOIN energy e ON c.iso_code = e.iso_code
+WHERE 
+  e.year BETWEEN 1990 AND 2019
+GROUP BY 
+  c.iso_code
+HAVING 
+  highest_clean_energy = (
+    SELECT 
+      MAX(clean_energy)
+    FROM 
+      energy
+    WHERE 
+      year BETWEEN 1990 AND 2019
+      AND iso_code = c.iso_code
+  )
+ORDER BY 
+  highest_clean_energy DESC
+LIMIT 10: 0 row(s) affected
+[46, 18:18:46] CREATE VIEW top_clean_energy AS
+SELECT 
+  c.name,
+  MAX(e.clean_energy) AS highest_clean_energy
+FROM 
+  countries c
+  JOIN energy e ON c.iso_code = e.iso_code
+WHERE 
+  e.year BETWEEN 1990 AND 2019
+GROUP BY 
+  c.iso_code
+HAVING 
+  highest_clean_energy = (
+    SELECT 
+      MAX(clean_energy)
+    FROM 
+      energy
+    WHERE 
+      year BETWEEN 1990 AND 2019
+      AND iso_code = c.iso_code
+  )
+ORDER BY 
+  highest_clean_energy DESC
+LIMIT 10: Running...
+[46, 18:18:46] CREATE VIEW top_clean_energy AS
+SELECT 
+  c.name,
+  MAX(e.clean_energy) AS highest_clean_energy
+FROM 
+  countries c
+  JOIN energy e ON c.iso_code = e.iso_code
+WHERE 
+  e.year BETWEEN 1990 AND 2019
+GROUP BY 
+  c.iso_code
+HAVING 
+  highest_clean_energy = (
+    SELECT 
+      MAX(clean_energy)
+    FROM 
+      energy
+    WHERE 
+      year BETWEEN 1990 AND 2019
+      AND iso_code = c.iso_code
+  )
+ORDER BY 
+  highest_clean_energy DESC
+LIMIT 10: Error Code: 1050. Table 'top_clean_energy' already exists
+[47, 18:18:50] SELECT * FROM top_clean_energy
+LIMIT 0, 1000
+: Running...
+[47, 18:18:50] SELECT * FROM top_clean_energy
+LIMIT 0, 1000
+: Fetching...
+[47, 18:18:51] SELECT * FROM top_clean_energy
+LIMIT 0, 1000
+: 10 row(s) returned
+[48, 18:26:04] CREATE VIEW top_dirty_energy AS
+SELECT 
+  c.name,
+  MAX(e.dirty_energy) AS highest_dirty_energy
+FROM 
+ countries c
+ JOIN energy e ON c.iso_code = e.iso_code
+WHERE
+ e.year between 1990 and 2019
+GROUP BY
+ c.iso_code
+HAVING 
+ highest_dirty_energy = (
+   SELECT
+	 MAX(dirty_energy)
+   FROM
+     energy
+   WHERE 
+     year BETWEEN 1990 AND 2019
+     AND iso_code = c.iso_code 
+ )
+ORDER BY
+  highest_dirty_energy DESC
+LIMIT 10: Running...
+[48, 18:26:04] CREATE VIEW top_dirty_energy AS
+SELECT 
+  c.name,
+  MAX(e.dirty_energy) AS highest_dirty_energy
+FROM 
+ countries c
+ JOIN energy e ON c.iso_code = e.iso_code
+WHERE
+ e.year between 1990 and 2019
+GROUP BY
+ c.iso_code
+HAVING 
+ highest_dirty_energy = (
+   SELECT
+	 MAX(dirty_energy)
+   FROM
+     energy
+   WHERE 
+     year BETWEEN 1990 AND 2019
+     AND iso_code = c.iso_code 
+ )
+ORDER BY
+  highest_dirty_energy DESC
+LIMIT 10: 0 row(s) affected
+[49, 18:26:24] SELECT * FROM test.top_dirty_energy
+LIMIT 0, 1000
+: Running...
+[49, 18:26:24] SELECT * FROM test.top_dirty_energy
+LIMIT 0, 1000
+: Fetching...
+[49, 18:26:24] SELECT * FROM test.top_dirty_energy
+LIMIT 0, 1000
+: 10 row(s) returned
+[50, 18:26:27] SELECT * FROM test.top_clean_energy
+LIMIT 0, 1000
+: Running...
+[50, 18:26:27] SELECT * FROM test.top_clean_energy
+LIMIT 0, 1000
+: Fetching...
+[50, 18:26:27] SELECT * FROM test.top_clean_energy
+LIMIT 0, 1000
+: 10 row(s) returned
+[51, 18:42:10] USE test: Running...
+[51, 18:42:10] USE test: 0 row(s) affected
+[52, 18:42:10] CREATE TABLE countries (
+  name_ VARCHAR(30),
+  iso_code VARCHAR(3),
+  PRIMARY KEY (iso_code)
+): Running...
+[52, 18:42:10] CREATE TABLE countries (
+  name_ VARCHAR(30),
+  iso_code VARCHAR(3),
+  PRIMARY KEY (iso_code)
+): Error Code: 1050. Table 'countries' already exists
+[53, 18:42:12] SELECT name
+FROM top_clean_energy
+EXCEPT
+SELECT name
+FROM top_dirty_energy: Running...
+[53, 18:42:12] SELECT name
+FROM top_clean_energy
+EXCEPT
+SELECT name
+FROM top_dirty_energy: Error Code: 1064. You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'EXCEPT
+SELECT name
+FROM top_dirty_energy' at line 3
+[54, 18:53:14] SELECT 
+  ce.name,
+  ce.highest_clean_energy,
+  de.highest_dirty_energy
+FROM 
+  top_clean_energy ce
+  JOIN top_dirty_energy de ON ce.name = de.name
+LIMIT 0, 1000
+: Running...
+[54, 18:53:14] SELECT 
+  ce.name,
+  ce.highest_clean_energy,
+  de.highest_dirty_energy
+FROM 
+  top_clean_energy ce
+  JOIN top_dirty_energy de ON ce.name = de.name
+LIMIT 0, 1000
+: Fetching...
+[54, 18:53:14] SELECT 
+  ce.name,
+  ce.highest_clean_energy,
+  de.highest_dirty_energy
+FROM 
+  top_clean_energy ce
+  JOIN top_dirty_energy de ON ce.name = de.name
+LIMIT 0, 1000
+: 1 row(s) returned
+[55, 18:53:24] SELECT 
+  ce.name,
+  ce.highest_clean_energy
+FROM 
+  top_clean_energy ce
+  LEFT JOIN top_dirty_energy de ON ce.name = de.name
+WHERE 
+  de.name IS NULL
+LIMIT 0, 1000
+: Running...
+[55, 18:53:24] SELECT 
+  ce.name,
+  ce.highest_clean_energy
+FROM 
+  top_clean_energy ce
+  LEFT JOIN top_dirty_energy de ON ce.name = de.name
+WHERE 
+  de.name IS NULL
+LIMIT 0, 1000
+: Fetching...
+[55, 18:53:24] SELECT 
+  ce.name,
+  ce.highest_clean_energy
+FROM 
+  top_clean_energy ce
+  LEFT JOIN top_dirty_energy de ON ce.name = de.name
+WHERE 
+  de.name IS NULL
+LIMIT 0, 1000
+: 9 row(s) returned
+[56, 18:53:28] SELECT 
+  de.name,
+  de.highest_dirty_energy
+FROM 
+  top_dirty_energy de
+  LEFT JOIN top_clean_energy ce ON de.name = ce.name
+WHERE 
+  ce.name IS NULL
+LIMIT 0, 1000
+: Running...
+[56, 18:53:28] SELECT 
+  de.name,
+  de.highest_dirty_energy
+FROM 
+  top_dirty_energy de
+  LEFT JOIN top_clean_energy ce ON de.name = ce.name
+WHERE 
+  ce.name IS NULL
+LIMIT 0, 1000
+: Fetching...
+[56, 18:53:28] SELECT 
+  de.name,
+  de.highest_dirty_energy
+FROM 
+  top_dirty_energy de
+  LEFT JOIN top_clean_energy ce ON de.name = ce.name
+WHERE 
+  ce.name IS NULL
+LIMIT 0, 1000
+: 9 row(s) returned
+[57, 18:54:24] SELECT * FROM test.energy
+LIMIT 0, 1000
+: Running...
+[57, 18:54:24] SELECT * FROM test.energy
+LIMIT 0, 1000
+: Fetching...
+[57, 18:54:24] SELECT * FROM test.energy
+LIMIT 0, 1000
+: 1000 row(s) returned
+[58, 18:54:27] SELECT * FROM test.pollution
+LIMIT 0, 1000
+: Running...
+[58, 18:54:27] SELECT * FROM test.pollution
+LIMIT 0, 1000
+: Fetching...
+[58, 18:54:27] SELECT * FROM test.pollution
+LIMIT 0, 1000
+: 30 row(s) returned
+[59, 18:57:55] SELECT 
+  de.name,
+  de.highest_dirty_energy
+FROM 
+  top_dirty_energy de
+  LEFT JOIN top_clean_energy ce ON de.name = ce.name
+WHERE 
+  ce.name IS NULL
+LIMIT 0, 1000
+: Running...
+[59, 18:57:55] SELECT 
+  de.name,
+  de.highest_dirty_energy
+FROM 
+  top_dirty_energy de
+  LEFT JOIN top_clean_energy ce ON de.name = ce.name
+WHERE 
+  ce.name IS NULL
+LIMIT 0, 1000
+: Fetching...
+[59, 18:57:55] SELECT 
+  de.name,
+  de.highest_dirty_energy
+FROM 
+  top_dirty_energy de
+  LEFT JOIN top_clean_energy ce ON de.name = ce.name
+WHERE 
+  ce.name IS NULL
+LIMIT 0, 1000
+: 9 row(s) returned
+[60, 18:58:03] SELECT 
+  ce.name,
+  ce.highest_clean_energy
+FROM 
+  top_clean_energy ce
+  LEFT JOIN top_dirty_energy de ON ce.name = de.name
+WHERE 
+  de.name IS NULL
+LIMIT 0, 1000
+: Running...
+[60, 18:58:03] SELECT 
+  ce.name,
+  ce.highest_clean_energy
+FROM 
+  top_clean_energy ce
+  LEFT JOIN top_dirty_energy de ON ce.name = de.name
+WHERE 
+  de.name IS NULL
+LIMIT 0, 1000
+: Fetching...
+[60, 18:58:03] SELECT 
+  ce.name,
+  ce.highest_clean_energy
+FROM 
+  top_clean_energy ce
+  LEFT JOIN top_dirty_energy de ON ce.name = de.name
+WHERE 
+  de.name IS NULL
+LIMIT 0, 1000
+: 9 row(s) returned
+[61, 18:58:07] CREATE VIEW top_dirty_energy AS
+SELECT 
+  c.name,
+  MAX(e.dirty_energy) AS highest_dirty_energy
+FROM 
+ countries c
+ JOIN energy e ON c.iso_code = e.iso_code
+WHERE
+ e.year between 1990 and 2019
+GROUP BY
+ c.iso_code
+HAVING 
+ highest_dirty_energy = (
+   SELECT
+	 MAX(dirty_energy)
+   FROM
+     energy
+   WHERE 
+     year BETWEEN 1990 AND 2019
+     AND iso_code = c.iso_code 
+ )
+ORDER BY
+  highest_dirty_energy DESC
+LIMIT 10: Running...
+[61, 18:58:07] CREATE VIEW top_dirty_energy AS
+SELECT 
+  c.name,
+  MAX(e.dirty_energy) AS highest_dirty_energy
+FROM 
+ countries c
+ JOIN energy e ON c.iso_code = e.iso_code
+WHERE
+ e.year between 1990 and 2019
+GROUP BY
+ c.iso_code
+HAVING 
+ highest_dirty_energy = (
+   SELECT
+	 MAX(dirty_energy)
+   FROM
+     energy
+   WHERE 
+     year BETWEEN 1990 AND 2019
+     AND iso_code = c.iso_code 
+ )
+ORDER BY
+  highest_dirty_energy DESC
+LIMIT 10: Error Code: 1050. Table 'top_dirty_energy' already exists
+[62, 18:58:11] SELECT 
+  ce.name,
+  ce.highest_clean_energy,
+  de.highest_dirty_energy
+FROM 
+  top_clean_energy ce
+  JOIN top_dirty_energy de ON ce.name = de.name
+LIMIT 0, 1000
+: Running...
+[62, 18:58:11] SELECT 
+  ce.name,
+  ce.highest_clean_energy,
+  de.highest_dirty_energy
+FROM 
+  top_clean_energy ce
+  JOIN top_dirty_energy de ON ce.name = de.name
+LIMIT 0, 1000
+: Fetching...
+[62, 18:58:11] SELECT 
+  ce.name,
+  ce.highest_clean_energy,
+  de.highest_dirty_energy
+FROM 
+  top_clean_energy ce
+  JOIN top_dirty_energy de ON ce.name = de.name
+LIMIT 0, 1000
+: 1 row(s) returned
+[63, 18:59:05] SELECT 
+  name,
+  highest_clean_energy,
+  highest_dirty_energy
+FROM 
+  top_clean_energy
+WHERE 
+  name IN (
+    SELECT 
+      name
+    FROM 
+      top_dirty_energy
+  )
+LIMIT 0, 1000
+: Running...
+[63, 18:59:05] SELECT 
+  name,
+  highest_clean_energy,
+  highest_dirty_energy
+FROM 
+  top_clean_energy
+WHERE 
+  name IN (
+    SELECT 
+      name
+    FROM 
+      top_dirty_energy
+  )
+LIMIT 0, 1000
+: Error Code: 1054. Unknown column 'highest_dirty_energy' in 'field list'
+[64, 18:59:21] SELECT 
+  name,
+  top_clean_energy,
+  top_dirty_energy
+FROM 
+  top_clean_energy
+WHERE 
+  name IN (
+    SELECT 
+      name
+    FROM 
+      top_dirty_energy
+  )
+LIMIT 0, 1000
+: Running...
+[64, 18:59:21] SELECT 
+  name,
+  top_clean_energy,
+  top_dirty_energy
+FROM 
+  top_clean_energy
+WHERE 
+  name IN (
+    SELECT 
+      name
+    FROM 
+      top_dirty_energy
+  )
+LIMIT 0, 1000
+: Error Code: 1054. Unknown column 'top_clean_energy' in 'field list'
+[65, 18:59:43] SELECT 
+  name 
+FROM 
+  top_clean_energy
+WHERE 
+  name IN (
+    SELECT 
+      name
+    FROM 
+      top_dirty_energy
+  )
+LIMIT 0, 1000
+: Running...
+[65, 18:59:43] SELECT 
+  name 
+FROM 
+  top_clean_energy
+WHERE 
+  name IN (
+    SELECT 
+      name
+    FROM 
+      top_dirty_energy
+  )
+LIMIT 0, 1000
+: Fetching...
+[65, 18:59:43] SELECT 
+  name 
+FROM 
+  top_clean_energy
+WHERE 
+  name IN (
+    SELECT 
+      name
+    FROM 
+      top_dirty_energy
+  )
+LIMIT 0, 1000
+: 1 row(s) returned
+[66, 19:00:44] SELECT 
+  name,
+  highest_clean_energy,
+  highest_dirty_energy
+FROM 
+  top_clean_energy
+WHERE 
+  name IN (
+    SELECT 
+      name
+    FROM 
+      top_dirty_energy
+  )
+LIMIT 0, 1000
+: Running...
+[66, 19:00:44] SELECT 
+  name,
+  highest_clean_energy,
+  highest_dirty_energy
+FROM 
+  top_clean_energy
+WHERE 
+  name IN (
+    SELECT 
+      name
+    FROM 
+      top_dirty_energy
+  )
+LIMIT 0, 1000
+: Error Code: 1054. Unknown column 'highest_dirty_energy' in 'field list'
+[67, 19:02:25] SELECT 
+  name  
+FROM 
+  top_clean_energy ce
+  JOIN top_dirty_energy de ON ce.name = de.name
+WHERE 
+  EXISTS (
+    SELECT
+	  name
+    FROM 
+      top_dirty_energy
+    WHERE 
+      de2.name = ce.name
+  )
+LIMIT 0, 1000
+: Running...
+[67, 19:02:25] SELECT 
+  name  
+FROM 
+  top_clean_energy ce
+  JOIN top_dirty_energy de ON ce.name = de.name
+WHERE 
+  EXISTS (
+    SELECT
+	  name
+    FROM 
+      top_dirty_energy
+    WHERE 
+      de2.name = ce.name
+  )
+LIMIT 0, 1000
+: Error Code: 1052. Column 'name' in field list is ambiguous
+[68, 19:02:43] SELECT 
+  name  
+FROM 
+  top_clean_energy  
+WHERE 
+  EXISTS (
+    SELECT
+	  name
+    FROM 
+      top_dirty_energy
+    WHERE 
+      de2.name = ce.name
+  )
+LIMIT 0, 1000
+: Running...
+[68, 19:02:43] SELECT 
+  name  
+FROM 
+  top_clean_energy  
+WHERE 
+  EXISTS (
+    SELECT
+	  name
+    FROM 
+      top_dirty_energy
+    WHERE 
+      de2.name = ce.name
+  )
+LIMIT 0, 1000
+: Error Code: 1054. Unknown column 'de2.name' in 'where clause'
+[69, 19:02:53] SELECT 
+  name  
+FROM 
+  top_clean_energy  
+WHERE 
+  EXISTS (
+    SELECT
+	  name
+    FROM 
+      top_dirty_energy    
+  )
+LIMIT 0, 1000
+: Running...
+[69, 19:02:53] SELECT 
+  name  
+FROM 
+  top_clean_energy  
+WHERE 
+  EXISTS (
+    SELECT
+	  name
+    FROM 
+      top_dirty_energy    
+  )
+LIMIT 0, 1000
+: Fetching...
+[69, 19:02:53] SELECT 
+  name  
+FROM 
+  top_clean_energy  
+WHERE 
+  EXISTS (
+    SELECT
+	  name
+    FROM 
+      top_dirty_energy    
+  )
+LIMIT 0, 1000
+: 10 row(s) returned
+[70, 19:03:18] SELECT 
+  name  
+FROM 
+  top_clean_energy  
+WHERE 
+  EXISTS (
+    SELECT
+	  name
+    FROM 
+      top_dirty_energy 
+	WHERE 
+		top_clean_energy.name = top_dirty_energy.name
+  )
+LIMIT 0, 1000
+: Running...
+[70, 19:03:18] SELECT 
+  name  
+FROM 
+  top_clean_energy  
+WHERE 
+  EXISTS (
+    SELECT
+	  name
+    FROM 
+      top_dirty_energy 
+	WHERE 
+		top_clean_energy.name = top_dirty_energy.name
+  )
+LIMIT 0, 1000
+: Fetching...
+[70, 19:03:18] SELECT 
+  name  
+FROM 
+  top_clean_energy  
+WHERE 
+  EXISTS (
+    SELECT
+	  name
+    FROM 
+      top_dirty_energy 
+	WHERE 
+		top_clean_energy.name = top_dirty_energy.name
+  )
+LIMIT 0, 1000
+: 1 row(s) returned
+[71, 19:07:43] SELECT * FROM test.top_clean_energy
+LIMIT 0, 1000
+: Running...
+[71, 19:07:43] SELECT * FROM test.top_clean_energy
+LIMIT 0, 1000
+: Fetching...
+[71, 19:07:43] SELECT * FROM test.top_clean_energy
+LIMIT 0, 1000
+: 10 row(s) returned
+[72, 19:11:53] SELECT
+  COUNT(*) AS num_countries
+FROM
+  top_clean_energy
+WHERE
+  highest_clean_energy > (
+    SELECT
+      AVG(highest_clean_energy)
+    FROM
+      top_clean_energy
+    )
+LIMIT 0, 1000
+: Running...
+[72, 19:11:53] SELECT
+  COUNT(*) AS num_countries
+FROM
+  top_clean_energy
+WHERE
+  highest_clean_energy > (
+    SELECT
+      AVG(highest_clean_energy)
+    FROM
+      top_clean_energy
+    )
+LIMIT 0, 1000
+: Fetching...
+[72, 19:11:53] SELECT
+  COUNT(*) AS num_countries
+FROM
+  top_clean_energy
+WHERE
+  highest_clean_energy > (
+    SELECT
+      AVG(highest_clean_energy)
+    FROM
+      top_clean_energy
+    )
+LIMIT 0, 1000
+: 1 row(s) returned
+[73, 19:13:29] SELECT
+  COUNT(*) AS num_countries
+FROM
+  top_clean_energy
+WHERE
+  highest_clean_energy > (
+    SELECT
+      AVG(highest_clean_energy)
+    FROM
+      top_clean_energy
+    )
+
+# Find the minimum dirty energy producer among the top 10 dirty energy producers
+SELECT
+  MIN(top_dirty_energy) AS min_dirty_energy
+FROM
+  top_dirty_energy: Running...
+[73, 19:13:29] SELECT
+  COUNT(*) AS num_countries
+FROM
+  top_clean_energy
+WHERE
+  highest_clean_energy > (
+    SELECT
+      AVG(highest_clean_energy)
+    FROM
+      top_clean_energy
+    )
+
+# Find the minimum dirty energy producer among the top 10 dirty energy producers
+SELECT
+  MIN(top_dirty_energy) AS min_dirty_energy
+FROM
+  top_dirty_energy: Error Code: 1064. You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'SELECT
+  MIN(top_dirty_energy) AS min_dirty_energy
+FROM
+  top_dirty_energy' at line 14
+[74, 19:15:31] SELECT
+  COUNT(*) AS num_countries
+FROM
+  top_clean_energy
+WHERE
+  highest_clean_energy > (
+    SELECT
+      AVG(highest_clean_energy)
+    FROM
+      top_clean_energy
+    )
+
+# Find the minimum dirty energy producer among the top 10 dirty energy producers
+SELECT
+  MIN(top_dirty_energy) AS least_dirty_energy
+FROM
+  top_dirty_energy
+WHERE
+  least_dirty_energy = MIN(top_dirty_energy.dirty_energy): Running...
+[74, 19:15:31] SELECT
+  COUNT(*) AS num_countries
+FROM
+  top_clean_energy
+WHERE
+  highest_clean_energy > (
+    SELECT
+      AVG(highest_clean_energy)
+    FROM
+      top_clean_energy
+    )
+
+# Find the minimum dirty energy producer among the top 10 dirty energy producers
+SELECT
+  MIN(top_dirty_energy) AS least_dirty_energy
+FROM
+  top_dirty_energy
+WHERE
+  least_dirty_energy = MIN(top_dirty_energy.dirty_energy): Error Code: 1064. You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'SELECT
+  MIN(top_dirty_energy) AS least_dirty_energy
+FROM
+  top_dirty_energy
+WHE' at line 14
+[1, 19:20:26] SELECT
+  MIN(top_dirty_energy.dirty_energy) AS least_dirty_energy
+FROM
+  top_dirty_energy
+LIMIT 0, 1000
+: Running...
+[1, 19:20:26] SELECT
+  MIN(top_dirty_energy.dirty_energy) AS least_dirty_energy
+FROM
+  top_dirty_energy
+LIMIT 0, 1000
+: Error Code: 1054. Unknown column 'top_dirty_energy.dirty_energy' in 'field list'
+[2, 19:20:35] SELECT * FROM test.top_dirty_energy
+LIMIT 0, 1000
+: Running...
+[2, 19:20:35] SELECT * FROM test.top_dirty_energy
+LIMIT 0, 1000
+: Fetching...
+[2, 19:20:35] SELECT * FROM test.top_dirty_energy
+LIMIT 0, 1000
+: 10 row(s) returned
+[3, 19:20:41] SELECT * FROM test.top_clean_energy
+LIMIT 0, 1000
+: Running...
+[3, 19:20:41] SELECT * FROM test.top_clean_energy
+LIMIT 0, 1000
+: Fetching...
+[3, 19:20:41] SELECT * FROM test.top_clean_energy
+LIMIT 0, 1000
+: 10 row(s) returned
+[1, 19:21:10] SELECT
+  MIN(e.dirty_energy) AS least_dirty_energy
+FROM
+  top_dirty_energy e
+LIMIT 0, 1000
+: Running...
+[1, 19:21:10] SELECT
+  MIN(e.dirty_energy) AS least_dirty_energy
+FROM
+  top_dirty_energy e
+LIMIT 0, 1000
+: Error Code: 1054. Unknown column 'e.dirty_energy' in 'field list'
+[2, 19:21:19] SELECT
+  MIN(e.highest_dirty_energy) AS least_dirty_energy
+FROM
+  top_dirty_energy e
+LIMIT 0, 1000
+: Running...
+[2, 19:21:19] SELECT
+  MIN(e.highest_dirty_energy) AS least_dirty_energy
+FROM
+  top_dirty_energy e
+LIMIT 0, 1000
+: Fetching...
+[2, 19:21:19] SELECT
+  MIN(e.highest_dirty_energy) AS least_dirty_energy
+FROM
+  top_dirty_energy e
+LIMIT 0, 1000
+: 1 row(s) returned
+[3, 19:22:56] SELECT
+  MIN(e.highest_dirty_energy) AS least_dirty_energy,
+  name
+FROM
+  top_dirty_energy e
+
+SELECT
+  SUM(e.highest_dirty_energy) AS: Running...
+[3, 19:22:56] SELECT
+  MIN(e.highest_dirty_energy) AS least_dirty_energy,
+  name
+FROM
+  top_dirty_energy e
+
+SELECT
+  SUM(e.highest_dirty_energy) AS: Error Code: 1064. You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'SELECT
+  SUM(e.highest_dirty_energy) AS' at line 7
+[4, 19:22:59] SELECT
+  MIN(e.highest_dirty_energy) AS least_dirty_energy,
+  name
+FROM
+  top_dirty_energy e
+
+SELECT
+  SUM(e.highest_dirty_energy) AS: Running...
+[4, 19:22:59] SELECT
+  MIN(e.highest_dirty_energy) AS least_dirty_energy,
+  name
+FROM
+  top_dirty_energy e
+
+SELECT
+  SUM(e.highest_dirty_energy) AS: Error Code: 1064. You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'SELECT
+  SUM(e.highest_dirty_energy) AS' at line 7
+[5, 19:23:36] SELECT
+  MIN(e.highest_dirty_energy) AS least_dirty_energy,
+  name
+FROM
+  top_dirty_energy e
+LIMIT 0, 1000
+: Running...
+[5, 19:23:36] SELECT
+  MIN(e.highest_dirty_energy) AS least_dirty_energy,
+  name
+FROM
+  top_dirty_energy e
+LIMIT 0, 1000
+: Error Code: 1140. In aggregated query without GROUP BY, expression #2 of SELECT list contains nonaggregated column 'e.name'; this is incompatible with sql_mode=only_full_group_by
+[6, 19:23:41] SELECT
+  SUM(e.highest_dirty_energy) AS sum_of_highest_energy,
+  name
+FROM 
+  top_dirty_energy e
+LIMIT 0, 1000
+: Running...
+[6, 19:23:41] SELECT
+  SUM(e.highest_dirty_energy) AS sum_of_highest_energy,
+  name
+FROM 
+  top_dirty_energy e
+LIMIT 0, 1000
+: Error Code: 1140. In aggregated query without GROUP BY, expression #2 of SELECT list contains nonaggregated column 'e.name'; this is incompatible with sql_mode=only_full_group_by
+[7, 19:25:10] SELECT
+  MIN(e.highest_dirty_energy) AS least_dirty_energy  
+FROM
+  top_dirty_energy e
+GROUP BY
+  name
+LIMIT 0, 1000
+: Running...
+[7, 19:25:10] SELECT
+  MIN(e.highest_dirty_energy) AS least_dirty_energy  
+FROM
+  top_dirty_energy e
+GROUP BY
+  name
+LIMIT 0, 1000
+: Fetching...
+[7, 19:25:10] SELECT
+  MIN(e.highest_dirty_energy) AS least_dirty_energy  
+FROM
+  top_dirty_energy e
+GROUP BY
+  name
+LIMIT 0, 1000
+: 10 row(s) returned
+[8, 19:25:52] SELECT
+  MIN(e.highest_dirty_energy) AS least_dirty_energy  
+FROM
+  top_dirty_energy e
+GROUP BY
+  name,
+  least_dirty_energy
+LIMIT 0, 1000
+: Running...
+[8, 19:25:52] SELECT
+  MIN(e.highest_dirty_energy) AS least_dirty_energy  
+FROM
+  top_dirty_energy e
+GROUP BY
+  name,
+  least_dirty_energy
+LIMIT 0, 1000
+: Error Code: 1056. Can't group on 'least_dirty_energy'
+[9, 19:26:11] SELECT
+  MIN(e.highest_dirty_energy) AS least_dirty_energy,
+  name
+FROM
+  top_dirty_energy e
+GROUP BY
+  name,
+  least_dirty_energy
+LIMIT 0, 1000
+: Running...
+[9, 19:26:11] SELECT
+  MIN(e.highest_dirty_energy) AS least_dirty_energy,
+  name
+FROM
+  top_dirty_energy e
+GROUP BY
+  name,
+  least_dirty_energy
+LIMIT 0, 1000
+: Error Code: 1056. Can't group on 'least_dirty_energy'
+[10, 19:26:22] SELECT
+  MIN(e.highest_dirty_energy) AS least_dirty_energy,
+  name
+FROM
+  top_dirty_energy e
+GROUP BY
+  name
+LIMIT 0, 1000
+: Running...
+[10, 19:26:22] SELECT
+  MIN(e.highest_dirty_energy) AS least_dirty_energy,
+  name
+FROM
+  top_dirty_energy e
+GROUP BY
+  name
+LIMIT 0, 1000
+: Fetching...
+[10, 19:26:22] SELECT
+  MIN(e.highest_dirty_energy) AS least_dirty_energy,
+  name
+FROM
+  top_dirty_energy e
+GROUP BY
+  name
+LIMIT 0, 1000
+: 10 row(s) returned
+[11, 19:27:23] SELECT
+  MIN(e.highest_dirty_energy) AS least_dirty_energy,
+  name
+FROM
+  top_dirty_energy e
+
+
+SELECT
+  SUM(e.highest_dirty_energy) AS sum_of_highest_energy  
+FROM 
+  top_dirty_energy e: Running...
+[11, 19:27:23] SELECT
+  MIN(e.highest_dirty_energy) AS least_dirty_energy,
+  name
+FROM
+  top_dirty_energy e
+
+
+SELECT
+  SUM(e.highest_dirty_energy) AS sum_of_highest_energy  
+FROM 
+  top_dirty_energy e: Error Code: 1064. You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'SELECT
+  SUM(e.highest_dirty_energy) AS sum_of_highest_energy  
+FROM 
+  top_dirt' at line 8
+[12, 19:27:29] SELECT
+  MIN(e.highest_dirty_energy) AS least_dirty_energy,
+  name
+FROM
+  top_dirty_energy e
+LIMIT 0, 1000
+: Running...
+[12, 19:27:29] SELECT
+  MIN(e.highest_dirty_energy) AS least_dirty_energy,
+  name
+FROM
+  top_dirty_energy e
+LIMIT 0, 1000
+: Error Code: 1140. In aggregated query without GROUP BY, expression #2 of SELECT list contains nonaggregated column 'e.name'; this is incompatible with sql_mode=only_full_group_by
+[13, 19:27:45] SELECT
+  MIN(e.highest_dirty_energy) AS least_dirty_energy,
+  e.name
+FROM
+  top_dirty_energy e
+LIMIT 0, 1000
+: Running...
+[13, 19:27:45] SELECT
+  MIN(e.highest_dirty_energy) AS least_dirty_energy,
+  e.name
+FROM
+  top_dirty_energy e
+LIMIT 0, 1000
+: Error Code: 1140. In aggregated query without GROUP BY, expression #2 of SELECT list contains nonaggregated column 'e.name'; this is incompatible with sql_mode=only_full_group_by
+[14, 19:29:27] SELECT MIN(highest_dirty_energy) AS min_dirty_energy
+FROM top_dirty_energy
+LIMIT 0, 1000
+: Running...
+[14, 19:29:27] SELECT MIN(highest_dirty_energy) AS min_dirty_energy
+FROM top_dirty_energy
+LIMIT 0, 1000
+: Fetching...
+[14, 19:29:27] SELECT MIN(highest_dirty_energy) AS min_dirty_energy
+FROM top_dirty_energy
+LIMIT 0, 1000
+: 1 row(s) returned
+[15, 19:30:27] SELECT
+ MIN(highest_dirty_energy) AS min_dirty_energy,
+ min_dirty_energy.name
+FROM top_dirty_energy
+LIMIT 0, 1000
+: Running...
+[15, 19:30:27] SELECT
+ MIN(highest_dirty_energy) AS min_dirty_energy,
+ min_dirty_energy.name
+FROM top_dirty_energy
+LIMIT 0, 1000
+: Error Code: 1054. Unknown column 'min_dirty_energy.name' in 'field list'
+[16, 19:31:05] SELECT * FROM test.top_clean_energy
+LIMIT 0, 1000
+: Running...
+[16, 19:31:05] SELECT * FROM test.top_clean_energy
+LIMIT 0, 1000
+: Fetching...
+[16, 19:31:05] SELECT * FROM test.top_clean_energy
+LIMIT 0, 1000
+: 10 row(s) returned
+[17, 19:35:32] SELECT
+  name,
+  MIN(highest_dirty_energy) AS min_dirty_energy  
+FROM
+  top_dirty_energy
+GROUP BY
+  min_dirty_energy.name
+LIMIT 0, 1000
+: Running...
+[17, 19:35:32] SELECT
+  name,
+  MIN(highest_dirty_energy) AS min_dirty_energy  
+FROM
+  top_dirty_energy
+GROUP BY
+  min_dirty_energy.name
+LIMIT 0, 1000
+: Error Code: 1054. Unknown column 'min_dirty_energy.name' in 'group statement'
+[18, 19:35:49] SELECT
+  name,
+  MIN(highest_dirty_energy) AS min_dirty_energy  
+FROM
+  top_dirty_energy
+GROUP BY
+  name
+LIMIT 0, 1000
+: Running...
+[18, 19:35:49] SELECT
+  name,
+  MIN(highest_dirty_energy) AS min_dirty_energy  
+FROM
+  top_dirty_energy
+GROUP BY
+  name
+LIMIT 0, 1000
+: Fetching...
+[18, 19:35:49] SELECT
+  name,
+  MIN(highest_dirty_energy) AS min_dirty_energy  
+FROM
+  top_dirty_energy
+GROUP BY
+  name
+LIMIT 0, 1000
+: 10 row(s) returned
+[19, 19:37:01] SELECT
+  name,
+  highest_dirty_energy
+FROM top_dirty_energy
+WHERE highest_dirty_energy = (
+  SELECT MIN(highest_dirty_energy)
+  FROM top_dirty_energy
+)
+
+
+
+
+
+SELECT
+  SUM(e.highest_dirty_energy) AS sum_of_highest_energy  
+FROM 
+  top_dirty_energy e: Running...
+[19, 19:37:01] SELECT
+  name,
+  highest_dirty_energy
+FROM top_dirty_energy
+WHERE highest_dirty_energy = (
+  SELECT MIN(highest_dirty_energy)
+  FROM top_dirty_energy
+)
+
+
+
+
+
+SELECT
+  SUM(e.highest_dirty_energy) AS sum_of_highest_energy  
+FROM 
+  top_dirty_energy e: Error Code: 1064. You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'SELECT
+  SUM(e.highest_dirty_energy) AS sum_of_highest_energy  
+FROM 
+  top_dirt' at line 14
+[20, 19:37:08] SELECT
+  name,
+  highest_dirty_energy
+FROM top_dirty_energy
+WHERE highest_dirty_energy = (
+  SELECT MIN(highest_dirty_energy)
+  FROM top_dirty_energy
+)
+LIMIT 0, 1000
+: Running...
+[20, 19:37:08] SELECT
+  name,
+  highest_dirty_energy
+FROM top_dirty_energy
+WHERE highest_dirty_energy = (
+  SELECT MIN(highest_dirty_energy)
+  FROM top_dirty_energy
+)
+LIMIT 0, 1000
+: Fetching...
+[20, 19:37:08] SELECT
+  name,
+  highest_dirty_energy
+FROM top_dirty_energy
+WHERE highest_dirty_energy = (
+  SELECT MIN(highest_dirty_energy)
+  FROM top_dirty_energy
+)
+LIMIT 0, 1000
+: 1 row(s) returned
+[21, 19:38:59] SELECT 'top_dirty_energy' AS view_name, SUM(highest_dirty_energy) AS total_dirty_energy
+FROM top_dirty_energy
+LIMIT 0, 1000
+: Running...
+[21, 19:38:59] SELECT 'top_dirty_energy' AS view_name, SUM(highest_dirty_energy) AS total_dirty_energy
+FROM top_dirty_energy
+LIMIT 0, 1000
+: Fetching...
+[21, 19:38:59] SELECT 'top_dirty_energy' AS view_name, SUM(highest_dirty_energy) AS total_dirty_energy
+FROM top_dirty_energy
+LIMIT 0, 1000
+: 1 row(s) returned
+[22, 19:39:51] SELECT
+ 'top_dirty_energy' AS view_name,
+  SUM(highest_dirty_energy) AS total_dirty_energy
+FROM top_dirty_energy
+LIMIT 0, 1000
+: Running...
+[22, 19:39:51] SELECT
+ 'top_dirty_energy' AS view_name,
+  SUM(highest_dirty_energy) AS total_dirty_energy
+FROM top_dirty_energy
+LIMIT 0, 1000
+: Fetching...
+[22, 19:39:51] SELECT
+ 'top_dirty_energy' AS view_name,
+  SUM(highest_dirty_energy) AS total_dirty_energy
+FROM top_dirty_energy
+LIMIT 0, 1000
+: 1 row(s) returned
+[23, 20:02:02] ALTER TABLE population
+ADD CONSTRAINT year_check
+CHECK (year BETWEEN 1990 AND 2020): Running...
+[23, 20:02:02] ALTER TABLE population
+ADD CONSTRAINT year_check
+CHECK (year BETWEEN 1990 AND 2020): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[24, 20:02:06] INSERT INTO population(year, amount, iso_code)
+VALUES (1989, 400000, 'TUR'): Running...
+[24, 20:02:06] INSERT INTO population(year, amount, iso_code)
+VALUES (1989, 400000, 'TUR'): 1 row(s) affected
+[25, 20:04:02] DELETE FROM population
+ORDER BY year_ DESC, amount DESC
+LIMIT 1: Running...
+[25, 20:04:02] DELETE FROM population
+ORDER BY year_ DESC, amount DESC
+LIMIT 1: Error Code: 1054. Unknown column 'year_' in 'order clause'
+[26, 20:04:07] DELETE FROM population
+ORDER BY year DESC, amount DESC
+LIMIT 1: Running...
+[26, 20:04:07] DELETE FROM population
+ORDER BY year DESC, amount DESC
+LIMIT 1: 1 row(s) affected
+[27, 20:04:10] SELECT * FROM test.pollution
+LIMIT 0, 1000
+: Running...
+[27, 20:04:10] SELECT * FROM test.pollution
+LIMIT 0, 1000
+: Fetching...
+[27, 20:04:10] SELECT * FROM test.pollution
+LIMIT 0, 1000
+: 30 row(s) returned
+[28, 20:04:41] SELECT * FROM test.population
+LIMIT 0, 1000
+: Running...
+[28, 20:04:41] SELECT * FROM test.population
+LIMIT 0, 1000
+: Fetching...
+[28, 20:04:41] SELECT * FROM test.population
+LIMIT 0, 1000
+: 1000 row(s) returned
+[29, 20:06:25] ALTER TABLE population
+ADD CONSTRAINT check_year_range
+CHECK (year_ >= 1990 AND year_ <= 2019): Running...
+[29, 20:06:25] ALTER TABLE population
+ADD CONSTRAINT check_year_range
+CHECK (year_ >= 1990 AND year_ <= 2019): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[30, 20:06:27] ALTER TABLE population
+ADD CONSTRAINT check_year_range
+CHECK (year_ >= 1990 AND year_ <= 2019): Running...
+[30, 20:06:27] ALTER TABLE population
+ADD CONSTRAINT check_year_range
+CHECK (year_ >= 1990 AND year_ <= 2019): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[31, 20:06:38] INSERT INTO population (year_, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): Running...
+[31, 20:06:38] INSERT INTO population (year_, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): Error Code: 1054. Unknown column 'year_' in 'field list'
+[32, 20:06:43] INSERT INTO population (year, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): Running...
+[32, 20:06:43] INSERT INTO population (year, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): 1 row(s) affected
+[33, 20:06:47] SELECT * FROM test.population
+LIMIT 0, 1000
+: Running...
+[33, 20:06:47] SELECT * FROM test.population
+LIMIT 0, 1000
+: Fetching...
+[33, 20:06:47] SELECT * FROM test.population
+LIMIT 0, 1000
+: 1000 row(s) returned
+[34, 20:08:05] ALTER TABLE population
+ADD CONSTRAINT check_year_range
+CHECK (year >= 1990 AND year <= 2019): Running...
+[34, 20:08:05] ALTER TABLE population
+ADD CONSTRAINT check_year_range
+CHECK (year >= 1990 AND year <= 2019): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[35, 20:08:05] ALTER TABLE population
+ADD CONSTRAINT check_year_range
+CHECK (year >= 1990 AND year <= 2019): Running...
+[35, 20:08:05] ALTER TABLE population
+ADD CONSTRAINT check_year_range
+CHECK (year >= 1990 AND year <= 2019): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[36, 20:08:07] INSERT INTO population (year, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): Running...
+[36, 20:08:07] INSERT INTO population (year, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): 1 row(s) affected
+[37, 20:08:11] ALTER TABLE population
+ADD CONSTRAINT check_year_range
+CHECK (year >= 1990 AND year <= 2019): Running...
+[37, 20:08:11] ALTER TABLE population
+ADD CONSTRAINT check_year_range
+CHECK (year >= 1990 AND year <= 2019): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[38, 20:08:12] ALTER TABLE population
+ADD CONSTRAINT check_year_range
+CHECK (year >= 1990 AND year <= 2019): Running...
+[38, 20:08:12] ALTER TABLE population
+ADD CONSTRAINT check_year_range
+CHECK (year >= 1990 AND year <= 2019): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[39, 20:08:12] ALTER TABLE population
+ADD CONSTRAINT check_year_range
+CHECK (year >= 1990 AND year <= 2019): Running...
+[39, 20:08:12] ALTER TABLE population
+ADD CONSTRAINT check_year_range
+CHECK (year >= 1990 AND year <= 2019): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[40, 20:08:23] INSERT INTO population (year, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): Running...
+[40, 20:08:23] INSERT INTO population (year, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): 1 row(s) affected
+[41, 20:08:24] INSERT INTO population (year, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): Running...
+[41, 20:08:24] INSERT INTO population (year, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): 1 row(s) affected
+[42, 20:08:24] INSERT INTO population (year, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): Running...
+[42, 20:08:24] INSERT INTO population (year, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): 1 row(s) affected
+[43, 20:08:29] ALTER TABLE population
+ADD CONSTRAINT check_year_range
+CHECK (year >= 1990 AND year <= 2019): Running...
+[43, 20:08:29] ALTER TABLE population
+ADD CONSTRAINT check_year_range
+CHECK (year >= 1990 AND year <= 2019): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[44, 20:08:30] ALTER TABLE population
+ADD CONSTRAINT check_year_range
+CHECK (year >= 1990 AND year <= 2019): Running...
+[44, 20:08:30] ALTER TABLE population
+ADD CONSTRAINT check_year_range
+CHECK (year >= 1990 AND year <= 2019): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[45, 20:08:33] SELECT * FROM test.pollution
+LIMIT 0, 1000
+: Running...
+[45, 20:08:33] SELECT * FROM test.pollution
+LIMIT 0, 1000
+: Fetching...
+[45, 20:08:33] SELECT * FROM test.pollution
+LIMIT 0, 1000
+: 30 row(s) returned
+[46, 20:08:36] SELECT * FROM test.population
+LIMIT 0, 1000
+: Running...
+[46, 20:08:36] SELECT * FROM test.population
+LIMIT 0, 1000
+: Fetching...
+[46, 20:08:37] SELECT * FROM test.population
+LIMIT 0, 1000
+: 1000 row(s) returned
+[47, 20:08:53] ALTER TABLE population
+ADD CONSTRAINT check_year_range
+CHECK (year >= 1990 AND year <= 2019): Running...
+[47, 20:08:53] ALTER TABLE population
+ADD CONSTRAINT check_year_range
+CHECK (year >= 1990 AND year <= 2019): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[48, 20:08:55] ALTER TABLE population
+ADD CONSTRAINT check_year_range
+CHECK (year >= 1990 AND year <= 2019): Running...
+[48, 20:08:55] ALTER TABLE population
+ADD CONSTRAINT check_year_range
+CHECK (year >= 1990 AND year <= 2019): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[49, 20:08:56] ALTER TABLE population
+ADD CONSTRAINT check_year_range
+CHECK (year >= 1990 AND year <= 2019): Running...
+[49, 20:08:56] ALTER TABLE population
+ADD CONSTRAINT check_year_range
+CHECK (year >= 1990 AND year <= 2019): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[50, 20:09:48] INSERT INTO population (year, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): Running...
+[50, 20:09:48] INSERT INTO population (year, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): 1 row(s) affected
+[51, 20:09:49] INSERT INTO population (year, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): Running...
+[51, 20:09:49] INSERT INTO population (year, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): 1 row(s) affected
+[52, 20:09:49] INSERT INTO population (year, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): Running...
+[52, 20:09:49] INSERT INTO population (year, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): 1 row(s) affected
+[53, 20:09:50] INSERT INTO population (year, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): Running...
+[53, 20:09:50] INSERT INTO population (year, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): 1 row(s) affected
+[54, 20:09:50] INSERT INTO population (year, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): Running...
+[54, 20:09:50] INSERT INTO population (year, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): 1 row(s) affected
+[55, 20:09:50] INSERT INTO population (year, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): Running...
+[55, 20:09:50] INSERT INTO population (year, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): 1 row(s) affected
+[56, 20:09:50] INSERT INTO population (year, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): Running...
+[56, 20:09:50] INSERT INTO population (year, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): 1 row(s) affected
+[57, 20:09:51] INSERT INTO population (year, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): Running...
+[57, 20:09:51] INSERT INTO population (year, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): 1 row(s) affected
+[58, 20:09:51] INSERT INTO population (year, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): Running...
+[58, 20:09:51] INSERT INTO population (year, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): 1 row(s) affected
+[59, 20:09:51] INSERT INTO population (year, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): Running...
+[59, 20:09:51] INSERT INTO population (year, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): 1 row(s) affected
+[60, 20:09:51] INSERT INTO population (year, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): Running...
+[60, 20:09:51] INSERT INTO population (year, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): 1 row(s) affected
+[61, 20:09:51] INSERT INTO population (year, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): Running...
+[61, 20:09:51] INSERT INTO population (year, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): 1 row(s) affected
+[62, 20:09:52] INSERT INTO population (year, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): Running...
+[62, 20:09:52] INSERT INTO population (year, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): 1 row(s) affected
+[63, 20:09:52] INSERT INTO population (year, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): Running...
+[63, 20:09:52] INSERT INTO population (year, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): 1 row(s) affected
+[64, 20:09:52] INSERT INTO population (year, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): Running...
+[64, 20:09:52] INSERT INTO population (year, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): 1 row(s) affected
+[65, 20:09:52] INSERT INTO population (year, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): Running...
+[65, 20:09:52] INSERT INTO population (year, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): 1 row(s) affected
+[66, 20:09:52] INSERT INTO population (year, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): Running...
+[66, 20:09:52] INSERT INTO population (year, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): 1 row(s) affected
+[67, 20:09:52] INSERT INTO population (year, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): Running...
+[67, 20:09:52] INSERT INTO population (year, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): 1 row(s) affected
+[68, 20:09:52] INSERT INTO population (year, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): Running...
+[68, 20:09:52] INSERT INTO population (year, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): 1 row(s) affected
+[1, 20:10:07] SELECT * FROM test.population
+LIMIT 0, 1000
+: Running...
+[1, 20:10:07] SELECT * FROM test.population
+LIMIT 0, 1000
+: Fetching...
+[1, 20:10:07] SELECT * FROM test.population
+LIMIT 0, 1000
+: 1000 row(s) returned
+[2, 20:10:17] SELECT * FROM test.population
+LIMIT 0, 1000
+: Running...
+[2, 20:10:17] SELECT * FROM test.population
+LIMIT 0, 1000
+: Fetching...
+[2, 20:10:17] SELECT * FROM test.population
+LIMIT 0, 1000
+: 1000 row(s) returned
+[3, 20:10:51] SELECT * FROM test.population
+LIMIT 0, 1000
+: Running...
+[3, 20:10:51] SELECT * FROM test.population
+LIMIT 0, 1000
+: Fetching...
+[3, 20:10:51] SELECT * FROM test.population
+LIMIT 0, 1000
+: 1000 row(s) returned
+[4, 20:11:31] SELECT * FROM test.countries
+LIMIT 0, 1000
+: Running...
+[4, 20:11:31] SELECT * FROM test.countries
+LIMIT 0, 1000
+: Fetching...
+[4, 20:11:31] SELECT * FROM test.countries
+LIMIT 0, 1000
+: 218 row(s) returned
+[5, 20:11:37] SELECT * FROM test.population
+LIMIT 0, 1000
+: Running...
+[5, 20:11:37] SELECT * FROM test.population
+LIMIT 0, 1000
+: Fetching...
+[5, 20:11:37] SELECT * FROM test.population
+LIMIT 0, 1000
+: 1000 row(s) returned
+[6, 20:11:57] SELECT * FROM test.population
+LIMIT 0, 50000
+: Running...
+[6, 20:11:57] SELECT * FROM test.population
+LIMIT 0, 50000
+: Fetching...
+[6, 20:11:57] SELECT * FROM test.population
+LIMIT 0, 50000
+: 6450 row(s) returned
+[7, 20:12:36] DELETE FROM population
+ORDER BY year_ DESC, amount DESC
+LIMIT 1: Running...
+[7, 20:12:36] DELETE FROM population
+ORDER BY year_ DESC, amount DESC
+LIMIT 1: Error Code: 1054. Unknown column 'year_' in 'order clause'
+[8, 20:12:40] DELETE FROM population
+ORDER BY year DESC, amount DESC
+LIMIT 1: Running...
+[8, 20:12:40] DELETE FROM population
+ORDER BY year DESC, amount DESC
+LIMIT 1: 1 row(s) affected
+[9, 20:12:41] DELETE FROM population
+ORDER BY year DESC, amount DESC
+LIMIT 1: Running...
+[9, 20:12:42] DELETE FROM population
+ORDER BY year DESC, amount DESC
+LIMIT 1: 1 row(s) affected
+[10, 20:12:42] DELETE FROM population
+ORDER BY year DESC, amount DESC
+LIMIT 1: Running...
+[10, 20:12:42] DELETE FROM population
+ORDER BY year DESC, amount DESC
+LIMIT 1: 1 row(s) affected
+[11, 20:12:43] DELETE FROM population
+ORDER BY year DESC, amount DESC
+LIMIT 1: Running...
+[11, 20:12:43] DELETE FROM population
+ORDER BY year DESC, amount DESC
+LIMIT 1: 1 row(s) affected
+[12, 20:12:43] DELETE FROM population
+ORDER BY year DESC, amount DESC
+LIMIT 1: Running...
+[12, 20:12:43] DELETE FROM population
+ORDER BY year DESC, amount DESC
+LIMIT 1: 1 row(s) affected
+[13, 20:12:43] DELETE FROM population
+ORDER BY year DESC, amount DESC
+LIMIT 1: Running...
+[13, 20:12:43] DELETE FROM population
+ORDER BY year DESC, amount DESC
+LIMIT 1: 1 row(s) affected
+[14, 20:12:43] DELETE FROM population
+ORDER BY year DESC, amount DESC
+LIMIT 1: Running...
+[14, 20:12:43] DELETE FROM population
+ORDER BY year DESC, amount DESC
+LIMIT 1: 1 row(s) affected
+[15, 20:12:46] SELECT * FROM test.population
+LIMIT 0, 50000
+: Running...
+[15, 20:12:46] SELECT * FROM test.population
+LIMIT 0, 50000
+: Fetching...
+[15, 20:12:46] SELECT * FROM test.population
+LIMIT 0, 50000
+: 6443 row(s) returned
+[16, 20:13:12] SELECT * FROM test.population
+LIMIT 0, 50000
+: Running...
+[16, 20:13:12] SELECT * FROM test.population
+LIMIT 0, 50000
+: Fetching...
+[16, 20:13:12] SELECT * FROM test.population
+LIMIT 0, 50000
+: 6443 row(s) returned
+[17, 20:13:38] DELETE FROM population
+ORDER BY year DESC, amount DESC
+LIMIT 10: Running...
+[17, 20:13:38] DELETE FROM population
+ORDER BY year DESC, amount DESC
+LIMIT 10: 10 row(s) affected
+[18, 20:13:44] SELECT * FROM test.population
+LIMIT 0, 50000
+: Running...
+[18, 20:13:44] SELECT * FROM test.population
+LIMIT 0, 50000
+: Fetching...
+[18, 20:13:44] SELECT * FROM test.population
+LIMIT 0, 50000
+: 6433 row(s) returned
+[19, 20:14:04] DELETE FROM population
+ORDER BY year DESC, amount DESC
+LIMIT 10: Running...
+[19, 20:14:04] DELETE FROM population
+ORDER BY year DESC, amount DESC
+LIMIT 10: 10 row(s) affected
+[20, 20:14:07] SELECT * FROM test.world_total
+LIMIT 0, 50000
+: Running...
+[20, 20:14:07] SELECT * FROM test.world_total
+LIMIT 0, 50000
+: Fetching...
+[20, 20:14:07] SELECT * FROM test.world_total
+LIMIT 0, 50000
+: 2143 row(s) returned
+[21, 20:14:11] SELECT * FROM test.population
+LIMIT 0, 50000
+: Running...
+[21, 20:14:11] SELECT * FROM test.population
+LIMIT 0, 50000
+: Fetching...
+[21, 20:14:11] SELECT * FROM test.population
+LIMIT 0, 50000
+: 6423 row(s) returned
+[22, 20:14:39] DELETE FROM population
+ORDER BY year DESC, amount DESC
+LIMIT 10: Running...
+[22, 20:14:39] DELETE FROM population
+ORDER BY year DESC, amount DESC
+LIMIT 10: 10 row(s) affected
+[23, 20:14:41] SELECT * FROM test.population
+LIMIT 0, 50000
+: Running...
+[23, 20:14:41] SELECT * FROM test.population
+LIMIT 0, 50000
+: Fetching...
+[23, 20:14:41] SELECT * FROM test.population
+LIMIT 0, 50000
+: 6413 row(s) returned
+[24, 20:16:13] DELETE FROM population
+WHERE year_ = 1985 AND amount = 1000000 AND iso_code = 'USA': Running...
+[24, 20:16:13] DELETE FROM population
+WHERE year_ = 1985 AND amount = 1000000 AND iso_code = 'USA': Error Code: 1054. Unknown column 'year_' in 'where clause'
+[25, 20:16:18] DELETE FROM population
+WHERE year = 1985 AND amount = 1000000 AND iso_code = 'USA': Running...
+[25, 20:16:19] DELETE FROM population
+WHERE year = 1985 AND amount = 1000000 AND iso_code = 'USA': 24 row(s) affected
+[26, 20:16:24] SELECT * FROM test.population
+LIMIT 0, 50000
+: Running...
+[26, 20:16:24] SELECT * FROM test.population
+LIMIT 0, 50000
+: Fetching...
+[26, 20:16:24] SELECT * FROM test.population
+LIMIT 0, 50000
+: 6389 row(s) returned
+[27, 20:16:49] DELETE FROM population
+WHERE year = 1989 AND amount = 400000 AND iso_code = 'TUR': Running...
+[27, 20:16:49] DELETE FROM population
+WHERE year = 1989 AND amount = 400000 AND iso_code = 'TUR': 1 row(s) affected
+[28, 20:16:55] SELECT * FROM test.population
+LIMIT 0, 50000
+: Running...
+[28, 20:16:55] SELECT * FROM test.population
+LIMIT 0, 50000
+: Fetching...
+[28, 20:16:55] SELECT * FROM test.population
+LIMIT 0, 50000
+: 6388 row(s) returned
+[29, 20:17:08] ALTER TABLE population
+ADD CONSTRAINT check_year_range
+CHECK (year >= 1990 AND year <= 2019): Running...
+[29, 20:17:08] ALTER TABLE population
+ADD CONSTRAINT check_year_range
+CHECK (year >= 1990 AND year <= 2019): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[30, 20:17:09] ALTER TABLE population
+ADD CONSTRAINT check_year_range
+CHECK (year >= 1990 AND year <= 2019): Running...
+[30, 20:17:09] ALTER TABLE population
+ADD CONSTRAINT check_year_range
+CHECK (year >= 1990 AND year <= 2019): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[31, 20:17:09] ALTER TABLE population
+ADD CONSTRAINT check_year_range
+CHECK (year >= 1990 AND year <= 2019): Running...
+[31, 20:17:09] ALTER TABLE population
+ADD CONSTRAINT check_year_range
+CHECK (year >= 1990 AND year <= 2019): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[32, 20:17:09] ALTER TABLE population
+ADD CONSTRAINT check_year_range
+CHECK (year >= 1990 AND year <= 2019): Running...
+[32, 20:17:10] ALTER TABLE population
+ADD CONSTRAINT check_year_range
+CHECK (year >= 1990 AND year <= 2019): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[33, 20:17:29] INSERT INTO population (year, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): Running...
+[33, 20:17:29] INSERT INTO population (year, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): 1 row(s) affected
+[34, 20:17:46] DELETE FROM population
+WHERE year = 1985 AND amount = 1000000 AND iso_code = 'USA': Running...
+[34, 20:17:47] DELETE FROM population
+WHERE year = 1985 AND amount = 1000000 AND iso_code = 'USA': 1 row(s) affected
+[35, 20:17:52] ALTER TABLE population
+ADD CONSTRAINT check_year_range
+CHECK (year >= 1990 AND year <= 2019): Running...
+[35, 20:17:52] ALTER TABLE population
+ADD CONSTRAINT check_year_range
+CHECK (year >= 1990 AND year <= 2019): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[36, 20:18:39] ALTER TABLE population
+ADD CONSTRAINT check_year_range
+CHECK (year>= 1990 AND year <=2019): Running...
+[36, 20:18:39] ALTER TABLE population
+ADD CONSTRAINT check_year_range
+CHECK (year>= 1990 AND year <=2019): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[37, 20:18:39] ALTER TABLE population
+ADD CONSTRAINT check_year_range
+CHECK (year>= 1990 AND year <=2019): Running...
+[37, 20:18:39] ALTER TABLE population
+ADD CONSTRAINT check_year_range
+CHECK (year>= 1990 AND year <=2019): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[38, 20:18:42] INSERT INTO population (year, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): Running...
+[38, 20:18:42] INSERT INTO population (year, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): 1 row(s) affected
+[39, 20:19:41] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK (year>= 1990 AND year <=2019): Running...
+[39, 20:19:41] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK (year>= 1990 AND year <=2019): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[40, 20:19:41] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK (year>= 1990 AND year <=2019): Running...
+[40, 20:19:41] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK (year>= 1990 AND year <=2019): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[41, 20:19:42] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK (year>= 1990 AND year <=2019): Running...
+[41, 20:19:42] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK (year>= 1990 AND year <=2019): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[42, 20:19:44] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK (year>= 1990 AND year <=2019): Running...
+[42, 20:19:44] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK (year>= 1990 AND year <=2019): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[43, 20:19:45] USE test: Running...
+[43, 20:19:45] USE test: 0 row(s) affected
+[44, 20:19:45] CREATE TABLE countries (
+  name_ VARCHAR(30),
+  iso_code VARCHAR(3),
+  PRIMARY KEY (iso_code)
+): Running...
+[44, 20:19:45] CREATE TABLE countries (
+  name_ VARCHAR(30),
+  iso_code VARCHAR(3),
+  PRIMARY KEY (iso_code)
+): Error Code: 1050. Table 'countries' already exists
+[45, 20:19:48] DELETE FROM population
+WHERE year = 1985 AND amount = 1000000 AND iso_code = 'USA': Running...
+[45, 20:19:48] DELETE FROM population
+WHERE year = 1985 AND amount = 1000000 AND iso_code = 'USA': 1 row(s) affected
+[46, 20:19:51] DELETE FROM population
+WHERE year = 1985 AND amount = 1000000 AND iso_code = 'USA': Running...
+[46, 20:19:51] DELETE FROM population
+WHERE year = 1985 AND amount = 1000000 AND iso_code = 'USA': 0 row(s) affected
+[47, 20:19:52] DELETE FROM population
+WHERE year = 1985 AND amount = 1000000 AND iso_code = 'USA': Running...
+[47, 20:19:52] DELETE FROM population
+WHERE year = 1985 AND amount = 1000000 AND iso_code = 'USA': 0 row(s) affected
+[48, 20:19:52] DELETE FROM population
+WHERE year = 1985 AND amount = 1000000 AND iso_code = 'USA': Running...
+[48, 20:19:52] DELETE FROM population
+WHERE year = 1985 AND amount = 1000000 AND iso_code = 'USA': 0 row(s) affected
+[49, 20:19:54] DELETE FROM population
+WHERE year = 1985 AND amount = 1000000 AND iso_code = 'USA': Running...
+[49, 20:19:54] DELETE FROM population
+WHERE year = 1985 AND amount = 1000000 AND iso_code = 'USA': 0 row(s) affected
+[50, 20:20:05] INSERT INTO population (year, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): Running...
+[50, 20:20:05] INSERT INTO population (year, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): 1 row(s) affected
+[51, 20:20:08] DELETE FROM population
+WHERE year = 1985 AND amount = 1000000 AND iso_code = 'USA': Running...
+[51, 20:20:08] DELETE FROM population
+WHERE year = 1985 AND amount = 1000000 AND iso_code = 'USA': 1 row(s) affected
+[52, 20:20:10] DELETE FROM population
+WHERE year = 1985 AND amount = 1000000 AND iso_code = 'USA': Running...
+[52, 20:20:10] DELETE FROM population
+WHERE year = 1985 AND amount = 1000000 AND iso_code = 'USA': 0 row(s) affected
+[53, 20:21:39] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK (year>= 1990 AND year <=2019): Running...
+[53, 20:21:39] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK (year>= 1990 AND year <=2019): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[54, 20:21:48] INSERT INTO population (year, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): Running...
+[54, 20:21:48] INSERT INTO population (year, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): 1 row(s) affected
+[55, 20:21:53] DELETE FROM population
+WHERE year = 1985 AND amount = 1000000 AND iso_code = 'USA': Running...
+[55, 20:21:53] DELETE FROM population
+WHERE year = 1985 AND amount = 1000000 AND iso_code = 'USA': 1 row(s) affected
+[56, 20:23:10] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK (year_>= 1990 AND year_ <=2019): Running...
+[56, 20:23:10] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK (year_>= 1990 AND year_ <=2019): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[57, 20:23:11] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK (year_>= 1990 AND year_ <=2019): Running...
+[57, 20:23:11] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK (year_>= 1990 AND year_ <=2019): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[58, 20:23:12] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK (year_>= 1990 AND year_ <=2019): Running...
+[58, 20:23:12] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK (year_>= 1990 AND year_ <=2019): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[59, 20:23:12] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK (year_>= 1990 AND year_ <=2019): Running...
+[59, 20:23:12] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK (year_>= 1990 AND year_ <=2019): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[60, 20:23:12] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK (year_>= 1990 AND year_ <=2019): Running...
+[60, 20:23:12] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK (year_>= 1990 AND year_ <=2019): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[61, 20:23:12] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK (year_>= 1990 AND year_ <=2019): Running...
+[61, 20:23:12] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK (year_>= 1990 AND year_ <=2019): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[62, 20:23:18] INSERT INTO population (year_, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): Running...
+[62, 20:23:18] INSERT INTO population (year_, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): Error Code: 1054. Unknown column 'year_' in 'field list'
+[63, 20:23:24] INSERT INTO population (year, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): Running...
+[63, 20:23:24] INSERT INTO population (year, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): 1 row(s) affected
+[64, 20:23:31] DELETE FROM population
+WHERE year = 1985 AND amount = 1000000 AND iso_code = 'USA': Running...
+[64, 20:23:31] DELETE FROM population
+WHERE year = 1985 AND amount = 1000000 AND iso_code = 'USA': 1 row(s) affected
+[65, 20:23:49] USE test: Running...
+[65, 20:23:49] USE test: 0 row(s) affected
+[66, 20:23:49] CREATE TABLE countries (
+  name_ VARCHAR(30),
+  iso_code VARCHAR(3),
+  PRIMARY KEY (iso_code)
+): Running...
+[66, 20:23:49] CREATE TABLE countries (
+  name_ VARCHAR(30),
+  iso_code VARCHAR(3),
+  PRIMARY KEY (iso_code)
+): Error Code: 1050. Table 'countries' already exists
+[67, 20:23:54] CREATE TABLE energy (
+  year INT,
+  clean_energy INT,
+  dirty_energy INT,  
+  iso_code VARCHAR(3),  
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code)
+): Running...
+[67, 20:23:54] CREATE TABLE energy (
+  year INT,
+  clean_energy INT,
+  dirty_energy INT,  
+  iso_code VARCHAR(3),  
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code)
+): Error Code: 1050. Table 'energy' already exists
+[68, 20:24:06] SELECT * FROM test.energy
+LIMIT 0, 50000
+: Running...
+[68, 20:24:06] SELECT * FROM test.energy
+LIMIT 0, 50000
+: Fetching...
+[68, 20:24:06] SELECT * FROM test.energy
+LIMIT 0, 50000
+: 2143 row(s) returned
+[69, 20:24:11] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK (year>= 1990 AND year <=2019): Running...
+[69, 20:24:11] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK (year>= 1990 AND year <=2019): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[70, 20:24:12] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK (year>= 1990 AND year <=2019): Running...
+[70, 20:24:12] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK (year>= 1990 AND year <=2019): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[71, 20:24:13] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK (year>= 1990 AND year <=2019): Running...
+[71, 20:24:13] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK (year>= 1990 AND year <=2019): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[72, 20:24:14] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK (year>= 1990 AND year <=2019): Running...
+[72, 20:24:14] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK (year>= 1990 AND year <=2019): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[73, 20:24:16] INSERT INTO population (year, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): Running...
+[73, 20:24:16] INSERT INTO population (year, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): 1 row(s) affected
+[74, 20:24:43] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK (yearA>= 1990 AND yearA <=2019): Running...
+[74, 20:24:43] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK (yearA>= 1990 AND yearA <=2019): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[75, 20:24:44] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK (yearA>= 1990 AND yearA <=2019): Running...
+[75, 20:24:44] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK (yearA>= 1990 AND yearA <=2019): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[76, 20:24:45] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK (yearA>= 1990 AND yearA <=2019): Running...
+[76, 20:24:45] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK (yearA>= 1990 AND yearA <=2019): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[77, 20:24:46] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK (yearA>= 1990 AND yearA <=2019): Running...
+[77, 20:24:46] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK (yearA>= 1990 AND yearA <=2019): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[78, 20:24:46] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK (yearA>= 1990 AND yearA <=2019): Running...
+[78, 20:24:46] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK (yearA>= 1990 AND yearA <=2019): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[79, 20:24:47] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK (yearA>= 1990 AND yearA <=2019): Running...
+[79, 20:24:47] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK (yearA>= 1990 AND yearA <=2019): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[80, 20:24:48] INSERT INTO population (yearA, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): Running...
+[80, 20:24:48] INSERT INTO population (yearA, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): Error Code: 1054. Unknown column 'yearA' in 'field list'
+[81, 20:25:15] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK (year_A>= 1990 AND year_A <=2019): Running...
+[81, 20:25:15] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK (year_A>= 1990 AND year_A <=2019): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[82, 20:25:18] INSERT INTO population (year_A, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): Running...
+[82, 20:25:18] INSERT INTO population (year_A, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): Error Code: 1054. Unknown column 'year_A' in 'field list'
+[83, 20:25:23] CREATE TABLE population (
+  year_A INT,
+  amount INT,
+  iso_code VARCHAR(3),
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code)  
+): Running...
+[83, 20:25:23] CREATE TABLE population (
+  year_A INT,
+  amount INT,
+  iso_code VARCHAR(3),
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code)  
+): Error Code: 1050. Table 'population' already exists
+[84, 20:25:25] CREATE TABLE population (
+  year_A INT,
+  amount INT,
+  iso_code VARCHAR(3),
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code)  
+): Running...
+[84, 20:25:25] CREATE TABLE population (
+  year_A INT,
+  amount INT,
+  iso_code VARCHAR(3),
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code)  
+): Error Code: 1050. Table 'population' already exists
+[85, 20:25:26] CREATE TABLE population (
+  year_A INT,
+  amount INT,
+  iso_code VARCHAR(3),
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code)  
+): Running...
+[85, 20:25:26] CREATE TABLE population (
+  year_A INT,
+  amount INT,
+  iso_code VARCHAR(3),
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code)  
+): Error Code: 1050. Table 'population' already exists
+[86, 20:25:26] CREATE TABLE population (
+  year_A INT,
+  amount INT,
+  iso_code VARCHAR(3),
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code)  
+): Running...
+[86, 20:25:26] CREATE TABLE population (
+  year_A INT,
+  amount INT,
+  iso_code VARCHAR(3),
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code)  
+): Error Code: 1050. Table 'population' already exists
+[87, 20:25:26] CREATE TABLE population (
+  year_A INT,
+  amount INT,
+  iso_code VARCHAR(3),
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code)  
+): Running...
+[87, 20:25:26] CREATE TABLE population (
+  year_A INT,
+  amount INT,
+  iso_code VARCHAR(3),
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code)  
+): Error Code: 1050. Table 'population' already exists
+[88, 20:25:27] CREATE TABLE population (
+  year_A INT,
+  amount INT,
+  iso_code VARCHAR(3),
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code)  
+): Running...
+[88, 20:25:27] CREATE TABLE population (
+  year_A INT,
+  amount INT,
+  iso_code VARCHAR(3),
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code)  
+): Error Code: 1050. Table 'population' already exists
+[89, 20:25:30] SELECT * FROM test.population
+LIMIT 0, 50000
+: Running...
+[89, 20:25:30] SELECT * FROM test.population
+LIMIT 0, 50000
+: Fetching...
+[89, 20:25:30] SELECT * FROM test.population
+LIMIT 0, 50000
+: 6389 row(s) returned
+[90, 20:25:40] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK (year_A>= 1990 AND year_A <=2019): Running...
+[90, 20:25:40] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK (year_A>= 1990 AND year_A <=2019): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[91, 20:25:43] INSERT INTO population (year_A, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): Running...
+[91, 20:25:43] INSERT INTO population (year_A, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): Error Code: 1054. Unknown column 'year_A' in 'field list'
+[1, 20:26:06] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK (year_A>= 1990 AND year_A <=2019): Running...
+[1, 20:26:06] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK (year_A>= 1990 AND year_A <=2019): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[2, 20:26:08] INSERT INTO population (year_A, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): Running...
+[2, 20:26:08] INSERT INTO population (year_A, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): Error Code: 1054. Unknown column 'year_A' in 'field list'
+[3, 20:26:27] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK (year>= 1990 AND year <=2019): Running...
+[3, 20:26:27] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK (year>= 1990 AND year <=2019): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[4, 20:26:28] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK (year>= 1990 AND year <=2019): Running...
+[4, 20:26:28] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK (year>= 1990 AND year <=2019): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[5, 20:26:29] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK (year>= 1990 AND year <=2019): Running...
+[5, 20:26:29] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK (year>= 1990 AND year <=2019): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[6, 20:26:49] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK (amount>= 1990 AND amount <=2019): Running...
+[6, 20:26:49] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK (amount>= 1990 AND amount <=2019): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[7, 20:26:52] INSERT INTO population (year, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): Running...
+[7, 20:26:52] INSERT INTO population (year, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): 1 row(s) affected
+[8, 20:26:59] DELETE FROM population
+WHERE year = 1985 AND amount = 1000000 AND iso_code = 'USA': Running...
+[8, 20:26:59] DELETE FROM population
+WHERE year = 1985 AND amount = 1000000 AND iso_code = 'USA': 2 row(s) affected
+[9, 20:27:01] DELETE FROM population
+WHERE year = 1985 AND amount = 1000000 AND iso_code = 'USA': Running...
+[9, 20:27:01] DELETE FROM population
+WHERE year = 1985 AND amount = 1000000 AND iso_code = 'USA': 0 row(s) affected
+[10, 20:27:07] SELECT * FROM test.population
+LIMIT 0, 50000
+: Running...
+[10, 20:27:07] SELECT * FROM test.population
+LIMIT 0, 50000
+: Fetching...
+[10, 20:27:07] SELECT * FROM test.population
+LIMIT 0, 50000
+: 6388 row(s) returned
+[11, 20:29:16] ALTER TABLE population
+DROP INDEX check_year_range: Running...
+[11, 20:29:16] ALTER TABLE population
+DROP INDEX check_year_range: Error Code: 1091. Can't DROP 'check_year_range'; check that column/key exists
+[12, 20:29:22] ALTER TABLE population
+DROP INDEX check_year_range: Running...
+[12, 20:29:22] ALTER TABLE population
+DROP INDEX check_year_range: Error Code: 1091. Can't DROP 'check_year_range'; check that column/key exists
+[13, 20:29:51] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK (year BETWEEN 1990 AND 2020): Running...
+[13, 20:29:51] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK (year BETWEEN 1990 AND 2020): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[14, 20:29:53] INSERT INTO population (year, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): Running...
+[14, 20:29:54] INSERT INTO population (year, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): 1 row(s) affected
+[15, 20:29:56] DELETE FROM population
+WHERE year = 1985 AND amount = 1000000 AND iso_code = 'USA': Running...
+[15, 20:29:56] DELETE FROM population
+WHERE year = 1985 AND amount = 1000000 AND iso_code = 'USA': 1 row(s) affected
+[16, 20:29:58] DELETE FROM population
+WHERE year = 1985 AND amount = 1000000 AND iso_code = 'USA': Running...
+[16, 20:29:58] DELETE FROM population
+WHERE year = 1985 AND amount = 1000000 AND iso_code = 'USA': 0 row(s) affected
+[17, 20:33:59] ALTER TABLE population DROP check_year_range: Running...
+[17, 20:33:59] ALTER TABLE population DROP check_year_range: Error Code: 1091. Can't DROP 'check_year_range'; check that column/key exists
+[18, 20:34:07] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK (year BETWEEN 1990 AND 2020): Running...
+[18, 20:34:07] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK (year BETWEEN 1990 AND 2020): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[19, 20:34:55] SELECT *
+FROM population
+WHERE year_ < 1990 OR year_ > 2019
+LIMIT 0, 50000
+: Running...
+[19, 20:34:55] SELECT *
+FROM population
+WHERE year_ < 1990 OR year_ > 2019
+LIMIT 0, 50000
+: Error Code: 1054. Unknown column 'year_' in 'where clause'
+[20, 20:35:01] SELECT *
+FROM population
+WHERE year < 1990 OR year > 2019
+LIMIT 0, 50000
+: Running...
+[20, 20:35:01] SELECT *
+FROM population
+WHERE year < 1990 OR year > 2019
+LIMIT 0, 50000
+: Fetching...
+[20, 20:35:01] SELECT *
+FROM population
+WHERE year < 1990 OR year > 2019
+LIMIT 0, 50000
+: 0 row(s) returned
+[21, 20:35:42] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK (year BETWEEN 1990 AND 2020): Running...
+[21, 20:35:42] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK (year BETWEEN 1990 AND 2020): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[22, 20:35:43] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK (year BETWEEN 1990 AND 2020): Running...
+[22, 20:35:43] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK (year BETWEEN 1990 AND 2020): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[23, 20:35:43] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK (year BETWEEN 1990 AND 2020): Running...
+[23, 20:35:43] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK (year BETWEEN 1990 AND 2020): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[24, 20:35:44] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK (year BETWEEN 1990 AND 2020): Running...
+[24, 20:35:44] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK (year BETWEEN 1990 AND 2020): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[25, 20:35:47] ALTER TABLE population DROP check_year_range: Running...
+[25, 20:35:47] ALTER TABLE population DROP check_year_range: Error Code: 1091. Can't DROP 'check_year_range'; check that column/key exists
+[26, 20:35:56] SELECT * FROM test.population
+LIMIT 0, 50000
+: Running...
+[26, 20:35:56] SELECT * FROM test.population
+LIMIT 0, 50000
+: Fetching...
+[26, 20:35:56] SELECT * FROM test.population
+LIMIT 0, 50000
+: 6388 row(s) returned
+[27, 20:36:47] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(year>= 1990 and year<=2020): Running...
+[27, 20:36:47] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(year>= 1990 and year<=2020): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[28, 20:36:47] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(year>= 1990 and year<=2020): Running...
+[28, 20:36:47] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(year>= 1990 and year<=2020): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[29, 20:36:47] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(year>= 1990 and year<=2020): Running...
+[29, 20:36:47] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(year>= 1990 and year<=2020): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[30, 20:36:47] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(year>= 1990 and year<=2020): Running...
+[30, 20:36:47] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(year>= 1990 and year<=2020): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[31, 20:36:48] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(year>= 1990 and year<=2020): Running...
+[31, 20:36:48] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(year>= 1990 and year<=2020): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[32, 20:36:48] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(year>= 1990 and year<=2020): Running...
+[32, 20:36:48] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(year>= 1990 and year<=2020): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[33, 20:36:48] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(year>= 1990 and year<=2020): Running...
+[33, 20:36:48] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(year>= 1990 and year<=2020): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[34, 20:36:48] USE test: Running...
+[34, 20:36:48] USE test: 0 row(s) affected
+[35, 20:36:48] CREATE TABLE countries (
+  name_ VARCHAR(30),
+  iso_code VARCHAR(3),
+  PRIMARY KEY (iso_code)
+): Running...
+[35, 20:36:48] CREATE TABLE countries (
+  name_ VARCHAR(30),
+  iso_code VARCHAR(3),
+  PRIMARY KEY (iso_code)
+): Error Code: 1050. Table 'countries' already exists
+[36, 20:36:49] USE test: Running...
+[36, 20:36:49] USE test: 0 row(s) affected
+[37, 20:36:49] CREATE TABLE countries (
+  name_ VARCHAR(30),
+  iso_code VARCHAR(3),
+  PRIMARY KEY (iso_code)
+): Running...
+[37, 20:36:49] CREATE TABLE countries (
+  name_ VARCHAR(30),
+  iso_code VARCHAR(3),
+  PRIMARY KEY (iso_code)
+): Error Code: 1050. Table 'countries' already exists
+[38, 20:36:50] USE test: Running...
+[38, 20:36:50] USE test: 0 row(s) affected
+[39, 20:36:50] CREATE TABLE countries (
+  name_ VARCHAR(30),
+  iso_code VARCHAR(3),
+  PRIMARY KEY (iso_code)
+): Running...
+[39, 20:36:50] CREATE TABLE countries (
+  name_ VARCHAR(30),
+  iso_code VARCHAR(3),
+  PRIMARY KEY (iso_code)
+): Error Code: 1050. Table 'countries' already exists
+[40, 20:36:50] USE test: Running...
+[40, 20:36:50] USE test: 0 row(s) affected
+[41, 20:36:50] CREATE TABLE countries (
+  name_ VARCHAR(30),
+  iso_code VARCHAR(3),
+  PRIMARY KEY (iso_code)
+): Running...
+[41, 20:36:50] CREATE TABLE countries (
+  name_ VARCHAR(30),
+  iso_code VARCHAR(3),
+  PRIMARY KEY (iso_code)
+): Error Code: 1050. Table 'countries' already exists
+[42, 20:36:50] USE test: Running...
+[42, 20:36:50] USE test: 0 row(s) affected
+[43, 20:36:50] CREATE TABLE countries (
+  name_ VARCHAR(30),
+  iso_code VARCHAR(3),
+  PRIMARY KEY (iso_code)
+): Running...
+[43, 20:36:50] CREATE TABLE countries (
+  name_ VARCHAR(30),
+  iso_code VARCHAR(3),
+  PRIMARY KEY (iso_code)
+): Error Code: 1050. Table 'countries' already exists
+[44, 20:36:50] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(year>= 1990 and year<=2020): Running...
+[44, 20:36:50] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(year>= 1990 and year<=2020): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[45, 20:36:51] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(year>= 1990 and year<=2020): Running...
+[45, 20:36:51] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(year>= 1990 and year<=2020): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[46, 20:36:51] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(year>= 1990 and year<=2020): Running...
+[46, 20:36:51] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(year>= 1990 and year<=2020): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[47, 20:36:51] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(year>= 1990 and year<=2020): Running...
+[47, 20:36:51] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(year>= 1990 and year<=2020): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[48, 20:36:51] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(year>= 1990 and year<=2020): Running...
+[48, 20:36:51] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(year>= 1990 and year<=2020): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[49, 20:36:51] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(year>= 1990 and year<=2020): Running...
+[49, 20:36:51] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(year>= 1990 and year<=2020): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[50, 20:36:51] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(year>= 1990 and year<=2020): Running...
+[50, 20:36:51] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(year>= 1990 and year<=2020): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[51, 20:36:51] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(year>= 1990 and year<=2020): Running...
+[51, 20:36:51] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(year>= 1990 and year<=2020): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[52, 20:36:54] ALTER TABLE population DROP check_year_range: Running...
+[52, 20:36:54] ALTER TABLE population DROP check_year_range: Error Code: 1091. Can't DROP 'check_year_range'; check that column/key exists
+[53, 20:37:21] EXPLAIN ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(year>= 1990 and year<=2020): Executing 
+[53, 20:37:21] EXPLAIN ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(year>= 1990 and year<=2020): Error Code: 1064
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(year>= 1990 and yea' at line 1
+[54, 20:37:27] EXPLAIN DELETE FROM population
+WHERE year = 1985 AND amount = 1000000 AND iso_code = 'USA': Executing 
+[54, 20:37:27] EXPLAIN DELETE FROM population
+WHERE year = 1985 AND amount = 1000000 AND iso_code = 'USA': OK
+[55, 20:37:27] EXPLAIN FORMAT=JSON DELETE FROM population
+WHERE year = 1985 AND amount = 1000000 AND iso_code = 'USA': Executing 
+[55, 20:37:27] EXPLAIN FORMAT=JSON DELETE FROM population
+WHERE year = 1985 AND amount = 1000000 AND iso_code = 'USA': OK
+[56, 20:39:07] CREATE TABLE population (
+  year_ INT,
+  amount INT,
+  iso_code VARCHAR(3),
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code)  
+): Running...
+[56, 20:39:07] CREATE TABLE population (
+  year_ INT,
+  amount INT,
+  iso_code VARCHAR(3),
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code)  
+): Error Code: 1050. Table 'population' already exists
+[57, 20:39:09] CREATE TABLE population (
+  year_ INT,
+  amount INT,
+  iso_code VARCHAR(3),
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code)  
+): Running...
+[57, 20:39:09] CREATE TABLE population (
+  year_ INT,
+  amount INT,
+  iso_code VARCHAR(3),
+  FOREIGN KEY (iso_code) REFERENCES countries(iso_code)  
+): Error Code: 1050. Table 'population' already exists
+[58, 20:39:12] EXPLAIN CREATE TABLE countries (
+  name_ VARCHAR(30),
+  iso_code VARCHAR(3),
+  PRIMARY KEY (iso_code)
+): Executing 
+[58, 20:39:12] EXPLAIN CREATE TABLE countries (
+  name_ VARCHAR(30),
+  iso_code VARCHAR(3),
+  PRIMARY KEY (iso_code)
+): Error Code: 1064
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'CREATE TABLE countries (
+  name_ VARCHAR(30),
+  iso_code VARCHAR(3),
+  PRIMARY K' at line 1
+[59, 20:39:44] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount>= 1990 and amount<=2020): Running...
+[59, 20:39:44] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount>= 1990 and amount<=2020): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[60, 20:39:46] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount>= 1990 and amount<=2020): Running...
+[60, 20:39:46] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount>= 1990 and amount<=2020): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[61, 20:39:46] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount>= 1990 and amount<=2020): Running...
+[61, 20:39:46] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount>= 1990 and amount<=2020): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[62, 20:39:46] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount>= 1990 and amount<=2020): Running...
+[62, 20:39:46] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount>= 1990 and amount<=2020): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[63, 20:39:46] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount>= 1990 and amount<=2020): Running...
+[63, 20:39:46] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount>= 1990 and amount<=2020): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[64, 20:39:46] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount>= 1990 and amount<=2020): Running...
+[64, 20:39:46] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount>= 1990 and amount<=2020): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[65, 20:39:47] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount>= 1990 and amount<=2020): Running...
+[65, 20:39:47] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount>= 1990 and amount<=2020): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[66, 20:39:47] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount>= 1990 and amount<=2020): Running...
+[66, 20:39:47] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount>= 1990 and amount<=2020): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[67, 20:39:47] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount>= 1990 and amount<=2020): Running...
+[67, 20:39:47] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount>= 1990 and amount<=2020): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[68, 20:39:47] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount>= 1990 and amount<=2020): Running...
+[68, 20:39:47] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount>= 1990 and amount<=2020): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[69, 20:40:32] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount>= 1990 and amount<=2020): Running...
+[69, 20:40:32] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount>= 1990 and amount<=2020): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[70, 20:40:32] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount>= 1990 and amount<=2020): Running...
+[70, 20:40:32] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount>= 1990 and amount<=2020): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[71, 20:40:33] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount>= 1990 and amount<=2020): Running...
+[71, 20:40:33] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount>= 1990 and amount<=2020): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[72, 20:40:33] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount>= 1990 and amount<=2020): Running...
+[72, 20:40:33] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount>= 1990 and amount<=2020): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[73, 20:40:33] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount>= 1990 and amount<=2020): Running...
+[73, 20:40:33] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount>= 1990 and amount<=2020): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[74, 20:40:33] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount>= 1990 and amount<=2020): Running...
+[74, 20:40:33] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount>= 1990 and amount<=2020): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[75, 20:40:33] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount>= 1990 and amount<=2020): Running...
+[75, 20:40:33] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount>= 1990 and amount<=2020): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[76, 20:40:34] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount>= 1990 and amount<=2020): Running...
+[76, 20:40:34] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount>= 1990 and amount<=2020): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[77, 20:40:34] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount>= 1990 and amount<=2020): Running...
+[77, 20:40:34] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount>= 1990 and amount<=2020): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[78, 20:40:34] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount>= 1990 and amount<=2020): Running...
+[78, 20:40:34] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount>= 1990 and amount<=2020): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[79, 20:40:34] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount>= 1990 and amount<=2020): Running...
+[79, 20:40:34] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount>= 1990 and amount<=2020): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[80, 20:40:34] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount>= 1990 and amount<=2020): Running...
+[80, 20:40:34] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount>= 1990 and amount<=2020): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[81, 20:40:34] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount>= 1990 and amount<=2020): Running...
+[81, 20:40:34] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount>= 1990 and amount<=2020): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[82, 20:40:34] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount>= 1990 and amount<=2020): Running...
+[82, 20:40:34] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount>= 1990 and amount<=2020): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[83, 20:40:35] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount>= 1990 and amount<=2020): Running...
+[83, 20:40:35] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount>= 1990 and amount<=2020): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[84, 20:40:35] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount>= 1990 and amount<=2020): Running...
+[84, 20:40:35] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount>= 1990 and amount<=2020): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[85, 20:40:35] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount>= 1990 and amount<=2020): Running...
+[85, 20:40:35] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount>= 1990 and amount<=2020): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[86, 20:40:35] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount>= 1990 and amount<=2020): Running...
+[86, 20:40:35] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount>= 1990 and amount<=2020): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[87, 20:40:35] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount>= 1990 and amount<=2020): Running...
+[87, 20:40:35] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount>= 1990 and amount<=2020): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[88, 20:40:35] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount>= 1990 and amount<=2020): Running...
+[88, 20:40:35] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount>= 1990 and amount<=2020): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[89, 20:40:36] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount>= 1990 and amount<=2020): Running...
+[89, 20:40:36] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount>= 1990 and amount<=2020): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[90, 20:40:36] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount>= 1990 and amount<=2020): Running...
+[90, 20:40:36] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount>= 1990 and amount<=2020): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[91, 20:40:37] ALTER TABLE population DROP check_year_range: Running...
+[91, 20:40:37] ALTER TABLE population DROP check_year_range: Error Code: 1091. Can't DROP 'check_year_range'; check that column/key exists
+[92, 20:41:45] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount >= 1990 and amount <= 2020): Running...
+[92, 20:41:45] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount >= 1990 and amount <= 2020): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[93, 20:41:46] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount >= 1990 and amount <= 2020): Running...
+[93, 20:41:46] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount >= 1990 and amount <= 2020): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[94, 20:41:46] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount >= 1990 and amount <= 2020): Running...
+[94, 20:41:46] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount >= 1990 and amount <= 2020): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[95, 20:41:46] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount >= 1990 and amount <= 2020): Running...
+[95, 20:41:46] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount >= 1990 and amount <= 2020): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[96, 20:41:46] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount >= 1990 and amount <= 2020): Running...
+[96, 20:41:46] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount >= 1990 and amount <= 2020): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[97, 20:41:46] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount >= 1990 and amount <= 2020): Running...
+[97, 20:41:46] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount >= 1990 and amount <= 2020): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[98, 20:41:46] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount >= 1990 and amount <= 2020): Running...
+[98, 20:41:47] ALTER TABLE population
+ADD CONSTRAINT check_year_range CHECK(amount >= 1990 and amount <= 2020): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[99, 20:41:48] ALTER TABLE population DROP check_year_range: Running...
+[99, 20:41:48] ALTER TABLE population DROP check_year_range: Error Code: 1091. Can't DROP 'check_year_range'; check that column/key exists
+[100, 20:41:51] INSERT INTO population (year, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): Running...
+[100, 20:41:51] INSERT INTO population (year, amount, iso_code)
+VALUES (1985, 1000000, 'USA'): 1 row(s) affected
+[1, 13:07:47] SELECT * FROM test.top_clean_energy
+LIMIT 0, 50000
+: Running...
+[1, 13:07:47] SELECT * FROM test.top_clean_energy
+LIMIT 0, 50000
+: Fetching...
+[1, 13:07:47] SELECT * FROM test.top_clean_energy
+LIMIT 0, 50000
+: 10 row(s) returned
+[2, 13:09:02] ALTER TABLE energy ADD CONSTRAINT energy_year_range CHECK (year_ >= 1990 AND year_ <= 2019): Running...
+[2, 13:09:02] ALTER TABLE energy ADD CONSTRAINT energy_year_range CHECK (year_ >= 1990 AND year_ <= 2019): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[3, 13:09:03] ALTER TABLE energy ADD CONSTRAINT energy_year_range CHECK (year_ >= 1990 AND year_ <= 2019): Running...
+[3, 13:09:03] ALTER TABLE energy ADD CONSTRAINT energy_year_range CHECK (year_ >= 1990 AND year_ <= 2019): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[4, 13:09:06] INSERT INTO energy (year_, clean_energy, dirty_energy, iso_code) VALUES (2022, 50, 50, 'USA'): Running...
+[4, 13:09:06] INSERT INTO energy (year_, clean_energy, dirty_energy, iso_code) VALUES (2022, 50, 50, 'USA'): Error Code: 1054. Unknown column 'year_' in 'field list'
+[5, 13:09:24] INSERT INTO energy (year_, clean_energy, dirty_energy, iso_code) VALUES (2022, 50, 50, 'USA'): Running...
+[5, 13:09:24] INSERT INTO energy (year_, clean_energy, dirty_energy, iso_code) VALUES (2022, 50, 50, 'USA'): Error Code: 1054. Unknown column 'year_' in 'field list'
+[6, 13:09:28] INSERT INTO energy (year, clean_energy, dirty_energy, iso_code) VALUES (2022, 50, 50, 'USA'): Running...
+[6, 13:09:28] INSERT INTO energy (year, clean_energy, dirty_energy, iso_code) VALUES (2022, 50, 50, 'USA'): 1 row(s) affected
+[7, 13:09:32] SELECT * FROM test.energy
+LIMIT 0, 50000
+: Running...
+[7, 13:09:32] SELECT * FROM test.energy
+LIMIT 0, 50000
+: Fetching...
+[7, 13:09:32] SELECT * FROM test.energy
+LIMIT 0, 50000
+: 2144 row(s) returned
+[8, 13:09:48] ALTER TABLE energy ADD CONSTRAINT energy_year_range CHECK (year >= 1990 AND year <= 2019): Running...
+[8, 13:09:48] ALTER TABLE energy ADD CONSTRAINT energy_year_range CHECK (year >= 1990 AND year <= 2019): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[9, 13:09:49] ALTER TABLE energy ADD CONSTRAINT energy_year_range CHECK (year >= 1990 AND year <= 2019): Running...
+[9, 13:09:49] ALTER TABLE energy ADD CONSTRAINT energy_year_range CHECK (year >= 1990 AND year <= 2019): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[10, 13:09:49] ALTER TABLE energy ADD CONSTRAINT energy_year_range CHECK (year >= 1990 AND year <= 2019): Running...
+[10, 13:09:49] ALTER TABLE energy ADD CONSTRAINT energy_year_range CHECK (year >= 1990 AND year <= 2019): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[11, 13:09:49] ALTER TABLE energy ADD CONSTRAINT energy_year_range CHECK (year >= 1990 AND year <= 2019): Running...
+[11, 13:09:49] ALTER TABLE energy ADD CONSTRAINT energy_year_range CHECK (year >= 1990 AND year <= 2019): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[12, 13:09:49] ALTER TABLE energy ADD CONSTRAINT energy_year_range CHECK (year >= 1990 AND year <= 2019): Running...
+[12, 13:09:49] ALTER TABLE energy ADD CONSTRAINT energy_year_range CHECK (year >= 1990 AND year <= 2019): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[13, 13:09:50] ALTER TABLE energy ADD CONSTRAINT energy_year_range CHECK (year >= 1990 AND year <= 2019): Running...
+[13, 13:09:50] ALTER TABLE energy ADD CONSTRAINT energy_year_range CHECK (year >= 1990 AND year <= 2019): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[14, 13:09:50] ALTER TABLE energy ADD CONSTRAINT energy_year_range CHECK (year >= 1990 AND year <= 2019): Running...
+[14, 13:09:50] ALTER TABLE energy ADD CONSTRAINT energy_year_range CHECK (year >= 1990 AND year <= 2019): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[15, 13:09:50] ALTER TABLE energy ADD CONSTRAINT energy_year_range CHECK (year >= 1990 AND year <= 2019): Running...
+[15, 13:09:50] ALTER TABLE energy ADD CONSTRAINT energy_year_range CHECK (year >= 1990 AND year <= 2019): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[16, 13:09:50] ALTER TABLE energy ADD CONSTRAINT energy_year_range CHECK (year >= 1990 AND year <= 2019): Running...
+[16, 13:09:50] ALTER TABLE energy ADD CONSTRAINT energy_year_range CHECK (year >= 1990 AND year <= 2019): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[17, 13:09:50] ALTER TABLE energy ADD CONSTRAINT energy_year_range CHECK (year >= 1990 AND year <= 2019): Running...
+[17, 13:09:50] ALTER TABLE energy ADD CONSTRAINT energy_year_range CHECK (year >= 1990 AND year <= 2019): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[18, 13:09:53] SELECT
+  COUNT(*) AS num_countries
+FROM
+  top_clean_energy
+WHERE
+  highest_clean_energy > (
+    SELECT
+      AVG(highest_clean_energy)
+    FROM
+      top_clean_energy
+    )
+LIMIT 0, 50000
+: Running...
+[18, 13:09:53] SELECT
+  COUNT(*) AS num_countries
+FROM
+  top_clean_energy
+WHERE
+  highest_clean_energy > (
+    SELECT
+      AVG(highest_clean_energy)
+    FROM
+      top_clean_energy
+    )
+LIMIT 0, 50000
+: Fetching...
+[18, 13:09:53] SELECT
+  COUNT(*) AS num_countries
+FROM
+  top_clean_energy
+WHERE
+  highest_clean_energy > (
+    SELECT
+      AVG(highest_clean_energy)
+    FROM
+      top_clean_energy
+    )
+LIMIT 0, 50000
+: 1 row(s) returned
+[19, 13:10:00] INSERT INTO energy (year, clean_energy, dirty_energy, iso_code) VALUES (2022, 50, 50, 'USA'): Running...
+[19, 13:10:00] INSERT INTO energy (year, clean_energy, dirty_energy, iso_code) VALUES (2022, 50, 50, 'USA'): 1 row(s) affected
+[20, 13:10:01] INSERT INTO energy (year, clean_energy, dirty_energy, iso_code) VALUES (2022, 50, 50, 'USA'): Running...
+[20, 13:10:01] INSERT INTO energy (year, clean_energy, dirty_energy, iso_code) VALUES (2022, 50, 50, 'USA'): 1 row(s) affected
+[21, 13:10:11] SELECT * FROM test.energy
+LIMIT 0, 50000
+: Running...
+[21, 13:10:11] SELECT * FROM test.energy
+LIMIT 0, 50000
+: Fetching...
+[21, 13:10:11] SELECT * FROM test.energy
+LIMIT 0, 50000
+: 2146 row(s) returned
+[22, 13:11:01] DELETE FROM tablename ORDER BY primarykey DESC LIMIT 1: Running...
+[22, 13:11:01] DELETE FROM tablename ORDER BY primarykey DESC LIMIT 1: Error Code: 1146. Table 'test.tablename' doesn't exist
+[23, 13:16:04] SELECT * FROM test.energy
+LIMIT 0, 50000
+: Running...
+[23, 13:16:04] SELECT * FROM test.energy
+LIMIT 0, 50000
+: Fetching...
+[23, 13:16:04] SELECT * FROM test.energy
+LIMIT 0, 50000
+: 2146 row(s) returned
+[24, 13:17:05] DELETE FROM energy WHERE (2022, 50, 50, 'USA'): Running...
+[24, 13:17:05] DELETE FROM energy WHERE (2022, 50, 50, 'USA'): Error Code: 1241. Operand should contain 1 column(s)
+[25, 13:17:08] DELETE FROM energy WHERE (2022, 50, 50, 'USA'): Running...
+[25, 13:17:08] DELETE FROM energy WHERE (2022, 50, 50, 'USA'): Error Code: 1241. Operand should contain 1 column(s)
+[26, 13:17:22] DELETE FROM energy WHERE iso_code = 'USA' AND year_ = 2022: Running...
+[26, 13:17:22] DELETE FROM energy WHERE iso_code = 'USA' AND year_ = 2022: Error Code: 1054. Unknown column 'year_' in 'where clause'
+[27, 13:17:23] DELETE FROM energy WHERE iso_code = 'USA' AND year_ = 2022: Running...
+[27, 13:17:23] DELETE FROM energy WHERE iso_code = 'USA' AND year_ = 2022: Error Code: 1054. Unknown column 'year_' in 'where clause'
+[28, 13:17:28] DELETE FROM energy WHERE iso_code = 'USA' AND year = 2022: Running...
+[28, 13:17:28] DELETE FROM energy WHERE iso_code = 'USA' AND year = 2022: 3 row(s) affected
+[29, 13:17:29] DELETE FROM energy WHERE iso_code = 'USA' AND year = 2022: Running...
+[29, 13:17:29] DELETE FROM energy WHERE iso_code = 'USA' AND year = 2022: 0 row(s) affected
+[30, 13:18:51] ALTER TABLE energy ADD CONSTRAINT check_clean_energy CHECK (clean_energy >= 0): Running...
+[30, 13:18:51] ALTER TABLE energy ADD CONSTRAINT check_clean_energy CHECK (clean_energy >= 0): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[31, 13:18:52] ALTER TABLE energy ADD CONSTRAINT check_clean_energy CHECK (clean_energy >= 0): Running...
+[31, 13:18:52] ALTER TABLE energy ADD CONSTRAINT check_clean_energy CHECK (clean_energy >= 0): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[32, 13:18:59] INSERT INTO energy (year_, clean_energy, dirty_energy, iso_code) VALUES (2022, -100, 200, 'USA'): Running...
+[32, 13:18:59] INSERT INTO energy (year_, clean_energy, dirty_energy, iso_code) VALUES (2022, -100, 200, 'USA'): Error Code: 1054. Unknown column 'year_' in 'field list'
+[33, 13:19:05] INSERT INTO energy (year, clean_energy, dirty_energy, iso_code) VALUES (2022, -100, 200, 'USA'): Running...
+[33, 13:19:05] INSERT INTO energy (year, clean_energy, dirty_energy, iso_code) VALUES (2022, -100, 200, 'USA'): 1 row(s) affected
+[34, 13:19:08] ALTER TABLE energy ADD CONSTRAINT check_clean_energy CHECK (clean_energy >= 0): Running...
+[34, 13:19:08] ALTER TABLE energy ADD CONSTRAINT check_clean_energy CHECK (clean_energy >= 0): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[35, 13:19:57] SELECT * FROM test.energy
+LIMIT 0, 50000
+: Running...
+[35, 13:19:57] SELECT * FROM test.energy
+LIMIT 0, 50000
+: Fetching...
+[35, 13:19:57] SELECT * FROM test.energy
+LIMIT 0, 50000
+: 2144 row(s) returned
+[36, 13:20:36] SELECT * FROM test.energy
+LIMIT 0, 50000
+: Running...
+[36, 13:20:36] SELECT * FROM test.energy
+LIMIT 0, 50000
+: Fetching...
+[36, 13:20:36] SELECT * FROM test.energy
+LIMIT 0, 50000
+: 2144 row(s) returned
+[37, 13:21:29] DELETE FROM energy WHERE year = 2022 AND iso_code = 'USA': Running...
+[37, 13:21:29] DELETE FROM energy WHERE year = 2022 AND iso_code = 'USA': 1 row(s) affected
+[38, 13:21:36] ALTER TABLE energy ADD CONSTRAINT check_clean_energy CHECK (clean_energy >= 0): Running...
+[38, 13:21:36] ALTER TABLE energy ADD CONSTRAINT check_clean_energy CHECK (clean_energy >= 0): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[39, 13:21:36] ALTER TABLE energy ADD CONSTRAINT check_clean_energy CHECK (clean_energy >= 0): Running...
+[39, 13:21:36] ALTER TABLE energy ADD CONSTRAINT check_clean_energy CHECK (clean_energy >= 0): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[40, 13:21:37] ALTER TABLE energy ADD CONSTRAINT check_clean_energy CHECK (clean_energy >= 0): Running...
+[40, 13:21:37] ALTER TABLE energy ADD CONSTRAINT check_clean_energy CHECK (clean_energy >= 0): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[41, 13:21:37] ALTER TABLE energy ADD CONSTRAINT check_clean_energy CHECK (clean_energy >= 0): Running...
+[41, 13:21:37] ALTER TABLE energy ADD CONSTRAINT check_clean_energy CHECK (clean_energy >= 0): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[42, 13:21:38] ALTER TABLE energy ADD CONSTRAINT check_clean_energy CHECK (clean_energy >= 0): Running...
+[42, 13:21:38] ALTER TABLE energy ADD CONSTRAINT check_clean_energy CHECK (clean_energy >= 0): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[43, 13:28:32] ALTER TABLE energy
+ADD CHECK (clean_energy >= 0): Running...
+[43, 13:28:32] ALTER TABLE energy
+ADD CHECK (clean_energy >= 0): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[44, 13:28:33] ALTER TABLE energy
+ADD CHECK (clean_energy >= 0): Running...
+[44, 13:28:33] ALTER TABLE energy
+ADD CHECK (clean_energy >= 0): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[45, 13:28:34] ALTER TABLE energy
+ADD CHECK (clean_energy >= 0): Running...
+[45, 13:28:34] ALTER TABLE energy
+ADD CHECK (clean_energy >= 0): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[46, 13:28:34] ALTER TABLE energy
+ADD CHECK (clean_energy >= 0): Running...
+[46, 13:28:34] ALTER TABLE energy
+ADD CHECK (clean_energy >= 0): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[47, 13:28:35] ALTER TABLE energy
+ADD CHECK (clean_energy >= 0): Running...
+[47, 13:28:35] ALTER TABLE energy
+ADD CHECK (clean_energy >= 0): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[48, 13:28:55] INSERT INTO energy (year, clean_energy, dirty_energy, iso_code) VALUES (2022, -100, 200, 'USA'): Running...
+[48, 13:28:55] INSERT INTO energy (year, clean_energy, dirty_energy, iso_code) VALUES (2022, -100, 200, 'USA'): 1 row(s) affected
+[49, 13:28:58] DELETE FROM energy WHERE year = 2022 AND iso_code = 'USA': Running...
+[49, 13:28:58] DELETE FROM energy WHERE year = 2022 AND iso_code = 'USA': 1 row(s) affected
+[50, 13:45:01] END
+
+CREATE TRIGGER clean_energy_update_trigger
+    BEFORE UPDATE ON energy
+    FOR EACH ROW
+    BEGIN
+        IF clean_energy < 0 THEN
+            SET clean_energy = 0: Running...
+[50, 13:45:01] END
+
+CREATE TRIGGER clean_energy_update_trigger
+    BEFORE UPDATE ON energy
+    FOR EACH ROW
+    BEGIN
+        IF clean_energy < 0 THEN
+            SET clean_energy = 0: Error Code: 1064. You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'END
+
+CREATE TRIGGER clean_energy_update_trigger
+    BEFORE UPDATE ON energy
+    ' at line 1
+[51, 13:46:46] END: Running...
+[51, 13:46:46] END: Error Code: 1064. You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'END' at line 1
+[52, 13:46:46] END: Running...
+[52, 13:46:46] END: Error Code: 1064. You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'END' at line 1
+[53, 13:46:46] END: Running...
+[53, 13:46:46] END: Error Code: 1064. You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'END' at line 1
+[54, 13:46:47] END: Running...
+[54, 13:46:47] END: Error Code: 1064. You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'END' at line 1
+[55, 13:46:49] END: Running...
+[55, 13:46:49] END: Error Code: 1064. You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'END' at line 1
+[56, 13:46:52] SELECT
+ 'top_dirty_energy' AS view_name,
+  SUM(highest_dirty_energy) AS total_dirty_energy
+FROM top_dirty_energy
+LIMIT 0, 50000
+: Running...
+[56, 13:46:52] SELECT
+ 'top_dirty_energy' AS view_name,
+  SUM(highest_dirty_energy) AS total_dirty_energy
+FROM top_dirty_energy
+LIMIT 0, 50000
+: Fetching...
+[56, 13:46:52] SELECT
+ 'top_dirty_energy' AS view_name,
+  SUM(highest_dirty_energy) AS total_dirty_energy
+FROM top_dirty_energy
+LIMIT 0, 50000
+: 1 row(s) returned
+[57, 13:47:02] SELECT
+ 'top_dirty_energy' AS view_name,
+  SUM(highest_dirty_energy) AS total_dirty_energy
+FROM top_dirty_energy
+LIMIT 0, 50000
+: Running...
+[57, 13:47:02] SELECT
+ 'top_dirty_energy' AS view_name,
+  SUM(highest_dirty_energy) AS total_dirty_energy
+FROM top_dirty_energy
+LIMIT 0, 50000
+: Fetching...
+[57, 13:47:02] SELECT
+ 'top_dirty_energy' AS view_name,
+  SUM(highest_dirty_energy) AS total_dirty_energy
+FROM top_dirty_energy
+LIMIT 0, 50000
+: 1 row(s) returned
+[58, 13:49:32] CREATE TRIGGER clean_energy_insert_trigger
+    BEFORE INSERT ON energy
+    FOR EACH ROW
+    BEGIN
+        IF (NEW.clean_energy < 0) 
+        THEN
+            SET NEW.clean_energy = 0;
+        END IF;
+    END: Running...
+[58, 13:49:32] CREATE TRIGGER clean_energy_insert_trigger
+    BEFORE INSERT ON energy
+    FOR EACH ROW
+    BEGIN
+        IF (NEW.clean_energy < 0) 
+        THEN
+            SET NEW.clean_energy = 0;
+        END IF;
+    END: 0 row(s) affected
+[59, 13:49:54] CREATE TRIGGER clean_energy_update_trigger
+    BEFORE UPDATE ON energy
+    FOR EACH ROW
+    BEGIN
+        IF clean_energy < 0 THEN
+            SET clean_energy = 0;
+		END IF;
+    END: Running...
+[59, 13:49:54] CREATE TRIGGER clean_energy_update_trigger
+    BEFORE UPDATE ON energy
+    FOR EACH ROW
+    BEGIN
+        IF clean_energy < 0 THEN
+            SET clean_energy = 0;
+		END IF;
+    END: Error Code: 1193. Unknown system variable 'clean_energy'
+[60, 13:49:56] CREATE TRIGGER clean_energy_update_trigger
+    BEFORE UPDATE ON energy
+    FOR EACH ROW
+    BEGIN
+        IF clean_energy < 0 THEN
+            SET clean_energy = 0;
+		END IF;
+    END: Running...
+[60, 13:49:56] CREATE TRIGGER clean_energy_update_trigger
+    BEFORE UPDATE ON energy
+    FOR EACH ROW
+    BEGIN
+        IF clean_energy < 0 THEN
+            SET clean_energy = 0;
+		END IF;
+    END: Error Code: 1193. Unknown system variable 'clean_energy'
+[61, 13:50:08] CREATE TRIGGER clean_energy_update_trigger
+    BEFORE UPDATE ON energy
+    FOR EACH ROW
+    BEGIN
+        IF (NEW.clean_energy < 0) THEN
+            SET clean_energy = 0;
+		END IF;
+    END: Running...
+[61, 13:50:08] CREATE TRIGGER clean_energy_update_trigger
+    BEFORE UPDATE ON energy
+    FOR EACH ROW
+    BEGIN
+        IF (NEW.clean_energy < 0) THEN
+            SET clean_energy = 0;
+		END IF;
+    END: Error Code: 1193. Unknown system variable 'clean_energy'
+[62, 13:50:13] CREATE TRIGGER clean_energy_update_trigger
+    BEFORE UPDATE ON energy
+    FOR EACH ROW
+    BEGIN
+        IF (NEW.clean_energy < 0) THEN
+            SET NEW.clean_energy = 0;
+		END IF;
+    END: Running...
+[62, 13:50:13] CREATE TRIGGER clean_energy_update_trigger
+    BEFORE UPDATE ON energy
+    FOR EACH ROW
+    BEGIN
+        IF (NEW.clean_energy < 0) THEN
+            SET NEW.clean_energy = 0;
+		END IF;
+    END: 0 row(s) affected
+[63, 13:50:14] CREATE TRIGGER clean_energy_update_trigger
+    BEFORE UPDATE ON energy
+    FOR EACH ROW
+    BEGIN
+        IF (NEW.clean_energy < 0) THEN
+            SET NEW.clean_energy = 0;
+		END IF;
+    END: Running...
+[63, 13:50:14] CREATE TRIGGER clean_energy_update_trigger
+    BEFORE UPDATE ON energy
+    FOR EACH ROW
+    BEGIN
+        IF (NEW.clean_energy < 0) THEN
+            SET NEW.clean_energy = 0;
+		END IF;
+    END: Error Code: 1359. Trigger already exists
+[64, 13:51:05] INSERT INTO energy (year_, clean_energy, dirty_energy, iso_code) VALUES (2022, -100, 200, 'USA'): Running...
+[64, 13:51:05] INSERT INTO energy (year_, clean_energy, dirty_energy, iso_code) VALUES (2022, -100, 200, 'USA'): Error Code: 1054. Unknown column 'year_' in 'field list'
+[65, 13:51:09] INSERT INTO energy (year, clean_energy, dirty_energy, iso_code) VALUES (2022, -100, 200, 'USA'): Running...
+[65, 13:51:09] INSERT INTO energy (year, clean_energy, dirty_energy, iso_code) VALUES (2022, -100, 200, 'USA'): 1 row(s) affected
+[66, 13:51:12] SELECT * FROM test.energy
+LIMIT 0, 50000
+: Running...
+[66, 13:51:12] SELECT * FROM test.energy
+LIMIT 0, 50000
+: Fetching...
+[66, 13:51:12] SELECT * FROM test.energy
+LIMIT 0, 50000
+: 2144 row(s) returned
+[67, 13:52:59] SELECT * FROM test.countries
+LIMIT 0, 50000
+: Running...
+[67, 13:52:59] SELECT * FROM test.countries
+LIMIT 0, 50000
+: Fetching...
+[67, 13:52:59] SELECT * FROM test.countries
+LIMIT 0, 50000
+: 218 row(s) returned
+[68, 13:56:12] SELECT * FROM test.energy
+LIMIT 0, 50000
+: Running...
+[68, 13:56:12] SELECT * FROM test.energy
+LIMIT 0, 50000
+: Fetching...
+[68, 13:56:12] SELECT * FROM test.energy
+LIMIT 0, 50000
+: 2144 row(s) returned
+[69, 14:01:28] ALTER TABLE energy ADD CONSTRAINT clean_energy_constraint CHECK (clean_energy >=0): Running...
+[69, 14:01:28] ALTER TABLE energy ADD CONSTRAINT clean_energy_constraint CHECK (clean_energy >=0): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[70, 14:01:29] ALTER TABLE energy ADD CONSTRAINT clean_energy_constraint CHECK (clean_energy >=0): Running...
+[70, 14:01:29] ALTER TABLE energy ADD CONSTRAINT clean_energy_constraint CHECK (clean_energy >=0): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[71, 14:01:30] ALTER TABLE energy ADD CONSTRAINT clean_energy_constraint CHECK (clean_energy >=0): Running...
+[71, 14:01:30] ALTER TABLE energy ADD CONSTRAINT clean_energy_constraint CHECK (clean_energy >=0): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[72, 14:01:30] ALTER TABLE energy ADD CONSTRAINT clean_energy_constraint CHECK (clean_energy >=0): Running...
+[72, 14:01:30] ALTER TABLE energy ADD CONSTRAINT clean_energy_constraint CHECK (clean_energy >=0): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[73, 14:01:30] ALTER TABLE energy ADD CONSTRAINT clean_energy_constraint CHECK (clean_energy >=0): Running...
+[73, 14:01:30] ALTER TABLE energy ADD CONSTRAINT clean_energy_constraint CHECK (clean_energy >=0): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[74, 14:01:59] ANALYZE TABLE `test`.`energy`: Executing 
+[74, 14:01:59] ANALYZE TABLE `test`.`energy`: OK
+[75, 14:02:12] INSERT INTO energy (year, clean_energy, dirty_energy, iso_code) VALUES (2022, -100, 200, 'USA'): Running...
+[75, 14:02:12] INSERT INTO energy (year, clean_energy, dirty_energy, iso_code) VALUES (2022, -100, 200, 'USA'): 1 row(s) affected
+[76, 14:02:13] INSERT INTO energy (year, clean_energy, dirty_energy, iso_code) VALUES (2022, -100, 200, 'USA'): Running...
+[76, 14:02:13] INSERT INTO energy (year, clean_energy, dirty_energy, iso_code) VALUES (2022, -100, 200, 'USA'): 1 row(s) affected
+[77, 14:02:13] INSERT INTO energy (year, clean_energy, dirty_energy, iso_code) VALUES (2022, -100, 200, 'USA'): Running...
+[77, 14:02:13] INSERT INTO energy (year, clean_energy, dirty_energy, iso_code) VALUES (2022, -100, 200, 'USA'): 1 row(s) affected
+[78, 14:02:15] SELECT * FROM test.population
+LIMIT 0, 50000
+: Running...
+[78, 14:02:15] SELECT * FROM test.population
+LIMIT 0, 50000
+: Fetching...
+[78, 14:02:15] SELECT * FROM test.population
+LIMIT 0, 50000
+: 6389 row(s) returned
+[79, 14:02:19] SELECT * FROM test.energy
+LIMIT 0, 50000
+: Running...
+[79, 14:02:19] SELECT * FROM test.energy
+LIMIT 0, 50000
+: Fetching...
+[79, 14:02:19] SELECT * FROM test.energy
+LIMIT 0, 50000
+: 2147 row(s) returned
+[80, 14:03:04] DELETE FROM energy WHERE year = 2022 AND iso_code = 'USA': Running...
+[80, 14:03:04] DELETE FROM energy WHERE year = 2022 AND iso_code = 'USA': 4 row(s) affected
+[81, 14:03:07] SELECT * FROM test.energy
+LIMIT 0, 50000
+: Running...
+[81, 14:03:07] SELECT * FROM test.energy
+LIMIT 0, 50000
+: Fetching...
+[81, 14:03:07] SELECT * FROM test.energy
+LIMIT 0, 50000
+: 2143 row(s) returned
+[82, 14:03:18] SELECT * FROM test.energy
+LIMIT 0, 50000
+: Running...
+[82, 14:03:18] SELECT * FROM test.energy
+LIMIT 0, 50000
+: Fetching...
+[82, 14:03:18] SELECT * FROM test.energy
+LIMIT 0, 50000
+: 2143 row(s) returned
+[83, 14:03:55] DROP TRIGGER clean_energy_insert_trigger: Running...
+[83, 14:03:55] DROP TRIGGER clean_energy_insert_trigger: 0 row(s) affected
+[84, 14:04:07] DROP TRIGGER clean_energy_update_trigger: Running...
+[84, 14:04:07] DROP TRIGGER clean_energy_update_trigger: 0 row(s) affected
+[85, 14:04:16] ALTER TABLE energy ADD CONSTRAINT clean_energy_constraint CHECK (clean_energy >=0): Running...
+[85, 14:04:16] ALTER TABLE energy ADD CONSTRAINT clean_energy_constraint CHECK (clean_energy >=0): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[86, 14:04:17] ALTER TABLE energy ADD CONSTRAINT clean_energy_constraint CHECK (clean_energy >=0): Running...
+[86, 14:04:17] ALTER TABLE energy ADD CONSTRAINT clean_energy_constraint CHECK (clean_energy >=0): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[87, 14:04:17] ALTER TABLE energy ADD CONSTRAINT clean_energy_constraint CHECK (clean_energy >=0): Running...
+[87, 14:04:17] ALTER TABLE energy ADD CONSTRAINT clean_energy_constraint CHECK (clean_energy >=0): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[88, 14:05:13] ALTER TABLE energy ADD CONSTRAINT clean_energy_constraint CHECK (clean_energy >=0): Running...
+[88, 14:05:13] ALTER TABLE energy ADD CONSTRAINT clean_energy_constraint CHECK (clean_energy >=0): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[89, 14:05:14] ALTER TABLE energy ADD CONSTRAINT clean_energy_constraint CHECK (clean_energy >=0): Running...
+[89, 14:05:14] ALTER TABLE energy ADD CONSTRAINT clean_energy_constraint CHECK (clean_energy >=0): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[90, 14:05:16] INSERT INTO energy (year, clean_energy, dirty_energy, iso_code) VALUES (2022, -100, 200, 'USA'): Running...
+[90, 14:05:16] INSERT INTO energy (year, clean_energy, dirty_energy, iso_code) VALUES (2022, -100, 200, 'USA'): 1 row(s) affected
+[91, 14:05:40] ALTER TABLE energy ADD CONSTRAINT clean_energy_constraint CHECK (clean_energy = 0): Running...
+[91, 14:05:40] ALTER TABLE energy ADD CONSTRAINT clean_energy_constraint CHECK (clean_energy = 0): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[92, 14:05:40] ALTER TABLE energy ADD CONSTRAINT clean_energy_constraint CHECK (clean_energy = 0): Running...
+[92, 14:05:40] ALTER TABLE energy ADD CONSTRAINT clean_energy_constraint CHECK (clean_energy = 0): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[93, 14:05:41] ALTER TABLE energy ADD CONSTRAINT clean_energy_constraint CHECK (clean_energy = 0): Running...
+[93, 14:05:41] ALTER TABLE energy ADD CONSTRAINT clean_energy_constraint CHECK (clean_energy = 0): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[94, 14:05:41] ALTER TABLE energy ADD CONSTRAINT clean_energy_constraint CHECK (clean_energy = 0): Running...
+[94, 14:05:41] ALTER TABLE energy ADD CONSTRAINT clean_energy_constraint CHECK (clean_energy = 0): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[95, 14:05:42] ALTER TABLE energy ADD CONSTRAINT clean_energy_constraint CHECK (clean_energy = 0): Running...
+[95, 14:05:42] ALTER TABLE energy ADD CONSTRAINT clean_energy_constraint CHECK (clean_energy = 0): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[96, 14:05:42] ALTER TABLE energy ADD CONSTRAINT clean_energy_constraint CHECK (clean_energy = 0): Running...
+[96, 14:05:42] ALTER TABLE energy ADD CONSTRAINT clean_energy_constraint CHECK (clean_energy = 0): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[97, 14:05:42] ALTER TABLE energy ADD CONSTRAINT clean_energy_constraint CHECK (clean_energy = 0): Running...
+[97, 14:05:42] ALTER TABLE energy ADD CONSTRAINT clean_energy_constraint CHECK (clean_energy = 0): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[98, 14:05:42] ALTER TABLE energy ADD CONSTRAINT clean_energy_constraint CHECK (clean_energy = 0): Running...
+[98, 14:05:42] ALTER TABLE energy ADD CONSTRAINT clean_energy_constraint CHECK (clean_energy = 0): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[99, 14:05:42] ALTER TABLE energy ADD CONSTRAINT clean_energy_constraint CHECK (clean_energy = 0): Running...
+[99, 14:05:42] ALTER TABLE energy ADD CONSTRAINT clean_energy_constraint CHECK (clean_energy = 0): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[100, 14:05:43] ALTER TABLE energy ADD CONSTRAINT clean_energy_constraint CHECK (clean_energy = 0): Running...
+[100, 14:05:43] ALTER TABLE energy ADD CONSTRAINT clean_energy_constraint CHECK (clean_energy = 0): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[101, 14:05:43] ALTER TABLE energy ADD CONSTRAINT clean_energy_constraint CHECK (clean_energy = 0): Running...
+[101, 14:05:43] ALTER TABLE energy ADD CONSTRAINT clean_energy_constraint CHECK (clean_energy = 0): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[102, 14:05:49] DELETE FROM energy WHERE year = 2022 AND iso_code = 'USA': Running...
+[102, 14:05:49] DELETE FROM energy WHERE year = 2022 AND iso_code = 'USA': 1 row(s) affected
+[103, 14:07:02] CREATE TRIGGER clean_energy_update_trigger
+    BEFORE UPDATE ON energy
+    FOR EACH ROW
+    BEGIN
+        IF (NEW.clean_energy < 0) THEN
+            SET NEW.clean_energy = 0;
+		END IF;
+    END: Running...
+[103, 14:07:02] CREATE TRIGGER clean_energy_update_trigger
+    BEFORE UPDATE ON energy
+    FOR EACH ROW
+    BEGIN
+        IF (NEW.clean_energy < 0) THEN
+            SET NEW.clean_energy = 0;
+		END IF;
+    END: 0 row(s) affected
+[104, 14:07:05] CREATE TRIGGER clean_energy_insert_trigger
+    BEFORE INSERT ON energy
+    FOR EACH ROW
+    BEGIN
+        IF (NEW.clean_energy < 0) 
+        THEN
+            SET NEW.clean_energy = 0;
+        END IF;
+    END: Running...
+[104, 14:07:05] CREATE TRIGGER clean_energy_insert_trigger
+    BEFORE INSERT ON energy
+    FOR EACH ROW
+    BEGIN
+        IF (NEW.clean_energy < 0) 
+        THEN
+            SET NEW.clean_energy = 0;
+        END IF;
+    END: 0 row(s) affected
+[105, 14:07:10] INSERT INTO energy (year, clean_energy, dirty_energy, iso_code) VALUES (2022, -100, 200, 'USA'): Running...
+[105, 14:07:10] INSERT INTO energy (year, clean_energy, dirty_energy, iso_code) VALUES (2022, -100, 200, 'USA'): 1 row(s) affected
+[106, 14:39:21] CREATE PROCEDURE get_energy_stats(IN p_iso_code VARCHAR(3))
+BEGIN
+  DECLARE total_energy INT;
+  DECLARE clean_energy INT;
+  DECLARE dirty_energy INT;
+  DECLARE co2_emission INT;
+  DECLARE ozone_density FLOAT;
+  DECLARE temperature_anomaly FLOAT;
+  
+  SELECT total_energy, clean_energy, dirty_energy
+  INTO total_energy, clean_energy, dirty_energy
+  FROM energy
+  WHERE iso_code = p_iso_code;
+  
+  SELECT co2_emission
+  INTO co2_emission
+  FROM consumer_relationship
+  WHERE iso_code = p_iso_code
+  ORDER BY year_ DESC
+  LIMIT 1;
+  
+  SELECT ozone_density, temperature_anomaly
+  INTO ozone_density, temperature_anomaly
+  FROM pollution
+  WHERE year_ = (SELECT MAX(year_) FROM pollution);
+  
+  SELECT amount
+  FROM have_relationship
+  WHERE iso_code = p_iso_code
+  ORDER BY year_ DESC
+  LIMIT 1;
+  
+  SELECT total_energy, co2_emission, ozone_density, temperature_anomaly;
+END: Running...
+[106, 14:39:21] CREATE PROCEDURE get_energy_stats(IN p_iso_code VARCHAR(3))
+BEGIN
+  DECLARE total_energy INT;
+  DECLARE clean_energy INT;
+  DECLARE dirty_energy INT;
+  DECLARE co2_emission INT;
+  DECLARE ozone_density FLOAT;
+  DECLARE temperature_anomaly FLOAT;
+  
+  SELECT total_energy, clean_energy, dirty_energy
+  INTO total_energy, clean_energy, dirty_energy
+  FROM energy
+  WHERE iso_code = p_iso_code;
+  
+  SELECT co2_emission
+  INTO co2_emission
+  FROM consumer_relationship
+  WHERE iso_code = p_iso_code
+  ORDER BY year_ DESC
+  LIMIT 1;
+  
+  SELECT ozone_density, temperature_anomaly
+  INTO ozone_density, temperature_anomaly
+  FROM pollution
+  WHERE year_ = (SELECT MAX(year_) FROM pollution);
+  
+  SELECT amount
+  FROM have_relationship
+  WHERE iso_code = p_iso_code
+  ORDER BY year_ DESC
+  LIMIT 1;
+  
+  SELECT total_energy, co2_emission, ozone_density, temperature_anomaly;
+END: 0 row(s) affected
+[107, 14:40:03] CALL get_energy_stats('USA'): Running...
+[107, 14:40:03] CALL get_energy_stats('USA'): Error Code: 1172. Result consisted of more than one row
+[108, 14:40:20] CALL get_energy_stats('CHN'): Running...
+[108, 14:40:20] CALL get_energy_stats('CHN'): Error Code: 1172. Result consisted of more than one row
+[109, 14:41:19] INSERT INTO energy (year, clean_energy, dirty_energy, iso_code) VALUES (2022, -100, 200, 'USA'): Running...
+[109, 14:41:19] INSERT INTO energy (year, clean_energy, dirty_energy, iso_code) VALUES (2022, -100, 200, 'USA'): 1 row(s) affected
+[110, 14:41:35] CREATE PROCEDURE get_energy_stats(IN p_iso_code VARCHAR(3))
+BEGIN
+  DECLARE total_energy INT;
+  DECLARE clean_energy INT;
+  DECLARE dirty_energy INT;
+  DECLARE co2_emission INT;
+  DECLARE ozone_density FLOAT;
+  DECLARE temperature_anomaly FLOAT;
+  DECLARE latest_have_amount INT;
+  DECLARE latest_co2_emission INT;
+  
+  SELECT total_energy, clean_energy, dirty_energy
+  INTO total_energy, clean_energy, dirty_energy
+  FROM energy
+  WHERE iso_code = p_iso_code;
+  
+  SELECT co2_emission
+  INTO co2_emission
+  FROM consumer_relationship
+  WHERE iso_code = p_iso_code
+  AND year_ = (SELECT MAX(year_) FROM consumer_relationship WHERE iso_code = p_iso_code);
+  
+  SELECT ozone_density, temperature_anomaly
+  INTO ozone_density, temperature_anomaly
+  FROM pollution
+  WHERE year_ = (SELECT MAX(year_) FROM pollution);
+  
+  SELECT amount
+  INTO latest_have_amount
+  FROM have_relationship
+  WHERE iso_code = p_iso_code
+  AND year_ = (SELECT MAX(year_) FROM have_relationship WHERE iso_code = p_iso_code);
+  
+  SELECT co2_emission
+  INTO latest_co2_emission
+  FROM consumer_relationship
+  WHERE iso_code = p_iso_code
+  AND year_ = (SELECT MAX(year_) FROM consumer_relationship WHERE iso_code = p_iso_code);
+  
+  SELECT total_energy, latest_co2_emission, ozone_density, temperature_anomaly;
+END: Running...
+[110, 14:41:35] CREATE PROCEDURE get_energy_stats(IN p_iso_code VARCHAR(3))
+BEGIN
+  DECLARE total_energy INT;
+  DECLARE clean_energy INT;
+  DECLARE dirty_energy INT;
+  DECLARE co2_emission INT;
+  DECLARE ozone_density FLOAT;
+  DECLARE temperature_anomaly FLOAT;
+  DECLARE latest_have_amount INT;
+  DECLARE latest_co2_emission INT;
+  
+  SELECT total_energy, clean_energy, dirty_energy
+  INTO total_energy, clean_energy, dirty_energy
+  FROM energy
+  WHERE iso_code = p_iso_code;
+  
+  SELECT co2_emission
+  INTO co2_emission
+  FROM consumer_relationship
+  WHERE iso_code = p_iso_code
+  AND year_ = (SELECT MAX(year_) FROM consumer_relationship WHERE iso_code = p_iso_code);
+  
+  SELECT ozone_density, temperature_anomaly
+  INTO ozone_density, temperature_anomaly
+  FROM pollution
+  WHERE year_ = (SELECT MAX(year_) FROM pollution);
+  
+  SELECT amount
+  INTO latest_have_amount
+  FROM have_relationship
+  WHERE iso_code = p_iso_code
+  AND year_ = (SELECT MAX(year_) FROM have_relationship WHERE iso_code = p_iso_code);
+  
+  SELECT co2_emission
+  INTO latest_co2_emission
+  FROM consumer_relationship
+  WHERE iso_code = p_iso_code
+  AND year_ = (SELECT MAX(year_) FROM consumer_relationship WHERE iso_code = p_iso_code);
+  
+  SELECT total_energy, latest_co2_emission, ozone_density, temperature_anomaly;
+END: Error Code: 1304. PROCEDURE get_energy_stats already exists
+[111, 14:42:11] DROP PROCEDURE get_energy_stats: Running...
+[111, 14:42:11] DROP PROCEDURE get_energy_stats: 0 row(s) affected
+[112, 14:42:17] CREATE PROCEDURE get_energy_stats(IN p_iso_code VARCHAR(3))
+BEGIN
+  DECLARE total_energy INT;
+  DECLARE clean_energy INT;
+  DECLARE dirty_energy INT;
+  DECLARE co2_emission INT;
+  DECLARE ozone_density FLOAT;
+  DECLARE temperature_anomaly FLOAT;
+  DECLARE latest_have_amount INT;
+  DECLARE latest_co2_emission INT;
+  
+  SELECT total_energy, clean_energy, dirty_energy
+  INTO total_energy, clean_energy, dirty_energy
+  FROM energy
+  WHERE iso_code = p_iso_code;
+  
+  SELECT co2_emission
+  INTO co2_emission
+  FROM consumer_relationship
+  WHERE iso_code = p_iso_code
+  AND year_ = (SELECT MAX(year_) FROM consumer_relationship WHERE iso_code = p_iso_code);
+  
+  SELECT ozone_density, temperature_anomaly
+  INTO ozone_density, temperature_anomaly
+  FROM pollution
+  WHERE year_ = (SELECT MAX(year_) FROM pollution);
+  
+  SELECT amount
+  INTO latest_have_amount
+  FROM have_relationship
+  WHERE iso_code = p_iso_code
+  AND year_ = (SELECT MAX(year_) FROM have_relationship WHERE iso_code = p_iso_code);
+  
+  SELECT co2_emission
+  INTO latest_co2_emission
+  FROM consumer_relationship
+  WHERE iso_code = p_iso_code
+  AND year_ = (SELECT MAX(year_) FROM consumer_relationship WHERE iso_code = p_iso_code);
+  
+  SELECT total_energy, latest_co2_emission, ozone_density, temperature_anomaly;
+END: Running...
+[112, 14:42:17] CREATE PROCEDURE get_energy_stats(IN p_iso_code VARCHAR(3))
+BEGIN
+  DECLARE total_energy INT;
+  DECLARE clean_energy INT;
+  DECLARE dirty_energy INT;
+  DECLARE co2_emission INT;
+  DECLARE ozone_density FLOAT;
+  DECLARE temperature_anomaly FLOAT;
+  DECLARE latest_have_amount INT;
+  DECLARE latest_co2_emission INT;
+  
+  SELECT total_energy, clean_energy, dirty_energy
+  INTO total_energy, clean_energy, dirty_energy
+  FROM energy
+  WHERE iso_code = p_iso_code;
+  
+  SELECT co2_emission
+  INTO co2_emission
+  FROM consumer_relationship
+  WHERE iso_code = p_iso_code
+  AND year_ = (SELECT MAX(year_) FROM consumer_relationship WHERE iso_code = p_iso_code);
+  
+  SELECT ozone_density, temperature_anomaly
+  INTO ozone_density, temperature_anomaly
+  FROM pollution
+  WHERE year_ = (SELECT MAX(year_) FROM pollution);
+  
+  SELECT amount
+  INTO latest_have_amount
+  FROM have_relationship
+  WHERE iso_code = p_iso_code
+  AND year_ = (SELECT MAX(year_) FROM have_relationship WHERE iso_code = p_iso_code);
+  
+  SELECT co2_emission
+  INTO latest_co2_emission
+  FROM consumer_relationship
+  WHERE iso_code = p_iso_code
+  AND year_ = (SELECT MAX(year_) FROM consumer_relationship WHERE iso_code = p_iso_code);
+  
+  SELECT total_energy, latest_co2_emission, ozone_density, temperature_anomaly;
+END: 0 row(s) affected
+[113, 14:42:20] CALL get_energy_stats('USA'): Running...
+[113, 14:42:20] CALL get_energy_stats('USA'): Error Code: 1172. Result consisted of more than one row
+[1, 15:00:30] DROP PROCEDURE get_energy_stats: Running...
+[1, 15:00:30] DROP PROCEDURE get_energy_stats: 0 row(s) affected
+[2, 15:00:53] INSERT INTO energy (year, clean_energy, dirty_energy, iso_code) VALUES (2022, -100, 200, 'USA'): Running...
+[2, 15:00:53] INSERT INTO energy (year, clean_energy, dirty_energy, iso_code) VALUES (2022, -100, 200, 'USA'): 1 row(s) affected
+[3, 15:00:56] CALL get_energy_stats('USA'): Running...
+[3, 15:00:56] CALL get_energy_stats('USA'): Error Code: 1305. PROCEDURE test.get_energy_stats does not exist
+[4, 15:04:17] CREATE PROCEDURE get_energy_stats(IN p_iso_code VARCHAR(3))
+BEGIN
+  DECLARE total_energy INT;
+  DECLARE clean_energy INT;
+  DECLARE dirty_energy INT;
+  DECLARE co2_emission INT;
+  DECLARE ozone_density FLOAT;
+  DECLARE temperature_anomaly FLOAT;
+  DECLARE latest_have_amount INT;
+  DECLARE latest_co2_emission INT;
+  
+  SELECT total_energy, clean_energy, dirty_energy
+  INTO total_energy, clean_energy, dirty_energy
+  FROM energy
+  WHERE iso_code = p_iso_code;
+  
+  SELECT 'Total Energy: ' + total_energy;
+  SELECT 'Clean Energy: ' + clean_energy;
+  SELECT 'Dirty Energy: ' + dirty_energy;
+  
+  SELECT co2_emission
+  INTO co2_emission
+  FROM consumer_relationship
+  WHERE iso_code = p_iso_code
+  AND year_ = (SELECT MAX(year_) FROM consumer_relationship WHERE iso_code = p_iso_code);
+  
+  SELECT 'CO2 Emission: ' + co2_emission;
+  
+  SELECT ozone_density, temperature_anomaly
+  INTO ozone_density, temperature_anomaly
+  FROM pollution
+  WHERE year_ = (SELECT MAX(year_) FROM pollution);
+  
+  SELECT 'Ozone Density: ' + ozone_density;
+  SELECT 'Temperature Anomaly: ' + temperature_anomaly;
+  
+  SELECT amount
+  INTO latest_have_amount
+  FROM have_relationship
+  WHERE iso_code = p_iso_code
+  AND year_ = (SELECT MAX(year_) FROM have_relationship WHERE iso_code = p_iso_code);
+  
+  SELECT 'Latest Have Amount: ' + latest_have_amount;
+  
+  SELECT co2_emission
+  INTO latest_co2_emission
+  FROM consumer_relationship
+  WHERE iso_code = p_iso_code
+  AND year_ = (SELECT MAX(year_) FROM consumer_relationship WHERE iso_code = p_iso_code);
+  
+  SELECT 'Latest CO2 Emission: ' + latest_co2_emission;
+  
+  SELECT total_energy, latest_co2_emission, ozone_density, temperature_anomaly;
+END: Running...
+[4, 15:04:17] CREATE PROCEDURE get_energy_stats(IN p_iso_code VARCHAR(3))
+BEGIN
+  DECLARE total_energy INT;
+  DECLARE clean_energy INT;
+  DECLARE dirty_energy INT;
+  DECLARE co2_emission INT;
+  DECLARE ozone_density FLOAT;
+  DECLARE temperature_anomaly FLOAT;
+  DECLARE latest_have_amount INT;
+  DECLARE latest_co2_emission INT;
+  
+  SELECT total_energy, clean_energy, dirty_energy
+  INTO total_energy, clean_energy, dirty_energy
+  FROM energy
+  WHERE iso_code = p_iso_code;
+  
+  SELECT 'Total Energy: ' + total_energy;
+  SELECT 'Clean Energy: ' + clean_energy;
+  SELECT 'Dirty Energy: ' + dirty_energy;
+  
+  SELECT co2_emission
+  INTO co2_emission
+  FROM consumer_relationship
+  WHERE iso_code = p_iso_code
+  AND year_ = (SELECT MAX(year_) FROM consumer_relationship WHERE iso_code = p_iso_code);
+  
+  SELECT 'CO2 Emission: ' + co2_emission;
+  
+  SELECT ozone_density, temperature_anomaly
+  INTO ozone_density, temperature_anomaly
+  FROM pollution
+  WHERE year_ = (SELECT MAX(year_) FROM pollution);
+  
+  SELECT 'Ozone Density: ' + ozone_density;
+  SELECT 'Temperature Anomaly: ' + temperature_anomaly;
+  
+  SELECT amount
+  INTO latest_have_amount
+  FROM have_relationship
+  WHERE iso_code = p_iso_code
+  AND year_ = (SELECT MAX(year_) FROM have_relationship WHERE iso_code = p_iso_code);
+  
+  SELECT 'Latest Have Amount: ' + latest_have_amount;
+  
+  SELECT co2_emission
+  INTO latest_co2_emission
+  FROM consumer_relationship
+  WHERE iso_code = p_iso_code
+  AND year_ = (SELECT MAX(year_) FROM consumer_relationship WHERE iso_code = p_iso_code);
+  
+  SELECT 'Latest CO2 Emission: ' + latest_co2_emission;
+  
+  SELECT total_energy, latest_co2_emission, ozone_density, temperature_anomaly;
+END: 0 row(s) affected
+[5, 15:04:20] CALL get_energy_stats('USA'): Running...
+[5, 15:04:20] CALL get_energy_stats('USA'): Error Code: 1172. Result consisted of more than one row
+[6, 15:07:14] CREATE PROCEDURE get_energy_stats(IN p_iso_code VARCHAR(3))
+BEGIN
+  DECLARE v_population INT;
+  DECLARE v_clean_energy INT;
+  DECLARE v_dirty_energy INT;
+  DECLARE v_total_energy INT;
+  
+  SELECT amount INTO v_population FROM population WHERE iso_code = p_iso_code;
+  SELECT clean_energy INTO v_clean_energy FROM energy WHERE iso_code = p_iso_code;
+  SELECT dirty_energy INTO v_dirty_energy FROM energy WHERE iso_code = p_iso_code;
+  SET v_total_energy = v_clean_energy + v_dirty_energy;
+
+  SELECT v_population, v_clean_energy, v_dirty_energy, v_total_energy;
+END;
+
+
+
+DROP PROCEDURE get_energy_stats;
+
+CALL get_energy_stats('USA');
+
+CALL get_energy_stats('CHN');: Running...
+[6, 15:07:14] CREATE PROCEDURE get_energy_stats(IN p_iso_code VARCHAR(3))
+BEGIN
+  DECLARE v_population INT;
+  DECLARE v_clean_energy INT;
+  DECLARE v_dirty_energy INT;
+  DECLARE v_total_energy INT;
+  
+  SELECT amount INTO v_population FROM population WHERE iso_code = p_iso_code;
+  SELECT clean_energy INTO v_clean_energy FROM energy WHERE iso_code = p_iso_code;
+  SELECT dirty_energy INTO v_dirty_energy FROM energy WHERE iso_code = p_iso_code;
+  SET v_total_energy = v_clean_energy + v_dirty_energy;
+
+  SELECT v_population, v_clean_energy, v_dirty_energy, v_total_energy;
+END;
+
+
+
+DROP PROCEDURE get_energy_stats;
+
+CALL get_energy_stats('USA');
+
+CALL get_energy_stats('CHN');: Error Code: 1304. PROCEDURE get_energy_stats already exists
+[7, 15:07:19] CREATE PROCEDURE get_energy_stats(IN p_iso_code VARCHAR(3))
+BEGIN
+  DECLARE v_population INT;
+  DECLARE v_clean_energy INT;
+  DECLARE v_dirty_energy INT;
+  DECLARE v_total_energy INT;
+  
+  SELECT amount INTO v_population FROM population WHERE iso_code = p_iso_code;
+  SELECT clean_energy INTO v_clean_energy FROM energy WHERE iso_code = p_iso_code;
+  SELECT dirty_energy INTO v_dirty_energy FROM energy WHERE iso_code = p_iso_code;
+  SET v_total_energy = v_clean_energy + v_dirty_energy;
+
+  SELECT v_population, v_clean_energy, v_dirty_energy, v_total_energy;
+END;
+
+Error Code: 3819. Check constraint 'clean_energy_constraint' is violated
+
+DROP PROCEDURE get_energy_stats;
+
+CALL get_energy_stats('USA');
+
+CALL get_energy_stats('CHN');: Running...
+[7, 15:07:19] CREATE PROCEDURE get_energy_stats(IN p_iso_code VARCHAR(3))
+BEGIN
+  DECLARE v_population INT;
+  DECLARE v_clean_energy INT;
+  DECLARE v_dirty_energy INT;
+  DECLARE v_total_energy INT;
+  
+  SELECT amount INTO v_population FROM population WHERE iso_code = p_iso_code;
+  SELECT clean_energy INTO v_clean_energy FROM energy WHERE iso_code = p_iso_code;
+  SELECT dirty_energy INTO v_dirty_energy FROM energy WHERE iso_code = p_iso_code;
+  SET v_total_energy = v_clean_energy + v_dirty_energy;
+
+  SELECT v_population, v_clean_energy, v_dirty_energy, v_total_energy;
+END;
+
+
+
+DROP PROCEDURE get_energy_stats;
+
+CALL get_energy_stats('USA');
+
+CALL get_energy_stats('CHN');: Error Code: 1304. PROCEDURE get_energy_stats already exists
+[8, 15:07:35] DROP PROCEDURE get_energy_stats: Running...
+[8, 15:07:35] DROP PROCEDURE get_energy_stats: 0 row(s) affected
+[9, 15:07:38] CREATE PROCEDURE get_energy_stats(IN p_iso_code VARCHAR(3))
+BEGIN
+  DECLARE v_population INT;
+  DECLARE v_clean_energy INT;
+  DECLARE v_dirty_energy INT;
+  DECLARE v_total_energy INT;
+  
+  SELECT amount INTO v_population FROM population WHERE iso_code = p_iso_code;
+  SELECT clean_energy INTO v_clean_energy FROM energy WHERE iso_code = p_iso_code;
+  SELECT dirty_energy INTO v_dirty_energy FROM energy WHERE iso_code = p_iso_code;
+  SET v_total_energy = v_clean_energy + v_dirty_energy;
+
+  SELECT v_population, v_clean_energy, v_dirty_energy, v_total_energy;
+END: Running...
+[9, 15:07:38] CREATE PROCEDURE get_energy_stats(IN p_iso_code VARCHAR(3))
+BEGIN
+  DECLARE v_population INT;
+  DECLARE v_clean_energy INT;
+  DECLARE v_dirty_energy INT;
+  DECLARE v_total_energy INT;
+  
+  SELECT amount INTO v_population FROM population WHERE iso_code = p_iso_code;
+  SELECT clean_energy INTO v_clean_energy FROM energy WHERE iso_code = p_iso_code;
+  SELECT dirty_energy INTO v_dirty_energy FROM energy WHERE iso_code = p_iso_code;
+  SET v_total_energy = v_clean_energy + v_dirty_energy;
+
+  SELECT v_population, v_clean_energy, v_dirty_energy, v_total_energy;
+END: 0 row(s) affected
+[10, 15:07:41] CALL get_energy_stats('USA'): Running...
+[10, 15:07:41] CALL get_energy_stats('USA'): Error Code: 1172. Result consisted of more than one row
+[11, 15:11:03] execute get_energy_stats p_iso_code= 'USA': Running...
+[11, 15:11:03] execute get_energy_stats p_iso_code= 'USA': Error Code: 1064. You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'p_iso_code= 'USA'' at line 1
+[12, 15:12:43] execute get_energy_stats: Running...
+[12, 15:12:43] execute get_energy_stats: Error Code: 1243. Unknown prepared statement handler (get_energy_stats) given to EXECUTE
+[13, 15:13:21] CALL get_energy_stats: Running...
+[13, 15:13:21] CALL get_energy_stats: Error Code: 1318. Incorrect number of arguments for PROCEDURE test.get_energy_stats; expected 1, got 0
+[14, 15:13:31] CALL get_energy_stats('USA'): Running...
+[14, 15:13:31] CALL get_energy_stats('USA'): Error Code: 1172. Result consisted of more than one row
+[15, 15:15:47] DROP PROCEDURE get_energy_stats: Running...
+[15, 15:15:47] DROP PROCEDURE get_energy_stats: 0 row(s) affected
+[16, 15:15:49] CREATE PROCEDURE get_energy_stats(IN p_iso_code VARCHAR(3))
+BEGIN
+  DECLARE v_population INT;
+  DECLARE v_clean_energy INT;
+  DECLARE v_dirty_energy INT;
+  DECLARE v_total_energy INT;
+  
+  SELECT SUM(amount) INTO v_population FROM population WHERE iso_code = p_iso_code;
+  SELECT SUM(clean_energy) INTO v_clean_energy FROM energy WHERE iso_code = p_iso_code;
+  SELECT SUM(dirty_energy) INTO v_dirty_energy FROM energy WHERE iso_code = p_iso_code;
+  SET v_total_energy = v_clean_energy + v_dirty_energy;
+
+  SELECT v_population, v_clean_energy, v_dirty_energy, v_total_energy;
+END: Running...
+[16, 15:15:49] CREATE PROCEDURE get_energy_stats(IN p_iso_code VARCHAR(3))
+BEGIN
+  DECLARE v_population INT;
+  DECLARE v_clean_energy INT;
+  DECLARE v_dirty_energy INT;
+  DECLARE v_total_energy INT;
+  
+  SELECT SUM(amount) INTO v_population FROM population WHERE iso_code = p_iso_code;
+  SELECT SUM(clean_energy) INTO v_clean_energy FROM energy WHERE iso_code = p_iso_code;
+  SELECT SUM(dirty_energy) INTO v_dirty_energy FROM energy WHERE iso_code = p_iso_code;
+  SET v_total_energy = v_clean_energy + v_dirty_energy;
+
+  SELECT v_population, v_clean_energy, v_dirty_energy, v_total_energy;
+END: 0 row(s) affected
+[17, 15:15:52] CALL get_energy_stats('USA'): Running...
+[17, 15:15:52] CALL get_energy_stats('USA'): Error Code: 1264. Out of range value for column 'v_population' at row 1
+[18, 15:16:28] SELECT * FROM test.population
+LIMIT 0, 50000
+: Running...
+[18, 15:16:28] SELECT * FROM test.population
+LIMIT 0, 50000
+: Fetching...
+[18, 15:16:28] SELECT * FROM test.population
+LIMIT 0, 50000
+: 6389 row(s) returned
+[19, 15:17:07] CALL get_energy_stats('USA'): Running...
+[19, 15:17:07] CALL get_energy_stats('USA'): Error Code: 1264. Out of range value for column 'v_population' at row 1
+[20, 15:17:08] CALL get_energy_stats('USA'): Running...
+[20, 15:17:08] CALL get_energy_stats('USA'): Error Code: 1264. Out of range value for column 'v_population' at row 1
+[21, 15:17:22] DROP PROCEDURE get_energy_stats: Running...
+[21, 15:17:22] DROP PROCEDURE get_energy_stats: 0 row(s) affected
+[22, 15:17:24] CREATE PROCEDURE get_energy_stats(IN p_iso_code VARCHAR(3))
+BEGIN
+  DECLARE v_population INT;
+  DECLARE v_clean_energy INT;
+  DECLARE v_dirty_energy INT;
+  DECLARE v_total_energy INT;
+  
+  
+  SELECT SUM(clean_energy) INTO v_clean_energy FROM energy WHERE iso_code = p_iso_code;
+  SELECT SUM(dirty_energy) INTO v_dirty_energy FROM energy WHERE iso_code = p_iso_code;
+  SET v_total_energy = v_clean_energy + v_dirty_energy;
+
+  SELECT v_clean_energy, v_dirty_energy, v_total_energy;
+END: Running...
+[22, 15:17:24] CREATE PROCEDURE get_energy_stats(IN p_iso_code VARCHAR(3))
+BEGIN
+  DECLARE v_population INT;
+  DECLARE v_clean_energy INT;
+  DECLARE v_dirty_energy INT;
+  DECLARE v_total_energy INT;
+  
+  
+  SELECT SUM(clean_energy) INTO v_clean_energy FROM energy WHERE iso_code = p_iso_code;
+  SELECT SUM(dirty_energy) INTO v_dirty_energy FROM energy WHERE iso_code = p_iso_code;
+  SET v_total_energy = v_clean_energy + v_dirty_energy;
+
+  SELECT v_clean_energy, v_dirty_energy, v_total_energy;
+END: 0 row(s) affected
+[23, 15:17:26] CALL get_energy_stats('USA'): Running...
+[23, 15:17:26] CALL get_energy_stats('USA'): Fetching...
+[23, 15:17:26] CALL get_energy_stats('USA'): 1 row(s) returned
+[24, 15:17:32] CALL get_energy_stats('CHN'): Running...
+[24, 15:17:32] CALL get_energy_stats('CHN'): Fetching...
+[24, 15:17:32] CALL get_energy_stats('CHN'): 1 row(s) returned
