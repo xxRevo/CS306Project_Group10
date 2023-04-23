@@ -112,6 +112,57 @@ ORDER BY
   highest_dirty_energy DESC
 LIMIT 10;
 
+#This view finds the top 10 population amounts in the given year ranges
+CREATE VIEW population_summary_top10 AS
+SELECT 
+  year,
+  iso_code,
+  SUM(amount) AS total_population
+FROM 
+  population
+GROUP BY 
+  year,
+  iso_code
+ORDER BY 
+  total_population DESC
+LIMIT 10;
+
+#This view finds the top 10 countries that have had the highest number of population and then prints their entire population stats in the given year range
+CREATE VIEW population_summary_top10_unique AS
+SELECT 
+  p.year,
+  p.iso_code,
+  top10.total_population
+FROM 
+  (
+    SELECT 
+      iso_code,
+      SUM(amount) AS total_population
+    FROM 
+      population
+    GROUP BY 
+      iso_code
+    ORDER BY 
+      total_population DESC
+    LIMIT 10
+  ) AS top10
+  JOIN population AS p
+    ON top10.iso_code = p.iso_code
+ORDER BY 
+  top10.total_population DESC;
+ 
+ 
+#This view find the pollution average in the given range of years
+CREATE VIEW pollution_summary AS
+SELECT 
+  year_,
+  AVG(ozone_density) AS avg_ozone_density,
+  AVG(temperature_anomaly) AS avg_temperature_anomaly
+FROM 
+  pollution
+GROUP BY 
+  year_;
+
 # Using set operators (part b)
 
 # Countries appearing in both views
@@ -205,6 +256,8 @@ SELECT
 FROM top_dirty_energy;
 
 # Constraints and Triggers
+
+#Constraint for adding clean energy that is above or equal to 0
 ALTER TABLE energy ADD CONSTRAINT clean_energy_constraint CHECK (clean_energy >= 0);
 
 DELIMITER //
